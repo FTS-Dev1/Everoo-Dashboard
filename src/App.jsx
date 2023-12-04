@@ -16,9 +16,6 @@ import { GetProfileDataAPI } from 'API/user';
 // Helpers :
 import { ToastContainer } from "react-toastify";
 
-// Cross Domain Storage :
-import createHost from "cross-domain-storage/host";
-
 // CSS :
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -43,7 +40,7 @@ const AuthRoute = ({ user, children }) => {
 const App = () => {
   let Dispatch = useDispatch()
 
-  let token = localStorage.getItem("madrasaToken")
+  let token = localStorage.getItem("everooToken")
   let AuthToken = token ?? null
 
   let RefreshAPIs = useSelector(state => state.refreshAPIs)
@@ -55,27 +52,7 @@ const App = () => {
     } else {
       let userData = res.data?.result;
       Dispatch(userDataActions.setUserData(userData))
-      localStorage.setItem("madrasaUserData", JSON.stringify(userData))
-      // Create CDS :
-      console.log("---------- CSD-URL ----------", window?.location?.ClientURL);
-      var storageHost = createHost([
-        {
-          origin: window?.location?.ClientURL,
-          allowedMethods: ['get', 'set', 'remove'],
-        },
-        // {
-        //   origin: process.env.REACT_APP_DASHBOARD_URL,
-        //   allowedMethods: ['get', 'set', 'remove'],
-        // },
-        // {
-        //   origin: 'http://localhost:3001',
-        //   allowedMethods: ['get'],
-        // },
-        // {
-        //   origin: process.env.REACT_APP_SITE_URL,
-        //   allowedMethods: ['get'],
-        // },
-      ]);
+      localStorage.setItem("everooUserData", JSON.stringify(userData))
     }
   }
   useEffect(() => {
@@ -105,7 +82,6 @@ const App = () => {
       />
       <Routes>
         <Route path='login' element={<AuthRoute user={AuthToken}> <Login /> </AuthRoute>} />
-        <Route path='register' element={<AuthRoute user={AuthToken}> <Register /> </AuthRoute>} />
         <Route path='forget' element={<AuthRoute user={AuthToken}> <ForgetPassword /> </AuthRoute>} />
         <Route path='dashboard/*' element={<ProtectedRoute user={AuthToken}> <Dashboard /></ProtectedRoute>} />
         <Route path='*' element={<Navigate to="/dashboard" replace />} />

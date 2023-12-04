@@ -114,14 +114,6 @@ const Navbar = () => {
                 <Profile className='icon' />
                 Profile
             </div>
-            <div className='popoverItem' onClick={() => window.open(window.location?.ClientURL, "_blank")}>
-                <HomeHashtag className='icon' />
-                Site
-            </div>
-            <div className='popoverItem'>
-                <MessageQuestion className='icon' />
-                Help
-            </div>
             <div className='popoverItem' onClick={logout}>
                 <Logout className='icon' />
                 Logout
@@ -149,8 +141,8 @@ const Navbar = () => {
                         </div>
                     )
                 })
-                :
-                <div className="notfoundnotify">No Notification Here</div>
+                    :
+                    <div className="notfoundnotify">No Notification Here</div>
             }
         </div>
     )
@@ -173,15 +165,15 @@ const Navbar = () => {
                     <Fade left>
                         <div className="leftSide">
                             <div className="name"> hi.
-                             {/* {`${UserData.firstName} ${UserData?.lastName}`}  */}
-                             </div>
+                                {/* {`${UserData.firstName} ${UserData?.lastName}`}  */}
+                            </div>
                             <div className="welcome"> Welcome to dashboard </div>
                         </div>
                     </Fade>
                     <Fade right>
                         <div className="rightSide">
-                            <SearchBar />
-                            <div className="notificationsBar">
+                            {/* <SearchBar /> */}
+                            {/* <div className="notificationsBar">
                                 <Popover className='notifypopover'
                                     open={open} onOpenChange={handleOpenChange}
                                     placement="bottomRight" title={"Notifications"} content={notify} trigger="click">
@@ -193,7 +185,7 @@ const Navbar = () => {
                                         }
                                     </div>
                                 </Popover>
-                            </div>
+                            </div> */}
                             <div className="nav-popover">
                                 <Popover
                                     placement="bottomRight" title={
