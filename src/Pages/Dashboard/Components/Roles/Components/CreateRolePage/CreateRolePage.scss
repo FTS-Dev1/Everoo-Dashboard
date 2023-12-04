@@ -1,0 +1,95 @@
+.mainCreateRoleContainer{
+    ::-webkit-scrollbar-track {
+        margin: 8px !important;
+    }
+}
+
+.rolemainHeadingArea {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+
+.createRoleHeading {
+    color: var(--primaryTextColor);
+    font-size: 1.7rem;
+}
+
+.createRoleContainer {
+    height: 80vh;
+    margin: .5rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: .8rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.301);
+    overflow-y: scroll;
+    .permissionsrole {
+        padding: 1.5rem 0;
+    }
+    .nameSearchBar {
+        position: relative;
+        background-color: white;
+        box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.06);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        padding: 0px 10px;
+        height: 40px;
+
+        input {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 8px;
+            transition: width .7s;
+
+            &:focus-within {
+                width: 250px;
+            }
+
+            @media screen and (max-width:640px) {
+                display: none;
+            }
+        }
+    }
+
+    .permissionsArea{
+        display: flex;
+        flex-direction: column;
+        .createRoleBtn{
+            margin: 2rem 0;
+            display: flex;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+    .permissioncommonMain {
+        display: flex;
+        flex-direction: column;
+
+        .permissionCommon {
+            display: flex;
+            padding: .8rem 0;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .permissiontoggle {
+            display: flex;
+            padding-right: 1.5rem;
+            .toggle{
+                padding-right: .8rem;
+            }
+            .swichmain {
+                color: #FFC01E;
+            }
+        }
+        
+    }
+    
+}

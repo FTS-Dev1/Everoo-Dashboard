@@ -1,0 +1,52 @@
+.dashboardAllUsersContainer{
+    padding-top: 1rem;
+
+    .flexLineSpace{
+        @media screen and (max-width:500px) {
+            flex-direction: column;   
+            align-items: flex-start;         
+        }
+        .heading{
+            @media screen and (max-width:500px) {
+                font-size: 18px;            
+            }
+        }
+        .dashboardBtn{
+            width: 120px;
+            @media screen and (max-width:500px) {
+                font-size: 13px;
+                width: 100px; 
+            }
+        }
+        
+    }
+    .buttonandFilter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        .filterMain{
+            height: 40px;
+        }
+        .ant-select-selector{
+            border: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 35px;
+            text-align: center;
+            border-radius: 20px;
+            width: 10rem;
+            color: var(--themeColor);
+            background : linear-gradient(101.19deg, #143745 2.03%, #0A1C29 100%);;
+            @media screen and (max-width:500px) {
+                width: 7rem;                
+                padding: 20px 5px;
+            }
+    
+        }
+        .ant-select-selection-item{
+            color: var(--themeColor);
+        }
+    }
+}

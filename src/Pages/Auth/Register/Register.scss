@@ -1,0 +1,386 @@
+.registerContainer {
+    position: relative;
+
+    .stepperProgressBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background-color: white;
+
+        .bar {
+            background-color: var(--themeColorGreen);
+            width: 1%;
+            height: 100%;
+            transition: width .5s;
+        }
+    }
+
+    .registerBox {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        gap: 1rem;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: white;
+
+        @media screen and (max-width:800px) {
+            display: flex;
+        }
+
+        .rightSection {
+            background-color: var(--themeColorYellowLight);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            @media screen and (max-width:800px) {
+                display: none;
+            }
+
+            .madrasaLogo {
+
+                img {
+                    @media screen and (max-width:1535px) {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            .content {
+                color: #000000;
+
+                .heading {
+                    font-size: .9rem;
+                    margin: .5rem 2rem;
+
+                }
+
+                .para {
+                    max-width: 500px;
+                    padding-top: 1.5rem;
+                    font-size: 1.125rem;
+
+                    @media screen and (max-width:1150px) {
+                        font-size: 1rem;
+                        padding-top: 1rem;
+                    }
+
+                }
+            }
+
+        }
+
+        .leftSection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media screen and (max-width:800px){
+                width: 100vw;                
+            }
+
+
+            @media screen and (max-width:1024px) {
+                height: 100%;
+                background-color: var(--lightYellow);
+                padding: 0.5rem;
+            }
+
+            form {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                position: relative;
+                @media screen and (max-width:800px){
+                    width: 90%;                
+                }
+
+
+                .backArrow {
+                    position: absolute;
+                    top: -3rem;
+                    left: 0;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    color: var(--themeColor);
+                }
+
+                .heading {
+                    font-weight: 700;
+                    font-size: 2rem;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+
+                .authButton {
+                    width: 100%;
+                    padding-top: 10px;
+                    display: flex;
+                    gap: 1rem;
+                    justify-content: center;
+
+                    @media screen and (max-width:"500px") {
+                        flex-direction: column;
+                    }
+
+                    .fb,
+                    .google {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        gap: .5rem;
+                        background: rgb(255, 255, 255);
+                        padding: 10px;
+                        border-radius: 3px;
+                        background-color: rgb(255, 255, 255);
+                        color: rgba(0, 0, 0, 0.54);
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px 0px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px;
+                        border-radius: 2px;
+                        border: 1px solid transparent;
+                        font-size: 14px;
+                        font-weight: 500;
+
+                        @media screen and (max-width:"500px") {
+                            justify-content: center;
+                        }
+                    }
+
+                    .fb {
+                        background-color: #1877f2;
+                        color: #fff;
+                    }
+
+                }
+
+                .login {
+                    color: var(--themeColor);
+                }
+
+                .flexFields {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2.7rem;
+                    padding-top: 1rem;
+
+                    @media screen and (max-width:768px) {
+                        gap: 1rem;
+                    }
+
+                    .fields {
+                        width: 100%;
+                        display: flex;
+                        gap: 1rem;
+
+                        @media screen and (max-width:768px) {
+                            flex-direction: column;
+                        }
+
+                        .ant-space .ant-space-vertical {
+                            width: 100% !important;
+                        }
+
+                    }
+
+
+
+                    .field {
+                        width: 100%;
+                        position: relative;
+                        color: #838AA3;
+
+                        .name {
+                            font-size: small;
+                        }
+
+                        .errorMessage {
+                            height: 25px;
+                            position: absolute;
+                            bottom: -30px;
+                            left: 5px;
+                            font-size: .7rem;
+                            color: red;
+                        }
+
+                        input:-webkit-autofill,
+                        input:-webkit-autofill:hover,
+                        input:-webkit-autofill:focus,
+                        input:-webkit-autofill:active {
+                            -webkit-box-shadow: 0 0 0 30px #FCFCFC inset !important;
+                        }
+                    }
+
+
+                    .registerSelector {
+                        .ant-select-selector {
+                            background: #FCFCFC;
+                            border: 1px solid #F3F3F3;
+                            border-radius: 8px;
+                        }
+                    }
+
+                    .registerInput {
+                        padding: 12px 20px;
+                        background: #FCFCFC;
+                        border: 1px solid #F3F3F3;
+                        border-radius: 8px;
+
+                        input {
+                            background-color: inherit;
+                        }
+
+                        &:hover {
+                            border-color: var(--themeColorGreen);
+                        }
+                    }
+
+                    .phoneNumberInput {
+                        * {
+                            scroll-behavior: unset !important;
+                        }
+
+                        input {
+                            width: 100%;
+                            border: 1px solid var(--border);
+                            padding: 12px 55px;
+                            border-radius: var(--radius);
+                            box-shadow: none;
+
+                            &:hover {
+                                border-color: var(--themeColorGreen);
+                            }
+                        }
+                    }
+
+                    .passwordType {
+                        padding-top: .5rem;
+                        display: flex;
+                        flex-direction: column;
+                        gap: .5rem;
+
+                        .options {
+                            display: flex;
+                            gap: .8rem;
+                            align-items: center;
+
+                            .radio {
+                                border: 1px solid var(--themeColor);
+                                border-radius: 50%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: var(--themeColor);
+                            }
+
+                            .dangerRadio {
+                                border-radius: 50%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border: 1px solid var(--danger);
+                                color: var(--danger);
+
+                                .icon {
+                                    color: inherit;
+                                }
+
+                            }
+                        }
+
+                    }
+
+                    .registerButton {
+                        .register {
+                            max-height: 40px;
+                            height: 40px;
+                            width: 100%;
+                            background: #00A859;
+                            padding: 20px 35px;
+                            color: #fff;
+                            border-radius: var(--radius);
+                            font-size: 14px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 1px solid #00A859;
+
+                        }
+
+                        .anticon svg {
+                            fill: #fff !important;
+                            font-size: 10px;
+                        }
+
+                        p {
+                            padding-top: 1rem;
+                            text-align: center;
+                            font-size: 0.875rem;
+
+                            a {
+                                font-weight: bold;
+                                color: var(--themeColorGreen);
+                            }
+                        }
+
+                    }
+
+                    .userOptions {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .5rem;
+
+                        .option {
+                            display: flex;
+                            gap: 1rem;
+                            border: 1px solid var(--themeColorGreen);
+                            padding: 15px 20px;
+
+                            input {
+                                width: 20px;
+                                height: 20px;
+                            }
+
+                            &:focus-within {
+                                border: 2px solid var(--themeColorGreen);
+                            }
+                        }
+                    }
+                }
+
+                .terms {
+                    padding-top: .5rem;
+                    font-size: 0.875rem;
+                    text-align: justify;
+                    color: black;
+
+                    @media screen and (max-width:800px) {
+                        display: none;
+                    }
+
+                    a {
+                        cursor: pointer;
+                        font-weight: bold;
+                    }
+
+                }
+
+            }
+
+        }
+    }
+}
+
+.verificationEmail {
+    font-weight: bold;
+    color: var(--themeColorGreen);
+}

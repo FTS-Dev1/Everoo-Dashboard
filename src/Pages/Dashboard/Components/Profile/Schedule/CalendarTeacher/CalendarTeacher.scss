@@ -1,0 +1,42 @@
+.TeacherCalendarMain {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .rbc-day-slot .rbc-events-container {
+        margin-right: 0;
+    }
+    .rbc-timeslot-group {
+        border-bottom: 1px solid #fafafa;
+    }
+    .rbc-time-content > * + * > * {
+        border-left: 1px solid #fafafa;
+    }
+    .rbc-time-view {
+        border: 1px solid #f1f1f1;
+    }
+    .calendarday{
+        display: none;
+        @media screen and (max-width:800px) {
+            display: block !important;            
+        }
+    }
+    .calendarweek{
+        @media screen and (max-width:800px) {
+            display: none;            
+        }
+    }
+
+    .rbc-day-slot .rbc-event {
+        background: linear-gradient(94.04deg, #FFC01E 22.18%, #FFDB7E 100%);
+        box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        border: transparent;
+    }
+
+    .yellowGraBtn {
+        margin-top: 1rem;
+        min-width: 9rem;
+        padding: 1rem;
+    }
+}

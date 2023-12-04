@@ -1,0 +1,263 @@
+.WorkMainConatiner {
+  background: #ffffff;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 2rem;
+
+  .EducationHistoryHeading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .eduDiv {
+      display: flex;
+    }
+
+    .heading {
+      text-transform: uppercase;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 23px;
+      line-height: 30px;
+      padding-left: 13px;
+      @media screen and (max-width:800px) {
+        font-size: 14px !important;                
+    }
+    }
+
+    .AddBtn {
+      padding: 1rem;
+      align-self: center;
+      width: 8rem;
+      font-weight: 700;
+      font-size: 15px;
+    }
+  }
+
+  .InputFields {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    gap: 1rem;
+    width: 100%;
+
+    .Inputfield {
+      width: 100%;
+      display: flex;
+      gap: 1rem;
+      @media screen and (max-width:800px) {
+        flex-direction: column;        
+      }
+
+      .field {
+        width: 100%;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+      }
+
+
+      .eduInput {
+        width: 100%;
+        min-width: 10rem;
+        height: 71px;
+        padding: 12px 50px;
+        background: white;
+        border: 1px solid #f3f3f3;
+        background: #ffffff;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 9px;
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+          -webkit-box-shadow: 0 0 0 30px white inset !important;
+        }
+
+        input {
+          background-color: inherit;
+        }
+      }
+      .experienceTypeLable{
+        display: none;
+        @media screen and (max-width:800px) {
+          display: block !important;            
+        }
+      }
+
+      .educationField {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+          @media screen and (max-width:800px) {
+            padding: 12px !important;          
+          }
+
+        input {
+          background-color: inherit;
+        }
+
+
+        .TypeHeading {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 15.0973px;
+          line-height: 20px;
+          display: flex;
+          align-items: center;
+          color: #323232;
+          @media screen and (max-width:800px) {
+            display: none !important;            
+          }
+        }
+      }
+
+      .registerSelector {
+        .ant-select-selector {
+          height: 71px;
+          padding: 12px 30px;
+          padding-top: 15px;
+          background: #ffffff;
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+          border-radius: 9px;
+        }
+      }
+
+      .degreeImage2 {
+        position: absolute;
+        top: 57%;
+        z-index: 1;
+        left: 20px;
+        @media screen and (max-width:500px) {
+          display: none;
+        }
+      }
+      .degreeImage {
+        height: 21px;
+        position: absolute;
+        top: 56%;
+        z-index: 1;
+        left: 20px;
+        @media screen and (max-width:500px) {
+          display: none;
+        }
+      }
+
+      .progressInput {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        min-width: 10rem;
+        height: 71px;
+        padding: 12px 22px;
+        background: white;
+        border: 1px solid #f3f3f3;
+        background: #ffffff;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 9px;
+        
+
+        .progressHeading {
+          font-size: inherit;
+          font-weight: inherit;
+          color: inherit;
+          padding-left: 8px;
+          // @media screen and (max-width:500px) {
+          //   display: none !important;            
+          // }
+        }
+
+        .progressRadio {
+          position: absolute;
+          right: 0;
+          bottom: 22px;
+        }
+      }
+    }
+
+    .saveButton {
+      display: flex;
+      justify-content: end;
+
+      .btn {
+        width: 20px;
+        padding: 1rem;
+        align-self: center;
+        width: 8rem;
+        font-weight: 700;
+        font-size: 15px;
+      }
+    }
+
+  }
+
+  .attachment {
+    width: 53%;
+    min-width: 10rem;
+    height: 71px;
+    padding: 12px 38px;
+    background: white;
+    border: 1px solid #f3f3f3;
+    background: #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+    @media screen and (max-width:800px) {
+      width: 100% !important;      
+    }
+  }
+
+  .uploadBtn {
+    display: flex;
+    justify-content: space-between;
+    width: 49%;
+    min-width: 10rem;
+    height: 71px;
+    padding: 12px 20px;
+    background: white;
+    border: 1px solid #f3f3f3;
+    background: #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+    @media screen and (max-width:800px) {
+      width: 100% !important;      
+    }
+
+    .upload {
+      transition: transform all 0.1s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+      border-radius: 27px;
+      width: 7rem;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .ant-upload {
+      height: 40px !important;
+      width: 60px !important;
+    }
+
+    .upload:hover {
+      transform: scale(1.1);
+    }
+
+    .icon {
+      display: flex;
+      text-align: center;
+      align-self: center;
+      gap: 0.5rem;
+    }
+  }
+}
+
+.table .ant-table-thead>tr {
+  border-radius: 1rem !important;
+  background: linear-gradient(90.28deg, #FFC01E 0%, #FFDB7E 98.36%) !important;
+  color: var(--secondaryTextColor) !important;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25) !important;
+}

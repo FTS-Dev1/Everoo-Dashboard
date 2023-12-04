@@ -1,0 +1,47 @@
+.ProfileProfilebarMain {
+    width: 100%;
+    border-radius: 3px;
+
+    .carts {
+        max-width: 70%;
+        margin: auto;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+
+        .Profilebar.active {
+            transform: scale(1.2);
+            background-color: #fbfbfb;
+            box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            background: #FFFFFF;
+            box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            width: 9rem;
+            height: 90px;
+            cursor: pointer;
+
+            .iconProfile {
+                color: var(--dark);
+            }
+
+            .name {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 16px;
+                color: var(--dark);
+            }
+        }
+    }
+
+
+}

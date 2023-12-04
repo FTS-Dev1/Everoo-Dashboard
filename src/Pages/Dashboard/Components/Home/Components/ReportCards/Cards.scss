@@ -1,0 +1,80 @@
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    color: var(--primaryTextColor);
+
+    @media screen and (max-width:1450px) {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    @media screen and (max-width:768px) {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+    .hoverEffect {
+        transition: .7s;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0px 5px 5px 2px rgba(15, 15, 15, 0.1);
+        border-radius: 5px;
+        cursor: pointer;
+
+        .iconBox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .icon {
+                font-size: 2rem;
+            }
+
+            .counts {
+                display: flex;
+                gap: .2rem;
+                font-size: .7rem;
+                justify-content: center;
+                align-items: center;
+                background: var(--themeColorGreenGradient);
+                padding: .3rem .5rem;
+                border-radius: 1rem;
+                color: white;
+                box-shadow: 0px 0px 4px 2px rgba(53, 217, 102, 0.3);
+            }
+
+            .countDanger {
+                box-shadow: 0px 0px 4px 1px rgba(190, 47, 93, 0.3);
+            }
+        }
+
+        .detials {
+            display: flex;
+            flex-direction: column;
+            gap: .3rem;
+
+            .value {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .title {
+                color: gray;
+                font-size: small;
+            }
+        }
+
+    }
+}

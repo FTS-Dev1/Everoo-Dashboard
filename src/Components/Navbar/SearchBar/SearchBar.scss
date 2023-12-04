@@ -1,0 +1,134 @@
+.search-popover {
+    height: 18rem;
+    width: 33rem;
+    overflow-y: scroll;
+    padding-right: 1rem;
+    .books {
+        color: gray;
+        font-weight: bold;
+    }
+
+    .userMain {
+        display: flex;
+        justify-content: space-between;
+        color: gray;
+        cursor: pointer;
+        gap: 1rem;
+        padding-top: 0.3rem;
+
+        // width: 100%;
+        .title {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        img {
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    .bookMain {
+        color: gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 0.3rem;
+        width: 100%;
+        cursor: pointer;
+
+        .transactionStatus {
+            color: rgb(85, 85, 0);
+            text-transform: uppercase;
+            background-color: #ebebeb;
+            padding: 4px;
+            border-radius: 5px;
+
+        }
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        img {
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    .moreBtn {
+        color: gray;
+        border: 1px solid gray;
+        cursor: pointer;
+        align-self: center;
+        margin: 1rem;
+    }
+
+    .moreBtn:hover {
+        color: black;
+        background-color: #d1d1d1;
+    }
+}
+
+.searchBarMain {
+    .inputfield {
+        position: relative;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        padding: 0px 10px;
+
+        Input {
+            width: 200px;
+            border-radius: 8px;
+            transition: width .7s;
+            border: transparent;
+
+            &:focus-within {
+                width: 250px;
+            }
+
+            .loadingIcon {
+                display: flex;
+                height: 100%;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+
+            @media screen and (max-width:640px) {
+                display: none;
+            }
+        }
+
+        .icon {
+            font-size: .85rem;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media screen and (max-width:640px) {
+                color: #fff;
+                top: -11px;
+                right: 0px;
+                font-size: 20px;
+
+            }
+        }
+
+    }
+    @media screen and (max-width:640px) {
+        display: none;        
+    }
+}

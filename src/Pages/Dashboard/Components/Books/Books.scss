@@ -1,0 +1,59 @@
+.dashboardBooksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.bookContainer {
+
+    @media screen and (max-width:"1024px") {
+        height: -webkit-fill-available;
+    }
+
+
+    .flex-sections {
+        padding-top: 2rem;
+        display: grid;
+        grid-template-columns: auto 400px;
+        gap: 1.2rem;
+
+
+        @media screen and (max-width:1024px) {
+            grid-template-columns: 1fr;
+        }
+
+        .editor-section {
+
+            .flex-editor {
+                margin-top: 1rem;
+                background-color: #fff;
+                border-radius: 5px;
+
+                .active-buttons {
+                    height: 55px;
+                    background-color: #e2e4e6 !important;
+
+                    .flex-buttons {
+                        display: flex;
+
+                        button {
+                            display: flex;
+                            gap: .2rem;
+                            height: 55px;
+                            width: 150px;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 5px 5px 0px 0px;
+                            background-color: #e2e4e6;
+
+                            .icon {
+                                height: 18px;
+                                width: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

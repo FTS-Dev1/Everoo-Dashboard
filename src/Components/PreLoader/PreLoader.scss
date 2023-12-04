@@ -1,0 +1,17 @@
+.PreLoaderMain {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .message {
+        font-size: small;
+    }
+
+    .progress {
+        color: var(--themeColor);
+    }
+}

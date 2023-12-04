@@ -1,0 +1,203 @@
+.reviewBlogContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .commonIconReviewPage {
+        font-size: 18px;
+    }
+
+    .heading {
+        display: flex;
+        justify-content: space-between;
+        @media screen and (max-width:800px) {
+            font-size: 18px;            
+        }
+    }
+
+
+    .HeaderLeftReviewPage {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .commonReviewBtn {
+        border-radius: 26.5px;
+        @media screen and (max-width:650px){
+                width: 7rem;
+                gap: 2px;
+        }   
+    }
+    .flexLineSpace{
+        @media screen and (max-width:500px) {
+            flex-direction: column;            
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    .box {
+        display: grid;
+        grid-template-columns: auto 350px;
+        gap: 1.5rem;
+        @media screen and (max-width:800px) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .editor-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .ant-image {
+                width: -webkit-fill-available;
+                height: 600px;
+            }
+
+            Image {
+                width: -webkit-fill-available;
+                height: 600px;
+            }
+
+            .ReviewImageHead {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+            }
+
+            .contentAreaReviewPage {
+                background: #F9FCFE;
+                border-radius: 10px;
+                padding: 2rem;
+                @media screen and (max-width:800px) {
+                    padding: 5px;                        
+                }
+                .flexLine{
+                    @media screen and (max-width:500px) {
+                        flex-direction: column;                        
+                    }
+                }
+
+                .inputBox {
+                    gap: 1rem;
+
+                    .ql-editor {
+                        background-color: white;
+                        border: none;
+                    }
+
+                    .ql-bubble {
+                        border: none;
+                    }
+
+                    .title {
+                        font-family: 'Poppins';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 20px;
+                        color: var(--primaryTextColor);
+                        padding-top: 10px;
+
+                    }
+
+                    Input {
+                        background: #FFFFFF;
+                        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+                        border-radius: 5px;
+                        height: 55px;
+                        input:-webkit-autofill,
+                    input:-webkit-autofill:hover,
+                    input:-webkit-autofill:focus,
+                    input:-webkit-autofill:active {
+                        -webkit-box-shadow: 0 0 0 30px white inset !important;
+                    }
+                    }
+
+                    .contentPara {
+                        background: #FFFFFF;
+                        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+                        border-radius: 5px;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 15px;
+                        line-height: 27px;
+                        display: flex;
+                        align-items: center;
+                        text-align: justify;
+                        color: var(--primaryTextColor);
+                        padding: 2rem;
+                    }
+
+                    .profileBox {
+                        padding: 1rem;
+                        display: flex;
+                        gap: 1rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        .avater {
+                            img {
+                                width: 90px;
+                                height: 90px;
+                                border-radius: 50%;
+                                overflow: hidden;
+
+                                object-fit: cover;
+                            }
+                        }
+
+                        .details {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1rem;
+                            justify-content: center;
+                            align-items: center;
+
+                            .name {
+                                font-size: 1.2rem;
+                                font-weight: bold;
+                            }
+
+                            .bio {
+                                font-size: 15px;
+                                text-align: center;
+                                width: 80%;
+                                color: var(--primaryTextColor);
+
+                            }
+
+                            .ProfileReviewPagebtn {
+                                width: 10rem;
+                            }
+
+                            .allPost {
+                                width: fit-content;
+                                padding: 1rem;
+                                background-color: var(--lightYellow);
+                                border-radius: 1.5rem;
+                                cursor: pointer;
+
+                                &:hover {
+                                    background-color: var(--themeColor);
+                                }
+                            }
+                        }
+                    }
+
+                    .ql-bubble {
+
+
+                        * {
+                            cursor: no-drop;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

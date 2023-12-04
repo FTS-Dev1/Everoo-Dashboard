@@ -1,0 +1,73 @@
+.SetBodyMain {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: .8rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.301);
+    @media screen and (max-width:800px) {
+        flex-direction: column-reverse;            
+    }
+
+    .SetCharges {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        @media screen and (max-width:800px) {
+            width: 100%;           
+        }
+
+        .lableName {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+           padding-bottom: 2rem;
+        }
+
+        .eventInput {
+
+            width: 100%;
+            min-width: 10rem;
+            height: 52px;
+            padding: 12px !important;
+            background: white;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 9px;
+            border: transparent;
+            gap: 0.3rem;
+
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            input:-webkit-autofill:active {
+                -webkit-box-shadow: 0 0 0 30px white inset !important;
+            }
+
+            input {
+                background-color: inherit;
+
+            }
+
+            &:hover {
+                border-color: var(--themeColorGreen);
+            }
+        }
+
+        .BtnReadMore {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1rem;
+            .readMoreBtn {
+                display: flex;
+                justify-content: flex-end;
+                background-color: var(--themeColor);
+
+            }
+            .ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover{
+                color: var(--dark);
+            }
+        }
+
+    }
+   
+}

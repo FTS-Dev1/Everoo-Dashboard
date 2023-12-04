@@ -1,0 +1,66 @@
+.ProfileProfilebarMain {
+    width: 100%;
+    border-radius: 3px;
+    overflow-y: scroll;
+    // height: 10rem;
+    
+    .carts {
+        max-width: 70%;
+        margin: auto;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+        @media screen and (max-width:1600px) {
+            max-width: 100% !important;    
+            margin: 1rem;        
+        }
+        @media screen and (max-width:1200px) {
+            flex-direction: column;
+            height: auto;
+            padding: 2rem 0 ;
+        }
+        .Profilebar.active {
+            transform: scale(1.2);
+            background-color: #fbfbfb;
+            box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cart {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            background: #FFFFFF;
+            box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            min-width: 9rem;
+            height: 90px;
+            cursor: pointer;
+            width: 12rem;
+            @media screen and (max-width:1200px) {
+                height: 20px !important;                    
+                padding: 12px 0 !important;
+            }
+
+            .iconProfile {
+                color: var(--dark);
+                @media screen and (max-width:1200px) {
+                    display: none;                    
+                }
+            }
+
+            .name {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 16px;
+                color: var(--dark);
+            }
+        }
+    }
+
+ 
+}

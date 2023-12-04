@@ -1,0 +1,185 @@
+.close {
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    .icon {
+        fill: var(--themeColor);
+    }
+}
+
+.userFormContainer {
+    margin: .5rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: .8rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.301);
+
+    .wrapContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .heading {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .icon {
+                font-size: 2rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .imgViewer {
+        height: 143px;
+        width: 146px;
+        display: flex;
+        padding: .1rem;
+        border-radius: .3rem;
+        border: 1px dashed var(--themeColor);
+
+        .ant-image {
+            border-radius: .3rem;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .flexFields {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+
+        .ant-upload {
+            border-radius: 50rem !important;
+            height: 130px !important;
+            width: 130px !important;
+            border-radius: 8px;
+            padding: .1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .imgBox {
+                width: 100%;
+                height: 100%;
+                border-radius: 50rem;
+                overflow: hidden;
+                padding: 0;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+            }
+
+        }
+
+        .ant-upload:has(.imgBox) {
+            border: none !important;
+        }
+    }
+
+    .registerInput {
+        width: 100%;
+        height: 60px;
+        padding: 12px 30px;
+        background: white;
+        border: 1px solid #F3F3F3;
+        border-radius: 9px;
+        box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+
+        input {
+            background-color: inherit;
+        }
+
+        &:hover {
+            border-color: var(--themeColorGreen);
+        }
+    }
+
+    .registerSelector {
+        .ant-select-selector {
+            height: 60px;
+            padding: 12px 30px;
+            padding-top: 15px;
+            background: #FCFCFC;
+            border: 1px solid #F3F3F3;
+            border-radius: 9px;
+            box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .ant-input-prefix {
+        margin-right: .8rem;
+    }
+
+    .fields {
+        color: #42464E;
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        @media screen and (max-width:800px) {
+            flex-direction: column;
+        }
+
+    }
+
+    .field {
+        width: 100%;
+        position: relative;
+        color: #838AA3;
+        display: flex;
+        flex-direction: column;
+
+        .name {
+            font-size: small;
+        }
+
+        .errorMessage {
+            height: 25px;
+            position: absolute;
+            bottom: -30px;
+            left: 5px;
+            font-size: .7rem;
+            color: red;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #FCFCFC inset !important;
+        }
+    }
+
+    .ant-space-vertical {
+        width: 100% !important;
+    }
+
+    .registerButton {
+        padding-top: .5rem;
+        display: flex;
+        justify-content: center;
+
+        .yellowGraBtn {
+            width: 200px;
+
+            &:disabled {
+                background: rgba(0, 0, 0, 0.04);
+            }
+        }
+
+    }
+}
