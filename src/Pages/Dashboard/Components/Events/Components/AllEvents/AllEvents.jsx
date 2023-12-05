@@ -88,7 +88,7 @@ const AllEvents = ({ allEvents, loading, togglePage, RoutePermissions, setReload
             render: (_, data) => data?.createdAt?.slice(0, 10) || null
         },
         {
-            title: 'Event Title',
+            title: 'Catering Name',
             dataIndex: 'title',
             key: 'title',
             width: "300px",
