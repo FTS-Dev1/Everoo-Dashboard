@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
 // Components :
-import AllEvents from './Components/AllEvents/AllEvents';
-import AddEvent from './Components/AddEvent/AddEvent';
+import AllCateringService from './Components/AllCateringService/AllCateringService';
+import AddService from './Components/AddService/AddService';
 
 // APIs :
 import { GetAllEventsAPI } from "API/event"
@@ -10,13 +10,13 @@ import { GetAllEventsAPI } from "API/event"
 import { toast } from 'react-toastify';
 
 // CSS :
-import "./Events.scss";
+import "./Catering.scss";
 
 
 
 
 
-const Events = (props) => {
+const Catering = (props) => {
     let RoutePermissions = props?.permissions || []
 
     const [currentPage, setCurrentPage] = useState("all")
@@ -56,13 +56,13 @@ const Events = (props) => {
             <div className="dashboardEventsContainer">
                 {
                     currentPage && currentPage == "all" ?
-                        <AllEvents closePage={closePage} allEvents={allEvents} togglePage={togglePage} loading={loading} RoutePermissions={RoutePermissions} setReload={setReload} />
+                        <AllCateringService closePage={closePage} allEvents={allEvents} togglePage={togglePage} loading={loading} RoutePermissions={RoutePermissions} setReload={setReload} />
                         :
-                        <AddEvent selectedEvent={selectedEvent} closePage={closePage} />
+                        <AddService selectedEvent={selectedEvent} closePage={closePage} />
                 }
             </div>
         </>
     )
 }
 
-export default Events
+export default Catering

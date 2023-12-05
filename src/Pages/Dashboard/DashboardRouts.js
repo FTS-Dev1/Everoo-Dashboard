@@ -17,15 +17,17 @@ import Transaction from "./Components/Transactions/Transaction";
 import Profile from "./Components/Profile/Profile";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import Subscription from "./Components/Subscription/Subscription";
-import Events from "./Components/Events/Events";
+import Catering from "./Components/Catering/Catering";
 import VideoCallingTEMP from "./Components/VideoCalling/VideoCallingTEMP";
 import VideoCalling from "./Components/VideoCalling/VideoCalling";
 import Wallet from "./Components/Wallet/Wallet";
 import Settings from "./Components/Settings/Settings";
 import CallMeeting from "./Components/JoinMeeting/CallMeeting";
 import City from "./Components/City/City";
-import Services from "./Components/Services/Services";
 import Guest from "./Components/Guest/Guest";
+import AddEvent from "./Components/AddEvent/AddEvent";
+import AllServices from "./Components/AllServices/AllServices";
+import Catering1 from "./Components/AllServices/Components/Catering/Catering";
 
 
 
@@ -45,7 +47,7 @@ const getSideBarData = ({ label, key, icon, children, element, isDefault, permis
 const routsList = [
     getSideBarData({ label: 'Dashboard', key: '/', icon: <Element3 />, element: Home, isDefault: true }),
     getSideBarData({ label: 'City', key: '/city', icon: <PresentionChart />, element: City }),
-    getSideBarData({ label: 'Services', key: '/services', icon: <People />, element: Services }),
+    getSideBarData({ label: 'AddEvent', key: '/addEvent', icon: <People />, element: AddEvent }),
     getSideBarData({ label: 'Guest', key: '/guest', icon: <People />, element: Guest }),
     // getSideBarData({ label: 'Profile', key: '/profile', icon: <FaChalkboardTeacher />, element: Profile, isDefault: true }),
     // getSideBarData({ label: 'Roles', key: '/roles', icon: <Profile2User />, element: Roles }),
@@ -55,7 +57,17 @@ const routsList = [
     // getSideBarData({ label: 'Books', key: '/books', icon: <Book />, element: Books }),
     getSideBarData({ label: 'Customers', key: '/customers', icon: <Coin1 />, element: Transaction }),
     // getSideBarData({ label: 'Subscription', key: '/subscribtion', icon: <CardAdd />, element: Subscription }),
-    getSideBarData({ label: 'Events', key: '/events', icon: <CalendarTick />, element: Events }),
+    getSideBarData({ label: 'Catering', key: '/catering', icon: <CalendarTick />, element: Catering }),
+    {
+        label: 'Services',
+        key: '/services',
+        icon: <CalendarTick />,
+        element: AllServices,
+        children: [
+            getSideBarData({ label: 'Catering', key: '/services/catering', icon: <Calendar1 />, element: Catering1 }),
+            // getSideBarData({ label: 'Beverages', key: 'blogs', icon: <Calendar1 />, element: Beverages }),
+        ],
+    },
     // getSideBarData({ label: 'Calling', key: '/video', icon: <CalendarTick />, element: CallMeeting }),
     // getSideBarData({ label: 'Video Call', key: '/call', icon: <CalendarTick />, element: VideoCalling, isDefault: true }),
 

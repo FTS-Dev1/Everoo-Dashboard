@@ -29,7 +29,7 @@ import BagIcon from "../../../../../../Assets/Images/bagIcon.png";
 import EditIcon from "../../../../../../Assets/Images/editIcon.png";
 
 // CSS :
-import "./AllEvents.scss";
+import "./AllCateringService.scss";
 import PreLoader from 'Components/PreLoader/PreLoader';
 
 
@@ -37,7 +37,7 @@ import PreLoader from 'Components/PreLoader/PreLoader';
 
 const remove = <span>remove</span>;
 const edit = <span>edit</span>;
-const AllEvents = ({ allEvents, loading, togglePage, RoutePermissions, setReload }) => {
+const AllCateringService = ({ allEvents, loading, togglePage, RoutePermissions, setReload }) => {
 
     let UserData = useSelector(state => state.userData)
 
@@ -82,18 +82,26 @@ const AllEvents = ({ allEvents, loading, togglePage, RoutePermissions, setReload
 
     const columns = [
         {
-            title: 'Date',
-            dataIndex: 'date',
-            key: 'date',
-            render: (_, data) => data?.createdAt?.slice(0, 10) || null
+            title: 'Picture',
+            dataIndex: 'picture',
+            key: 'picture',
         },
         {
-            title: 'Event Title',
-            dataIndex: 'title',
-            key: 'title',
+            title: 'Catering Name',
+            dataIndex: 'cateringName',
+            key: 'cateringName',
             width: "300px",
             ellipsis: true,
-            render: (_, data) => `${data?.title}`,
+            render: (_, data) => `${data?.cateringName}`,
+
+        },
+        {
+            title: 'Price',
+            dataIndex: 'price',
+            key: 'price',
+            width: "300px",
+            ellipsis: true,
+            render: (_, data) => `${data?.price}`,
 
         },
         {
@@ -142,12 +150,12 @@ const AllEvents = ({ allEvents, loading, togglePage, RoutePermissions, setReload
             <div className="allEventsBox">
                 <div className="flexLineSpace">
                     <div className="heading upper">
-                        All Events
+                        All Catering
                     </div>
                     <div className="buttonandFilter">
                         {
                             (UserData?.isSuperAdmin || RoutePermissions?.includes("create")) &&
-                            <Button className='dashboardBtn' style={{ width: "120px" }} onClick={() => togglePage(null)}> Add Event </Button>
+                            <Button className='dashboardBtn' style={{ width: "120px" }} onClick={() => togglePage(null)}> Add Service </Button>
                         }
                     </div>
                 </div>
@@ -180,4 +188,4 @@ const AllEvents = ({ allEvents, loading, togglePage, RoutePermissions, setReload
     )
 }
 
-export default AllEvents
+export default AllCateringService
