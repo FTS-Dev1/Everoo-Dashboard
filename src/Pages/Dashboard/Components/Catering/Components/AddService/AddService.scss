@@ -13,8 +13,8 @@
         background-color: white;
         border-radius: .8rem;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.301);
-        display: flex;
-        justify-content: space-between;
+        // display: flex;
+        // justify-content: space-between;
         @media screen and (max-width:800px) {
             flex-direction: column-reverse;            
         }

@@ -11,7 +11,7 @@ import { EditProfileAPI } from 'API/user'
 
 
 const services = ['Catering', 'Beverage', 'Shuttle', 'Staff', 'Assaulting'];
-const Services = () => {
+const AddEvent = () => {
     const [checkedValues, setCheckedValues] = useState([]);
 
     const options = ['Breakfast', 'Lunch', 'Dinner', 'Supper', 'E'];
@@ -91,4 +91,4 @@ const Services = () => {
     );
 }
 
-export default Services;
+export default AddEvent;
