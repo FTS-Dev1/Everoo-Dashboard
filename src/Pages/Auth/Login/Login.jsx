@@ -10,6 +10,7 @@ import Fade from 'react-reveal/Fade';
 import Google from '../../../Assets/Images/google.svg';
 import EmailIcon from '../../../Assets/Images/emailIcon.png';
 import MuslimMan from "../../../Assets/Images/muslimMan.png"
+import Logo from "../../../Assets/Images/logo.png"
 
 // Redux :
 import { useDispatch } from "react-redux";
@@ -158,9 +159,9 @@ const Login = () => {
                     </form>
                 </div>
                 <div className="rightSection">
-                    <div className="madrasaLogo">
+                    <div className="">
                         <Fade left>
-                            <img src={MuslimMan} alt="" />
+                            <img src={Logo} alt="" width={500} />
                         </Fade>
                     </div>
                 </div>

@@ -65,7 +65,8 @@
                     background-color: inherit;
                     color: var(--secondaryTextColor);
                     position: relative;
-                    background: linear-gradient(270deg, #282C35 0%, #111317 99.72%);
+                    // background: linear-gradient(270deg, #282C35 0%, #111317 99.72%);
+                    background:  var(--themeColorDarkIcon);
                     &::before {
                         position: absolute;
                         content: "";

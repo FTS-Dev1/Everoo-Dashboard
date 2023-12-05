@@ -48,7 +48,7 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "set REACT_APP_ENV=staggingSub&& react-scripts start",
-    "devBuild": "REACT_APP_ENV=staggingSub react-scripts build",
+    "devBuild": "set REACT_APP_ENV=staggingSub&& react-scripts build",
     "prodBuild": "set REACT_APP_ENV=live&& react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
