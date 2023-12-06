@@ -27,7 +27,7 @@ import City from "./Components/City/City";
 import Guest from "./Components/Guest/Guest";
 import AddEvent from "./Components/AddEvent/AddEvent";
 import AllServices from "./Components/AllServices/AllServices";
-import Catering1 from "./Components/AllServices/Components/Catering/Catering";
+import Catering1 from "Components/Services/Services";
 
 
 
@@ -57,17 +57,16 @@ const routsList = [
     // getSideBarData({ label: 'Books', key: '/books', icon: <Book />, element: Books }),
     getSideBarData({ label: 'Customers', key: '/customers', icon: <Coin1 />, element: Transaction }),
     // getSideBarData({ label: 'Subscription', key: '/subscribtion', icon: <CardAdd />, element: Subscription }),
-    getSideBarData({ label: 'Catering', key: '/catering', icon: <CalendarTick />, element: Catering }),
-    {
+    getSideBarData({ label: 'Catering', key: '/catering', icon: <CalendarTick />, element: Catering1 }),
+    getSideBarData({
         label: 'Services',
-        key: '/services',
         icon: <CalendarTick />,
-        element: AllServices,
+        // element: AllServices,
         children: [
-            getSideBarData({ label: 'Catering', key: '/services/catering', icon: <Calendar1 />, element: Catering1 }),
+            getSideBarData({ label: 'Caterhyhhing', key: '/cateringjj', icon: <Calendar1 />, element: Catering1 }),
             // getSideBarData({ label: 'Beverages', key: 'blogs', icon: <Calendar1 />, element: Beverages }),
         ],
-    },
+    }),
     // getSideBarData({ label: 'Calling', key: '/video', icon: <CalendarTick />, element: CallMeeting }),
     // getSideBarData({ label: 'Video Call', key: '/call', icon: <CalendarTick />, element: VideoCalling, isDefault: true }),
 

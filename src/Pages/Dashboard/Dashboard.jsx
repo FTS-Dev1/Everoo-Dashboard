@@ -15,6 +15,7 @@ import VideoCall from './Components/VideoCalling/VideoCalling'
 import Profile from "./Components/Profile/Profile";
 import { GetAllNotificationAPI } from 'API/notification'
 import { NotificationActions } from 'Redux/Slice/notification'
+import Catering1 from "Components/Services/Services";
 
 
 // Routes :
@@ -62,6 +63,7 @@ const Dashboard = () => {
                     <Navbar />
                     <div className="rightBox">
                         <Routes>
+                            <Route key={"1c"} path='/cateringjj' element={<Catering1/>} />
                             {
                                 RoutesList && RoutesList.map((item, i) => {
                                     return (
