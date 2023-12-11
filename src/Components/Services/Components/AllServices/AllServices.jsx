@@ -37,7 +37,7 @@ import PreLoader from 'Components/PreLoader/PreLoader';
 
 const remove = <span>remove</span>;
 const edit = <span>edit</span>;
-const AllCateringService = ({ allEvents, loading, togglePage, RoutePermissions, setReload }) => {
+const AllCateringService = ({ allEvents, loading, togglePage, setReload }) => {
 
     let UserData = useSelector(state => state.userData)
 
@@ -153,10 +153,7 @@ const AllCateringService = ({ allEvents, loading, togglePage, RoutePermissions, 
                         All Catering
                     </div>
                     <div className="buttonandFilter">
-                        {
-                            (UserData?.isSuperAdmin || RoutePermissions?.includes("create")) &&
-                            <Button className='dashboardBtn' style={{ width: "120px" }} onClick={() => togglePage(null)}> Add Service </Button>
-                        }
+                        <Button className='dashboardBtn' style={{ width: "120px" }} onClick={() => togglePage(null)}> Add Service </Button>
                     </div>
                 </div>
 
@@ -164,7 +161,7 @@ const AllCateringService = ({ allEvents, loading, togglePage, RoutePermissions, 
                     <div className="Events">
                         {
                             loading ?
-                                <PreLoader/>
+                                <PreLoader />
                                 :
                                 <div className="table">
                                     <Row>

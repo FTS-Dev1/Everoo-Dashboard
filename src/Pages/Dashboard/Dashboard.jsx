@@ -63,7 +63,17 @@ const Dashboard = () => {
                     <Navbar />
                     <div className="rightBox">
                         <Routes>
-                            <Route key={"1c"} path='/cateringjj' element={<Catering1/>} />
+                            <Route key={"1c"} path='/location' element={<Catering1 path="location" />} />
+                            <Route key={"2c"} path='/catering' element={<Catering1 path="caterings" />} />
+                            <Route key={"3c"} path='/beverage' element={<Catering1 path="beverage" />} />
+                            <Route key={"4c"} path='/staff' element={<Catering1 path="staff" />} />
+                            <Route key={"5c"} path='/ausstattung' element={<Catering1 path="ausstattung" />} />
+                            <Route key={"6c"} path='/shuttle' element={<Catering1 path="shuttle" />} />
+                            <Route key={"7c"} path='/hotelmanagement' element={<Catering1 path="hotelmanagement" />} />
+                            <Route key={"8c"} path='/prasente' element={<Catering1 path="prasente" />} />
+                            <Route key={"9c"} path='/veranstaltungstechnik' element={<Catering1 path="veranstaltungstechnik" />} />
+                            <Route key={"10c"} path='/eventmodule' element={<Catering1 path="eventmodule" />} />
+                            <Route key={"11c"} path='/dokoration' element={<Catering1 path="dekoration" />} />
                             {
                                 RoutesList && RoutesList.map((item, i) => {
                                     return (

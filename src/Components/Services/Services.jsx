@@ -16,14 +16,13 @@ import "./Services.scss";
 
 
 
-const Catering = (props) => {
-    let RoutePermissions = props?.permissions || []
+const Catering = ({ path }) => {
 
     const [currentPage, setCurrentPage] = useState("all")
     const [allEvents, setAllEvents] = useState(null)
     const [selectedEvent, setSelectedEvent] = useState(null)
     const [loading, setLoading] = useState(false)
-    const [reload , setReload] = useState(false)
+    const [reload, setReload] = useState(false)
 
 
     const togglePage = (data) => {
@@ -48,7 +47,31 @@ const Catering = (props) => {
         setLoading(false)
     }
     useEffect(() => {
-        gettingAllEvents()
+        if (path == "location") {
+            gettingAllEvents()
+        } else if (path == "catering") {
+
+        } else if (path == "catering") {
+
+        } else if (path == "beverage") {
+
+        } else if (path == "staff") {
+
+        } else if (path == "ausstattung") {
+
+        } else if (path == "shuttle") {
+
+        } else if (path == "hotelmanagement") {
+
+        } else if (path == "prasente") {
+
+        } else if (path == "veranstaltungstechnik") {
+
+        } else if (path == "eventmodule") {
+
+        } else if (path == "dokoration") {
+
+        }
     }, [reload])
 
     return (
@@ -56,7 +79,7 @@ const Catering = (props) => {
             <div className="dashboardEventsContainer">
                 {
                     currentPage && currentPage == "all" ?
-                        <AllCateringService closePage={closePage} allEvents={allEvents} togglePage={togglePage} loading={loading} RoutePermissions={RoutePermissions} setReload={setReload} />
+                        <AllCateringService closePage={closePage} allEvents={allEvents} togglePage={togglePage} loading={loading} setReload={setReload} />
                         :
                         <AddService selectedEvent={selectedEvent} closePage={closePage} />
                 }

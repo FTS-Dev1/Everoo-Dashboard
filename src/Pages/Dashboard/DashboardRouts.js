@@ -57,13 +57,13 @@ const routsList = [
     // getSideBarData({ label: 'Books', key: '/books', icon: <Book />, element: Books }),
     getSideBarData({ label: 'Customers', key: '/customers', icon: <Coin1 />, element: Transaction }),
     // getSideBarData({ label: 'Subscription', key: '/subscribtion', icon: <CardAdd />, element: Subscription }),
-    getSideBarData({ label: 'Catering', key: '/catering', icon: <CalendarTick />, element: Catering1 }),
+    // getSideBarData({ label: 'Catering', key: '/catering', icon: <CalendarTick />, element: Catering1 }),
     getSideBarData({
         label: 'Services',
         icon: <CalendarTick />,
         // element: AllServices,
         children: [
-            getSideBarData({ label: 'Caterhyhhing', key: '/cateringjj', icon: <Calendar1 />, element: Catering1 }),
+            getSideBarData({ label: 'Catering', key: '/catering', icon: <Calendar1 />, element: Catering1 }),
             // getSideBarData({ label: 'Beverages', key: 'blogs', icon: <Calendar1 />, element: Beverages }),
         ],
     }),
