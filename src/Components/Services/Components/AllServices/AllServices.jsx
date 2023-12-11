@@ -37,7 +37,7 @@ import PreLoader from 'Components/PreLoader/PreLoader';
 
 const remove = <span>remove</span>;
 const edit = <span>edit</span>;
-const AllCateringService = ({ allEvents, loading, togglePage, setReload }) => {
+const AllCateringService = ({ allEvents, loading, togglePage, setReload , path }) => {
 
     let UserData = useSelector(state => state.userData)
 
@@ -92,7 +92,7 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload }) => {
             key: 'cateringName',
             width: "300px",
             ellipsis: true,
-            render: (_, data) => `${data?.cateringName}`,
+            render: (_, data) => `${data?.title}`,
 
         },
         {
@@ -150,7 +150,7 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload }) => {
             <div className="allEventsBox">
                 <div className="flexLineSpace">
                     <div className="heading upper">
-                        All Catering
+                        All {path}
                     </div>
                     <div className="buttonandFilter">
                         <Button className='dashboardBtn' style={{ width: "120px" }} onClick={() => togglePage(null)}> Add Service </Button>
@@ -166,7 +166,7 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload }) => {
                                 <div className="table">
                                     <Row>
                                         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                                            <Table loading={loading} columns={columns} />
+                                            <Table loading={loading} columns={columns} rows={allEvents} />
                                         </Col>
                                     </Row>
                                 </div>

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
 
 // Components :
 import AllCateringService from './Components/AllServices/AllServices';
 import AddService from './Components/AddService/AddService';
 
 // APIs :
-import { GetAllEventsAPI } from "API/event"
+import { GetAllServicesAPI } from "API/services"
 // Helpers :
 import { toast } from 'react-toastify';
 
@@ -17,6 +18,7 @@ import "./Services.scss";
 
 
 const Catering = ({ path }) => {
+    let Location = useLocation();
 
     const [currentPage, setCurrentPage] = useState("all")
     const [allEvents, setAllEvents] = useState(null)
@@ -36,9 +38,9 @@ const Catering = ({ path }) => {
     }
 
 
-    const gettingAllEvents = async () => {
+    const gettingServices = async () => {
         setLoading(true)
-        let res = await GetAllEventsAPI()
+        let res = await GetAllServicesAPI(path)
         if (res.error != null) {
             toast.error(res.error)
         } else {
@@ -47,41 +49,17 @@ const Catering = ({ path }) => {
         setLoading(false)
     }
     useEffect(() => {
-        if (path == "location") {
-            gettingAllEvents()
-        } else if (path == "catering") {
-
-        } else if (path == "catering") {
-
-        } else if (path == "beverage") {
-
-        } else if (path == "staff") {
-
-        } else if (path == "ausstattung") {
-
-        } else if (path == "shuttle") {
-
-        } else if (path == "hotelmanagement") {
-
-        } else if (path == "prasente") {
-
-        } else if (path == "veranstaltungstechnik") {
-
-        } else if (path == "eventmodule") {
-
-        } else if (path == "dokoration") {
-
-        }
-    }, [reload])
-
+        gettingServices()
+    }, [reload, Location.pathname])
+    console.log("----------------------->", Location);
     return (
         <>
             <div className="dashboardEventsContainer">
                 {
                     currentPage && currentPage == "all" ?
-                        <AllCateringService closePage={closePage} allEvents={allEvents} togglePage={togglePage} loading={loading} setReload={setReload} />
+                        <AllCateringService closePage={closePage} allEvents={allEvents} togglePage={togglePage} loading={loading} setReload={setReload} path={path} />
                         :
-                        <AddService selectedEvent={selectedEvent} closePage={closePage} />
+                        <AddService selectedEvent={selectedEvent} closePage={closePage} path={path} />
                 }
             </div>
         </>
