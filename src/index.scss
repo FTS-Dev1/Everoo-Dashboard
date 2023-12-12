@@ -190,6 +190,98 @@ input {
     accent-color: var(--themeColorGreen);
 }
 
+.inputMain {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    gap: 1rem;
+    width: 100%;
+
+    .inputFields {
+        gap: 2rem;
+        display: flex;
+        width: 100%;
+
+        .field {
+            display: flex;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .lableName{
+                padding: 0.5rem 3px;
+                font-size: 14px;
+                font-weight: 400;
+            }
+            .inputselect {
+                width: 100%;
+                min-width: 10rem;
+                height: 71px;
+                padding: 12px !important;
+                background: white;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 9px;
+                gap: 0.3rem;
+                display: flex;
+                align-items: center;
+            }
+            .selector {
+                border: transparent;
+                box-shadow: none;
+                display: flex;
+                width: 100%;
+                
+            }
+
+            .selecticon {
+                padding-left: 0.3rem;
+            }
+            .ant-select-selector {
+                border: none;
+                display: flex;
+                justify-content: center;
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                height: -webkit-fill-available;
+                scroll-behavior: smooth;
+                padding: 0 0.3rem;
+            }
+
+            .input {
+                width: 100%;
+                min-width: 10rem;
+                height: 71px;
+                padding: 12px !important;
+                background: white;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 9px;
+                gap: 0.3rem;
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover,
+                input:-webkit-autofill:focus,
+                input:-webkit-autofill:active {
+                    -webkit-box-shadow: 0 0 0 30px white inset !important;
+                }
+                
+            }
+            .textarea{
+                padding: 1rem;
+                width: 100%;
+                min-width: 10rem;
+                background: white;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 9px;
+                border: transparent;
+            }
+        }
+    }
+    .yellowGraBtn{
+        width: 7rem;
+        display: flex;
+        align-self: flex-end;
+    }
+}
+
 .greenButton {
     @extend %GreenButton
 }

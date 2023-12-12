@@ -1,59 +1,150 @@
+
 import React, { useEffect, useState } from 'react'
 
-
-
-// import Styling
-// import './ManageAccess.scss'
-import { Lock, NoteFavorite, Profile, Flag } from 'iconsax-react'
-import { Button, Input, Upload, Select } from 'antd'
-import { useSelector } from 'react-redux'
+// MUI | ANT-D :
+import { Button, Input, Upload, Select, Checkbox, Col, Row } from 'antd'
 import { LocalDiningOutlined } from '@mui/icons-material'
+
+// Assets | ICONS :
+import { Lock, NoteFavorite, Profile, Flag } from 'iconsax-react'
+
+// API :
+import { CreatCityAPI, GetAllServicesDataAPI } from 'API/city'
+// Redux :
+import { useSelector } from 'react-redux'
+// Helper :
 import { toast } from 'react-toastify'
-import ROLES from 'Utils/Roles'
-import ImgURLGEN from 'Utils/ImgUrlGen'
-import { EditProfileAPI } from 'API/user'
+
+
+
 
 
 const City = () => {
+
+    const [allServicesData, setAllServicesData] = useState(null)
+    const [allServicesList, setAllServicesList] = useState([])
+
+    const [cityName, setCityName] = useState("")
+    const [selectedService, setSelectedService] = useState(null)
+    const [selectedServiceData, setSelectedServiceData] = useState({})
+
+    const [checkedValues, setCheckedValues] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+
+    const onChange = (checkedValues) => {
+        setCheckedValues(checkedValues);
+        setSelectedServiceData({
+            ...selectedServiceData,
+            [selectedService]: checkedValues
+        })
+    };
+    const handleSelectChange = (event) => {
+        setSelectedService(event)
+    }
+
+
+    const SavingCity = async () => {
+        setLoading(true);
+        let res = await CreatCityAPI({ name: cityName, services: selectedServiceData });
+        if (res.error != null) {
+            toast.error(res.error);
+        } else {
+            toast.success(res.data.message);
+        }
+        setLoading(false);
+    }
+
+
+
+    const gettingAllServices = async () => {
+        let res = await GetAllServicesDataAPI()
+        if (res.error != null) {
+            toast.error(res.error)
+        } else {
+            setAllServicesData(res.data?.result || null)
+            if (res?.data?.result) {
+                let list = Object.keys(res?.data?.result)
+                setAllServicesList(list)
+            }
+        }
+    }
+    useEffect(() => {
+        gettingAllServices()
+    }, [])
+
+    useEffect(() => {
+        if (selectedService) {
+            let getCheckedValues = selectedServiceData[selectedService]
+            if (getCheckedValues && getCheckedValues.length >= 1) {
+                setCheckedValues(getCheckedValues)
+            }
+        }
+    }, [selectedService])
+
     return (
         <>
+
             <div className="ManageAccessMain">
 
                 <div className="head">
                     <div className="headingAccess">
-                        Add Event
+                        Select Services
                     </div>
                 </div>
 
                 <div className="inputMain">
                     <div className="inputFields">
                         <div className="field1 field">
-                            <div className="lableName">Event Type Name</div>
-                            <Input prefix={<Profile className='icon' />} size='large' className='input' type="text" placeholder='Event Name' name="eventName"
-                            // onChange={enterFormData} value={formData?.username} 
-                            />
+                            <div className="lableName">City</div>
+                            <div className="inputselect">
+                                <div className="selecticon"><Flag className='iconInfo' /></div>
+                                <input
+                                    placeholder='city name'
+                                    value={cityName}
+                                    className='selector'
+                                    onChange={(event) => setCityName(event.target.value)}
+                                />
+                            </div>
                         </div>
                     </div>
                     <div className="inputFields">
                         <div className="field1 field">
-                            <div className="lableName">City Name</div>
+                            <div className="lableName">Select Service</div>
                             <div className="inputselect">
                                 <div className="selecticon"><Flag className='iconInfo' /></div>
                                 <Select
-                                    placeholder='city'
+                                    placeholder='Select Service'
                                     bordered={false}
-                                    // value={formData?.nationality}
+                                    value={selectedService}
                                     className='selector'
-                                // onChange={(value) => handleSelectChange("nationality", value)}
-                                // options={countryList}
+                                    onChange={handleSelectChange}
+                                    options={allServicesList.map(service => ({ value: service, label: service }))}
                                 />
                             </div>
                         </div>
                     </div>
 
 
+                    <Checkbox.Group
+                        style={{
+                            width: '100%',
+                        }}
+                        onChange={onChange}
+                        value={checkedValues}
+                    >
+                        <Row>
+                            {selectedService && allServicesData[selectedService].map((option) => (
+                                <Col span={8} key={option}>
+                                    <Checkbox value={option?._id}>{option?.title}</Checkbox>
+                                </Col>
+                            ))}
+                        </Row>
+                    </Checkbox.Group>
+
                     <Button className='yellowGraBtn'
-                    // onClick={manageAccessFunc}
+                        loading={loading}
+                        onClick={SavingCity}
                     >Save</Button>
                 </div>
             </div>

@@ -9,7 +9,8 @@ import { CircularProgress } from '@mui/material';
 
 // ICONS | Assets :
 import { RiInformationLine } from "react-icons/ri";
-import { BagCross } from "iconsax-react"
+import { Filter, User as UserAvaterIcon } from "iconsax-react";
+
 
 // Components :
 import ConfirmationModel from 'Components/ConfirmationModel/ConfirmationModel';
@@ -19,6 +20,7 @@ import { DeleteEventAPI } from "API/event"
 import { useSelector } from 'react-redux';
 // Helpers :
 import { toast } from 'react-toastify';
+import ImgURLGEN from "Utils/ImgUrlGen"
 
 // MUI | ANT-D :
 import { Tooltip, Tag, Col, Row, Button, Modal, Select, Input } from "antd";
@@ -37,7 +39,7 @@ import PreLoader from 'Components/PreLoader/PreLoader';
 
 const remove = <span>remove</span>;
 const edit = <span>edit</span>;
-const AllCateringService = ({ allEvents, loading, togglePage, setReload , path }) => {
+const AllCateringService = ({ allEvents, loading, togglePage, setReload, path }) => {
 
     let UserData = useSelector(state => state.userData)
 
@@ -85,6 +87,8 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload , path }
             title: 'Picture',
             dataIndex: 'picture',
             key: 'picture',
+            render: (_, data) => <> <div className="avaterBox"> {data?.image?.url ? <img src={ImgURLGEN(data?.image)} alt="ERROR" /> : <UserAvaterIcon size={18} className='icon' />}  </div> </>,
+
         },
         {
             title: 'Catering Name',
@@ -120,13 +124,13 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload , path }
                 <div className="actionBox">
                     {
 
-                        <Tooltip placement="top" title={edit}>
-                            <div className="actionBtn"
-                            // onClick={() => togglePage(data)}
-                            >
-                                <img src={EditIcon} alt="" className='icon cursor' />
-                            </div>
-                        </Tooltip>
+                        // <Tooltip placement="top" title={edit}>
+                        //     <div className="actionBtn"
+                        //     // onClick={() => togglePage(data)}
+                        //     >
+                        //         <img src={EditIcon} alt="" className='icon cursor' />
+                        //     </div>
+                        // </Tooltip>
                     }
                     {
 

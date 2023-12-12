@@ -24,12 +24,12 @@ import { toast } from 'react-toastify';
 import { Tooltip, Tag, Col, Row, Button, Modal, Select, Input } from "antd";
 
 // Components :
-import Table from "../../../Users/Component/table/Table";
-import BagIcon from "../../../../../../Assets/Images/bagIcon.png";
-import EditIcon from "../../../../../../Assets/Images/editIcon.png";
+import Table from "Pages/Dashboard/Components/Users/Component/table/Table";
+import BagIcon from "Assets/Images/bagIcon.png";
+import EditIcon from "Assets/Images/editIcon.png";
 
 // CSS :
-import "./AllCateringService.scss";
+// import "./AllServices.scss";
 import PreLoader from 'Components/PreLoader/PreLoader';
 
 
@@ -37,9 +37,7 @@ import PreLoader from 'Components/PreLoader/PreLoader';
 
 const remove = <span>remove</span>;
 const edit = <span>edit</span>;
-const AllCateringService = ({ allEvents, loading, togglePage, RoutePermissions, setReload }) => {
-
-    let UserData = useSelector(state => state.userData)
+const AllEvents = ({ allEvents, loading, togglePage, setReload }) => {
 
     const [deleteConfirmation, setDeleteConfirmation] = useState({
         open: false,
@@ -82,34 +80,22 @@ const AllCateringService = ({ allEvents, loading, togglePage, RoutePermissions, 
 
     const columns = [
         {
-            title: 'Picture',
-            dataIndex: 'picture',
-            key: 'picture',
-        },
-        {
-            title: 'Catering Name',
-            dataIndex: 'cateringName',
-            key: 'cateringName',
+            title: 'Event Name',
+            dataIndex: 'EventName',
+            key: 'eventName',
             width: "300px",
             ellipsis: true,
-            render: (_, data) => `${data?.cateringName}`,
+            render: (_, data) => `${data?.name}`,
 
         },
         {
-            title: 'Price',
-            dataIndex: 'price',
-            key: 'price',
+            title: 'City',
+            dataIndex: 'city',
+            key: 'city',
             width: "300px",
             ellipsis: true,
-            render: (_, data) => `${data?.price}`,
+            render: (_, data) => `${data?.cities?.map(city => city?.name).join(" | ")}`,
 
-        },
-        {
-            title: 'Description',
-            dataIndex: 'description',
-            key: 'description',
-            width: "300px",
-            ellipsis: true,
         },
         {
             title: 'Actions',
@@ -120,19 +106,19 @@ const AllCateringService = ({ allEvents, loading, togglePage, RoutePermissions, 
                 <div className="actionBox">
                     {
 
-                        <Tooltip placement="top" title={edit}>
-                            <div className="actionBtn"
-                            // onClick={() => togglePage(data)}
-                            >
-                                <img src={EditIcon} alt="" className='icon cursor' />
-                            </div>
-                        </Tooltip>
+                        // <Tooltip placement="top" title={edit}>
+                        //     <div className="actionBtn"
+                        //     // onClick={() => togglePage(data)}
+                        //     >
+                        //         <img src={EditIcon} alt="" className='icon cursor' />
+                        //     </div>
+                        // </Tooltip>
                     }
                     {
 
                         <Tooltip placement="top" title={remove}>
                             <div className="actionBtn"
-                            // onClick={() => handleDeleteEventConfirmation(data)}
+                                onClick={() => handleDeleteEventConfirmation(data)}
                             >
                                 <img src={BagIcon} alt="" className='icon cursor' />
                             </div>
@@ -150,13 +136,10 @@ const AllCateringService = ({ allEvents, loading, togglePage, RoutePermissions, 
             <div className="allEventsBox">
                 <div className="flexLineSpace">
                     <div className="heading upper">
-                        All Catering
+                        All Events
                     </div>
                     <div className="buttonandFilter">
-                        {
-                            (UserData?.isSuperAdmin || RoutePermissions?.includes("create")) &&
-                            <Button className='dashboardBtn' style={{ width: "120px" }} onClick={() => togglePage(null)}> Add Service </Button>
-                        }
+                        <Button className='dashboardBtn' style={{ width: "120px" }} onClick={() => togglePage(null)}> Add Event  </Button>
                     </div>
                 </div>
 
@@ -164,12 +147,12 @@ const AllCateringService = ({ allEvents, loading, togglePage, RoutePermissions, 
                     <div className="Events">
                         {
                             loading ?
-                                <PreLoader/>
+                                <PreLoader />
                                 :
                                 <div className="table">
                                     <Row>
                                         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                                            <Table loading={loading} columns={columns} />
+                                            <Table loading={loading} columns={columns} rows={allEvents} />
                                         </Col>
                                     </Row>
                                 </div>
@@ -188,4 +171,4 @@ const AllCateringService = ({ allEvents, loading, togglePage, RoutePermissions, 
     )
 }
 
-export default AllCateringService
+export default AllEvents;
