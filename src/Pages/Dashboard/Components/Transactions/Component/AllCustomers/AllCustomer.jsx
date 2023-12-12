@@ -24,6 +24,7 @@ import { toast } from "react-toastify";
 import "./AllCustomer.scss";
 import TransactionDetail from "../TransactionDetail/TransactionDetail";
 import PreLoader from "Components/PreLoader/PreLoader";
+import { GetAllOrdersAPI } from "API/order";
 
 const view = <span>View</span>;
 
@@ -98,7 +99,7 @@ const AllCustomers = ({
 
   const getAllTransactions = async () => {
     setLoading(true);
-    const res = await GetAllTransactionsAPI();
+    const res = await GetAllOrdersAPI();
     if (res.error != null) {
       toast.error(res.error);
     } else {
@@ -113,30 +114,29 @@ const AllCustomers = ({
   }, [reload]);
 
   const columns = [
-    {
-      title: "Avatar",
-      dataIndex: "avatar",
-      key: "avatar",
-      align: "left",
-      render: (_, data) => data?.createdAt?.slice(0, 10) || null,
-      ellipsis: true,
-    },
+    // {
+    //   title: "Avatar",
+    //   dataIndex: "avatar",
+    //   key: "avatar",
+    //   align: "left",
+    //   render: (_, data) => data?.createdAt?.slice(0, 10) || null,
+    //   ellipsis: true,
+    // },
     {
       title: "Name",
       dataIndex: "name",
       key: "name",
       align: "left",
       render: (_, data) =>
-        `${data?.buyerId?.firstName ? data?.buyerId?.firstName : data?.shippingDetails?.firstName} ${data?.buyerId?.lastName ? data?.buyerId?.lastName : data?.shippingDetails?.lastName}`,
-        ellipsis: true,
+        `${data?.firstName} ${data?.lastName}`,
+      ellipsis: true,
     },
     {
       title: "Email",
-      dataIndex: "title",
-      key: "title",
+      dataIndex: "email",
+      key: "email",
       ellipsis: true,
       align: "left",
-      sorter: (a, b) => a?.title?.localeCompare(b?.title),
 
     },
     {
@@ -145,21 +145,21 @@ const AllCustomers = ({
       key: "phone",
       ellipsis: true,
       align: "center",
-      render: (_, data) => <>${`${data?.orderPrice}`}</>,
+      render: (_, data) => <>{data?.phone}</>,
     },
     {
       title: "Event",
       dataIndex: "event",
       key: "event",
       align: "center",
-      render: (_, data) => <>${`${parseFloat(data?.charges).toFixed(1)}`}</>,
+      render: (_, data) => <>{data?.event?.name}</>,
       ellipsis: true,
     },
     {
       title: "Date",
       dataIndex: "date",
       key: "date",
-      render: (_, data) => <>${`${parseFloat(data?.balance).toFixed(1)}`}</>,
+      render: (_, data) => data?.createdAt?.slice(0, 10) || null,
       align: "center",
       ellipsis: true,
     },
@@ -168,7 +168,7 @@ const AllCustomers = ({
       dataIndex: "action",
       key: "action",
       align: "center",
-      ellipsis:true,
+      ellipsis: true,
       render: (_, data) =>
         data?._id != "1" && (
           <>
@@ -176,7 +176,7 @@ const AllCustomers = ({
               <Tooltip placement="top" title={view}>
                 <div
                   className="actionBtn"
-                  onClick={() => openProfilePage(data)}
+                // onClick={() => openProfilePage(data)}
                 >
                   <GrView className="icon cursor" />
                   {/* <img src={EditIcon} alt="" className="icon cursor" /> */}
@@ -208,7 +208,7 @@ const AllCustomers = ({
               <div className="table">
                 <Row>
                   <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                    <Table loading={loading} rows={data.length >= 1 ? data.reverse() : []} columns={columns} rowClassName={(record, index) => record?.status && record?.status == "paid" ? "" : "noRole"} />
+                    <Table loading={loading} rows={data.length >= 1 ? data.reverse() : []} columns={columns} />
                   </Col>
                 </Row>
               </div>
