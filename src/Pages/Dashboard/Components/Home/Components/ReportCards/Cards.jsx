@@ -21,21 +21,21 @@ let tempCardsData = [
         image: dashboardCardPersonIcon,
         static: 80,
         value: '$143,624',
-        name: "Register Users"
+        // name: "Register Users"
     },
     {
         time: 'Monthly',
         image: dashboardCardPersonIcon,
         static: -30,
         value: '$143,624',
-        name: "Total Courses"
+        // name: "Total Courses"
     },
     {
         time: 'Yearly',
         image: dashboardCardPersonIcon,
         static: 40,
         value: '$143,624',
-        name: "Online Class"
+        // name: "Online Class"
     },
 
 ]

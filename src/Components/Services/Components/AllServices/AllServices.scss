@@ -1,14 +1,13 @@
 .allEventsBox {
     .ViewBodyMain {
-        margin: 2rem 0;
-        padding: 1.5rem;
-        background-color: white;
+        margin: 1rem 0;
+        padding: 1rem;
         border-radius: .8rem;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.301);
         display: flex;
         justify-content: space-between;
+
         @media screen and (max-width:800px) {
-            flex-direction: column-reverse;            
+            flex-direction: column-reverse;
         }
 
         .Events {
@@ -16,8 +15,9 @@
             flex-direction: column;
             // width: 60%;
             gap: 1rem;
+
             @media screen and (max-width:800px) {
-                width: 100%;                
+                width: 100%;
             }
 
             .lableName {
@@ -105,19 +105,22 @@
             .css-qa7bje-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
                 background-color: var(--themeColor) !important;
             }
-            .MuiDateCalendar-root{
+
+            .MuiDateCalendar-root {
                 @media screen and (max-width:500px) {
-                    width: inherit !important;                    
+                    width: inherit !important;
                 }
             }
-            .MuiPickersDay-today{
+
+            .MuiPickersDay-today {
                 @media screen and (max-width:500px) {
                     border: none;
                 }
             }
-            .MuiPickersDay-today{
+
+            .MuiPickersDay-today {
                 @media screen and (max-width:500px) {
-                    color: red;                   
+                    color: red;
                 }
             }
         }

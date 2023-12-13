@@ -25,36 +25,6 @@ const Home = () => {
                     <div className="chartsBox">
                         <div className="flexLineSpace">
                             <div className="subHeading">Sales Report</div>
-                            <RangePicker className='datePicker' />
-                        </div>
-                        <div className="charts">
-                            <LineChart />
-                        </div>
-                    </div>
-                    <div className="donutBox">
-                        <div className="flexLineSpace">
-                            <div className="subHeading">Products Report</div>
-                            <RangePicker className='datePicker' />
-                        </div>
-                        <div className="donuts">
-                            <DonutChart />
-                        </div>
-                    </div>
-                </div>
-                <div className="reportBox">
-                    <div className="donutBox">
-                        <div className="flexLineSpace">
-                            <div className="subHeading">Products Report</div>
-                            <RangePicker className='datePicker' />
-                        </div>
-                        <div className="donuts">
-                            <DonutChart />
-                        </div>
-                    </div>
-                    <div className="chartsBox">
-                        <div className="flexLineSpace">
-                            <div className="subHeading">Sales Report</div>
-                            <RangePicker className='datePicker' />
                         </div>
                         <div className="charts">
                             <LineChart />
