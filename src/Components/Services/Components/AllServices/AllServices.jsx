@@ -15,7 +15,7 @@ import { Filter, User as UserAvaterIcon } from "iconsax-react";
 // Components :
 import ConfirmationModel from 'Components/ConfirmationModel/ConfirmationModel';
 // APIs :
-import { DeleteEventAPI } from "API/event"
+import { DeleteServiceAPI } from "API/services"
 // Redux :
 import { useSelector } from 'react-redux';
 // Helpers :
@@ -41,8 +41,6 @@ const remove = <span>remove</span>;
 const edit = <span>edit</span>;
 const AllCateringService = ({ allEvents, loading, togglePage, setReload, path }) => {
 
-    let UserData = useSelector(state => state.userData)
-
     const [deleteConfirmation, setDeleteConfirmation] = useState({
         open: false,
         eventID: null,
@@ -61,7 +59,7 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload, path })
             ...deleteConfirmation,
             loading: true
         })
-        let res = await DeleteEventAPI(deleteConfirmation.eventID)
+        let res = await DeleteServiceAPI(path, deleteConfirmation.eventID)
         if (res.error != null) {
             toast.error(res.error)
         } else {
@@ -123,20 +121,19 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload, path })
             render: (_, data) => <>
                 <div className="actionBox">
                     {
-
-                        // <Tooltip placement="top" title={edit}>
-                        //     <div className="actionBtn"
-                        //     // onClick={() => togglePage(data)}
-                        //     >
-                        //         <img src={EditIcon} alt="" className='icon cursor' />
-                        //     </div>
-                        // </Tooltip>
+                        <Tooltip placement="top" title={edit}>
+                            <div className="actionBtn"
+                                onClick={() => togglePage(data)}
+                            >
+                                <img src={EditIcon} alt="" className='icon cursor' />
+                            </div>
+                        </Tooltip>
                     }
                     {
 
                         <Tooltip placement="top" title={remove}>
                             <div className="actionBtn"
-                            // onClick={() => handleDeleteEventConfirmation(data)}
+                                onClick={() => handleDeleteEventConfirmation(data)}
                             >
                                 <img src={BagIcon} alt="" className='icon cursor' />
                             </div>

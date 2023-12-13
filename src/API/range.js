@@ -7,7 +7,7 @@ import AuthTokenGen from "../Utils/AuthTokenGen"
 
 
 
-const GetRangeDataAPI = async (path) => {
+const GetRangeAPI = async (path) => {
     let resolved = {
         error: null,
         data: null
@@ -31,7 +31,7 @@ const GetRangeDataAPI = async (path) => {
 }
 
 
-const UpdateRangeAPI = async (id, formData) => {
+const CreateRangeAPI = async (formData) => {
     let resolved = {
         error: null,
         data: null
@@ -39,7 +39,7 @@ const UpdateRangeAPI = async (id, formData) => {
 
     try {
         let res = await axios({
-            url: `/range/${id}`,
+            url: `/range`,
             method: "POST",
             data: formData,
             headers: AuthTokenGen()
@@ -55,5 +55,52 @@ const UpdateRangeAPI = async (id, formData) => {
     return resolved;
 }
 
+const UpdateRangeAPI = async (id, formData) => {
+    let resolved = {
+        error: null,
+        data: null
+    }
 
-export { GetRangeDataAPI, UpdateRangeAPI };
+    try {
+        let res = await axios({
+            url: `/range/${id}`,
+            method: "PATCH",
+            data: formData,
+            headers: AuthTokenGen()
+        })
+        resolved.data = res.data
+    } catch (err) {
+        if (err && err.response && err?.response?.data?.message) {
+            resolved.error = err.response.data.message
+        } else {
+            resolved.error = "Something went Wrong"
+        }
+    }
+    return resolved;
+}
+
+const DeleteRangeAPI = async (id) => {
+    let resolved = {
+        error: null,
+        data: null
+    }
+
+    try {
+        let res = await axios({
+            url: `/range/${id}`,
+            method: "DELETE",
+            headers: AuthTokenGen()
+        })
+        resolved.data = res.data
+    } catch (err) {
+        if (err && err.response && err?.response?.data?.message) {
+            resolved.error = err.response.data.message
+        } else {
+            resolved.error = "Something went Wrong"
+        }
+    }
+    return resolved;
+}
+
+
+export { GetRangeAPI, UpdateRangeAPI, DeleteRangeAPI, CreateRangeAPI };

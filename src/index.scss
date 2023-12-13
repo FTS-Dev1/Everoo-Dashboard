@@ -82,7 +82,7 @@ body {
     max-height: 40px;
     height: 40px;
     width: 100%;
-    background: var(--themeColor);
+    background: var(--primaryTextColor);
     padding: 20px 35px;
     color: var(--light);
     border-radius: var(--radius);
@@ -112,7 +112,7 @@ body {
 
 
     &:hover {
-        color: var(--themeColor) !important;
+        // color: var(--themeColor) !important;
         border: none;
     }
 

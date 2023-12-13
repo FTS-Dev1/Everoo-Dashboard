@@ -22,17 +22,17 @@ const Catering = ({ path }) => {
 
     const [currentPage, setCurrentPage] = useState("all")
     const [allEvents, setAllEvents] = useState(null)
-    const [selectedEvent, setSelectedEvent] = useState(null)
+    const [selectedService, setSelectedService] = useState(null)
     const [loading, setLoading] = useState(false)
     const [reload, setReload] = useState(false)
 
 
     const togglePage = (data) => {
-        setSelectedEvent(data)
+        setSelectedService(data)
         setCurrentPage("add")
     }
     const closePage = () => {
-        setSelectedEvent(null)
+        setSelectedService(null)
         setCurrentPage("all")
         setReload(!reload)
     }
@@ -49,9 +49,11 @@ const Catering = ({ path }) => {
         setLoading(false)
     }
     useEffect(() => {
+        setSelectedService(null)
+        setCurrentPage("all")
         gettingServices()
     }, [reload, Location.pathname])
-    console.log("----------------------->", Location);
+
     return (
         <>
             <div className="dashboardEventsContainer">
@@ -59,7 +61,7 @@ const Catering = ({ path }) => {
                     currentPage && currentPage == "all" ?
                         <AllCateringService closePage={closePage} allEvents={allEvents} togglePage={togglePage} loading={loading} setReload={setReload} path={path} />
                         :
-                        <AddService selectedEvent={selectedEvent} closePage={closePage} path={path} />
+                        <AddService selectedService={selectedService} closePage={closePage} path={path} />
                 }
             </div>
         </>

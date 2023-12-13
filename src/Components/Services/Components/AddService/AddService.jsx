@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // ANT-D | MUI :
 
@@ -14,7 +14,7 @@ import ImgURLGEN from 'Utils/ImgUrlGen'
 import { EditProfileAPI } from 'API/user'
 import { BsArrowLeftShort } from "react-icons/bs";
 
-import { CreatServiceAPI } from "API/services";
+import { CreatServiceAPI, UpdateServiceAPI } from "API/services";
 
 // CSS :
 import "./AddService.scss";
@@ -23,7 +23,7 @@ import "./AddService.scss";
 
 
 
-const AddService = ({ closePage, setCurrentPage, path }) => {
+const AddService = ({ selectedService, closePage, path }) => {
 
   const [formData, setFormData] = useState({
     title: "",
@@ -59,29 +59,45 @@ const AddService = ({ closePage, setCurrentPage, path }) => {
     data.append("description", formData.description)
     data.append("image", image)
 
-    let res = await CreatServiceAPI(path, data)
+    let res;
+    if (selectedService) {
+      res = await UpdateServiceAPI(path, selectedService?._id, data)
+    } else {
+      res = await CreatServiceAPI(path, data)
+    }
+
     if (res.error != null) {
       toast.error(res.error)
     } else {
       toast.success(res.data.message)
+      closePage()
     }
     setLoading(false)
   }
+
+  useEffect(() => {
+    if (selectedService) {
+      setFormData({
+        title: selectedService?.title,
+        description: selectedService?.description,
+        price: selectedService?.price,
+      })
+    } else {
+      setFormData({
+        title: "",
+        description: "",
+        price: ""
+      })
+    }
+  }, [selectedService])
 
   return (
     <>
       <div className="AddEventMain">
         <div className="flexLineSpace">
-          <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">Add {path}</div></div>
+          <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedService ? "EDIT" : "ADD"} {path}</div></div>
         </div>
         <div className="ManageAccessMain">
-
-          <div className="head">
-            <div className="headingAccess">
-              Catering
-            </div>
-          </div>
-
           <div className="inputMain">
             <input type="file" onChange={enteringFile} />
             <div className="inputFields">
@@ -118,7 +134,7 @@ const AddService = ({ closePage, setCurrentPage, path }) => {
             <Button className='yellowGraBtn'
               loading={loading}
               onClick={saveService}
-            >Save</Button>
+            >{selectedService ? "Update" : "Save"}</Button>
           </div>
         </div>
       </div>

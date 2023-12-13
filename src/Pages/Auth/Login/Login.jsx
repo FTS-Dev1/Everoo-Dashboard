@@ -161,7 +161,7 @@ const Login = () => {
                 <div className="rightSection">
                     <div className="">
                         <Fade left>
-                            <img src={Logo} alt="" width={500} />
+                            <img src={Logo} alt="" width={200} />
                         </Fade>
                     </div>
                 </div>

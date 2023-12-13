@@ -8,8 +8,12 @@ import { LocalDiningOutlined } from '@mui/icons-material'
 // Assets | ICONS :
 import { Lock, NoteFavorite, Profile, Flag } from 'iconsax-react'
 
+// Components :
+import AllCities from './Components/AllCities/AllCities'
+import AddCity from './Components/AddCity/AddCity'
+
 // API :
-import { CreatCityAPI, GetAllServicesDataAPI } from 'API/city'
+import { GetCitiesAPI } from 'API/city'
 // Redux :
 import { useSelector } from 'react-redux'
 // Helper :
@@ -21,132 +25,47 @@ import { toast } from 'react-toastify'
 
 const City = () => {
 
-    const [allServicesData, setAllServicesData] = useState(null)
-    const [allServicesList, setAllServicesList] = useState([])
-
-    const [cityName, setCityName] = useState("")
-    const [selectedService, setSelectedService] = useState(null)
-    const [selectedServiceData, setSelectedServiceData] = useState({})
-
-    const [checkedValues, setCheckedValues] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState("all")
+    const [allCities, setAllCities] = useState(null)
+    const [selectedCity, setSelectedCity] = useState(null)
+    const [loading, setLoading] = useState(false)
+    const [reload, setReload] = useState(false)
 
 
-    const onChange = (checkedValues) => {
-        setCheckedValues(checkedValues);
-        setSelectedServiceData({
-            ...selectedServiceData,
-            [selectedService]: checkedValues
-        })
-    };
-    const handleSelectChange = (event) => {
-        setSelectedService(event)
+    const togglePage = (data) => {
+        setSelectedCity(data)
+        setCurrentPage("add")
+    }
+    const closePage = () => {
+        setSelectedCity(null)
+        setCurrentPage("all")
+        setReload(!reload)
     }
 
 
-    const SavingCity = async () => {
-        setLoading(true);
-        let res = await CreatCityAPI({ name: cityName, services: selectedServiceData });
-        if (res.error != null) {
-            toast.error(res.error);
-        } else {
-            toast.success(res.data.message);
-        }
-        setLoading(false);
-    }
-
-
-
-    const gettingAllServices = async () => {
-        let res = await GetAllServicesDataAPI()
+    const gettingCities = async () => {
+        setLoading(true)
+        let res = await GetCitiesAPI()
         if (res.error != null) {
             toast.error(res.error)
         } else {
-            setAllServicesData(res.data?.result || null)
-            if (res?.data?.result) {
-                let list = Object.keys(res?.data?.result)
-                setAllServicesList(list)
-            }
+            setAllCities(res.data?.result || [])
         }
+        setLoading(false)
     }
     useEffect(() => {
-        gettingAllServices()
-    }, [])
-
-    useEffect(() => {
-        if (selectedService) {
-            let getCheckedValues = selectedServiceData[selectedService]
-            if (getCheckedValues && getCheckedValues.length >= 1) {
-                setCheckedValues(getCheckedValues)
-            }
-        }
-    }, [selectedService])
+        gettingCities()
+    }, [reload])
 
     return (
         <>
-
-            <div className="ManageAccessMain">
-
-                <div className="head">
-                    <div className="headingAccess">
-                        Select Services
-                    </div>
-                </div>
-
-                <div className="inputMain">
-                    <div className="inputFields">
-                        <div className="field1 field">
-                            <div className="lableName">City</div>
-                            <div className="inputselect">
-                                <div className="selecticon"><Flag className='iconInfo' /></div>
-                                <input
-                                    placeholder='city name'
-                                    value={cityName}
-                                    className='selector'
-                                    onChange={(event) => setCityName(event.target.value)}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="inputFields">
-                        <div className="field1 field">
-                            <div className="lableName">Select Service</div>
-                            <div className="inputselect">
-                                <div className="selecticon"><Flag className='iconInfo' /></div>
-                                <Select
-                                    placeholder='Select Service'
-                                    bordered={false}
-                                    value={selectedService}
-                                    className='selector'
-                                    onChange={handleSelectChange}
-                                    options={allServicesList.map(service => ({ value: service, label: service }))}
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <Checkbox.Group
-                        style={{
-                            width: '100%',
-                        }}
-                        onChange={onChange}
-                        value={checkedValues}
-                    >
-                        <Row>
-                            {selectedService && allServicesData[selectedService].map((option) => (
-                                <Col span={8} key={option}>
-                                    <Checkbox value={option?._id}>{option?.title}</Checkbox>
-                                </Col>
-                            ))}
-                        </Row>
-                    </Checkbox.Group>
-
-                    <Button className='yellowGraBtn'
-                        loading={loading}
-                        onClick={SavingCity}
-                    >Save</Button>
-                </div>
+            <div className="dashboardEventsContainer">
+                {
+                    currentPage && currentPage == "all" ?
+                        <AllCities closePage={closePage} allCities={allCities} togglePage={togglePage} loading={loading} setReload={setReload} />
+                        :
+                        <AddCity selectedCity={selectedCity} closePage={closePage} />
+                }
             </div>
         </>
     );

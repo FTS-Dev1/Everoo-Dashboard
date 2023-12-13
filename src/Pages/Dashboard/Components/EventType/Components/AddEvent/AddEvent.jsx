@@ -17,7 +17,7 @@ import ROLES from 'Utils/Roles'
 import ImgURLGEN from 'Utils/ImgUrlGen'
 import { EditProfileAPI } from 'API/user'
 import { GetCitiesAPI } from 'API/city'
-import { CreatEventAPI } from 'API/event'
+import { CreatEventAPI, UpdateEventAPI } from 'API/event'
 import { BsArrowLeftShort } from "react-icons/bs";
 
 
@@ -25,7 +25,7 @@ import { BsArrowLeftShort } from "react-icons/bs";
 
 
 
-const AddEvent = ({ closePage }) => {
+const AddEvent = ({ selectedEvent, closePage }) => {
 
     const [allCitiesData, setAllCitiesData] = useState([]);
 
@@ -48,7 +48,12 @@ const AddEvent = ({ closePage }) => {
 
     let SavingEvent = async () => {
         setLoading(true);
-        let res = await CreatEventAPI(data);
+        let res;
+        if (selectedEvent) {
+            res = await UpdateEventAPI(selectedEvent?._id, data)
+        } else {
+            res = await CreatEventAPI(data);
+        }
         if (res.error != null) {
             toast.error(res.error)
         } else {
@@ -71,11 +76,25 @@ const AddEvent = ({ closePage }) => {
         gettingCities()
     }, [])
 
+    useEffect(() => {
+        if (selectedEvent) {
+            setData({
+                name: selectedEvent?.name,
+                cities: selectedEvent?.cities?.map(data => data?._id)
+            })
+        } else {
+            setData({
+                name: "",
+                cities: []
+            })
+        }
+    }, [selectedEvent])
+
     return (
         <>
             <div className="AddEventMain">
                 <div className="flexLineSpace">
-                    <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">Add Event</div></div>
+                    <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedEvent ? "Edit" : "ADD"} Event</div></div>
                 </div>
                 <div className="ManageAccessMain">
                     <div className="inputMain">
@@ -95,7 +114,7 @@ const AddEvent = ({ closePage }) => {
                                     <Select
                                         placeholder='city'
                                         bordered={false}
-                                        // value={formData?.nationality}
+                                        value={data.cities[0]}
                                         className='selector'
                                         onChange={(value) => enteringData({ target: { name: "cities", value: [value] } })}
                                         options={allCitiesData.map(city => ({ value: city?._id, label: city?.name }))}
@@ -107,7 +126,7 @@ const AddEvent = ({ closePage }) => {
                         <Button className='yellowGraBtn'
                             loading={loading}
                             onClick={SavingEvent}
-                        >Save</Button>
+                        >{selectedEvent ? "Update" : "Save"}</Button>
                     </div>
                 </div>
             </div>
