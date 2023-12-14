@@ -17,21 +17,21 @@ import "./Cards.scss";
 
 let tempCardsData = [
     {
-        time: 'Today',
+        time: 'Heute',
         image: dashboardCardPersonIcon,
         static: 80,
         value: '$143,624',
         // name: "Register Users"
     },
     {
-        time: 'Monthly',
+        time: 'Monatlich',
         image: dashboardCardPersonIcon,
         static: -30,
         value: '$143,624',
         // name: "Total Courses"
     },
     {
-        time: 'Yearly',
+        time: 'Jahrlich',
         image: dashboardCardPersonIcon,
         static: 40,
         value: '$143,624',
