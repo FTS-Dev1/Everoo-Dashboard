@@ -42,7 +42,6 @@ const routsList = [
     getSideBarData({ label: 'City', key: '/city', icon: <img src={city} />, element: City }),
     getSideBarData({ label: 'Gäste-Sortiment', key: '/guest', icon: <img src={guest} />, element: Guest }),
     getSideBarData({ label: 'Kundschaft', key: '/customers', icon: <img src={customers} />, element: Transaction }),
-    getSideBarData({ label: 'Kundschaft', key: '/customers-detail', icon: <img src={customers} />, element: CustomerDetail }),
     getSideBarData({
         label: 'Dienste',
         icon: <img src={services} />,
