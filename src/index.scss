@@ -135,30 +135,6 @@ body {
         transform: translateY(-7px);
     }
 
-    :where(.css-dev-only-do-not-override-2q8sxy).ant-btn-primary:not(:disabled):not(.ant-btn-disabled):active {
-        color: #fff;
-        background-color: black;
-        min-height: 40px;
-        box-shadow: 0px 15px 20px rgba(1, 1, 1, .2) !important;
-        transform: translateY(-7px);
-      }
-      
-      :where(.css-dev-only-do-not-override-2q8sxy).ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
-        color: #fff;
-        background-color: black;
-        min-height: 40px;
-        box-shadow: 0px 15px 20px rgba(1, 1, 1, .2) !important;
-        transform: translateY(-7px);
-      }
-      
-      :where(.css-dev-only-do-not-override-2q8sxy).ant-btn {
-        color: #fff;
-        background-color: #5E9894;
-        min-height: 40px;
-        box-shadow: 0px 8px 15px rgba(1, 1, 1, .1) !important;
-        transition: all 0.3s ease 0s;
-      }
-
 }
 
 /* ************ Custom  ScrollBar ************** */
@@ -926,14 +902,14 @@ input {
     }
 }
 
-:where(.css-dev-only-do-not-override-6j9yrn).ant-menu-light .ant-menu-submenu-selected >.ant-menu-submenu-title, :where(.css-dev-only-do-not-override-6j9yrn).ant-menu-light>.ant-menu .ant-menu-submenu-selected >.ant-menu-submenu-title {
+.ant-menu-light .ant-menu-submenu-selected >.ant-menu-submenu-title,.ant-menu-light>.ant-menu .ant-menu-submenu-selected >.ant-menu-submenu-title {
     color: white;
 }
 
-:where(.css-dev-only-do-not-override-6j9yrn).ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):hover, :where(.css-dev-only-do-not-override-6j9yrn).ant-menu-light>.ant-menu:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):hover {
+.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):hover,.ant-menu-light>.ant-menu:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):hover {
     background-color: transparent;
 }
 
-:where(.css-dev-only-do-not-override-6j9yrn).ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):active, :where(.css-dev-only-do-not-override-6j9yrn).ant-menu-light>.ant-menu:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):active {
+.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):active,.ant-menu-light>.ant-menu:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):active {
      background-color: transparent; 
 }
