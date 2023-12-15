@@ -21,21 +21,24 @@ let tempCardsData = [
         image: dashboardCardPersonIcon,
         static: 80,
         value: '$143,624',
-        // name: "Register Users"
+        name: "Last day",
+        value2: '$143,624',
     },
     {
         time: 'Monatlich',
         image: dashboardCardPersonIcon,
         static: -30,
         value: '$143,624',
-        // name: "Total Courses"
+        name: "Last Month",
+        value2: '$143,624',
     },
     {
         time: 'Jahrlich',
         image: dashboardCardPersonIcon,
         static: 40,
         value: '$143,624',
-        // name: "Online Class"
+        name: "Last Year",
+        value2: '$143,624',
     },
 
 ]
@@ -50,11 +53,11 @@ const Cards = () => {
                                 <div className="card">
                                     <div className="iconBox">
                                     <div className="title">{data.time}</div>
-
                                     </div>
                                     <div className="detials">
-                                        <div className="value">{data.value}</div>
+                                        <h1 className="value">{data.value}</h1>
                                         <div className="title">{data.name}</div>
+                                        <span className="title">{data.value2}</span>
                                     </div>
                                 </div>
                             </div>

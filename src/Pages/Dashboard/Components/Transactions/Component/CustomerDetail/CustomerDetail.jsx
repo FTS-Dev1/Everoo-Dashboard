@@ -25,12 +25,7 @@ const CustomerDetail = ({
           {selectedTransaction ? "VIEW" : ""}Customers Detail
         </div>
         <div style={{ width: "80%", margin: "auto" }}>
-          <Row gutter={{
-            xs: 8,
-            sm: 16,
-            md: 24,
-            lg: 32,
-          }}>
+          <Row gutter={26}>
             <Col xs={24} sm={8} md={8} lg={8} xl={8}>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
@@ -92,12 +87,7 @@ const CustomerDetail = ({
           <Row gutter={26}>
             <h3 style={{ padding: "2rem" }}>Services</h3>
           </Row>
-          <Row gutter={{
-            xs: 8,
-            sm: 16,
-            md: 24,
-            lg: 32,
-          }}>
+          <Row gutter={26}>
             <Col xs={24} sm={24} md={8} lg={8} xl={8}>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
