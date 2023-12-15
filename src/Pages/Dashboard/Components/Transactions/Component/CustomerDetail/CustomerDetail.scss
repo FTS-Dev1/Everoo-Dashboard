@@ -1,0 +1,12 @@
+.TransactionContainer{
+    margin: .5rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: .8rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.301);
+
+    .heading{
+        align-items: center;
+        display: flex;
+    }
+}

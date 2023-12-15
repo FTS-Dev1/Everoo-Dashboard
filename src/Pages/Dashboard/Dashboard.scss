@@ -56,7 +56,7 @@
                     }
                     
                     &:focus-visible{
-                        background-color: #111317;
+                        background-color: transparent;
                         outline: none;
                     }
                 }
@@ -66,7 +66,7 @@
                     color: var(--secondaryTextColor);
                     position: relative;
                     // background: linear-gradient(270deg, #282C35 0%, #111317 99.72%);
-                    background:  var(--themeColorDarkIcon);
+                    background:  transparent;
                     &::before {
                         position: absolute;
                         content: "";
@@ -101,7 +101,7 @@
                 font-size: 1.2rem;
                 font-weight: bold;
                 box-sizing: border-box;
-                background-color: var(--secondaryTextColor);
+                background-color: transparent;
                 border-radius: 10rem;
                 // background: linear-gradient(93.95deg, #FFC01E 21.88%, #FEE198 100%);
             }

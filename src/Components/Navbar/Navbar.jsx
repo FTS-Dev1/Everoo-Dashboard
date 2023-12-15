@@ -164,10 +164,10 @@ const Navbar = () => {
                 <div className='navbarBox'>
                     <Fade left>
                         <div className="leftSide">
-                            <div className="name"> hi.
+                            <div className="name"> hallo.
                                 {/* {`${UserData.firstName} ${UserData?.lastName}`}  */}
                             </div>
-                            <div className="welcome"> Welcome to dashboard </div>
+                            <div className="welcome"> Willkommen bei dashboard </div>
                         </div>
                     </Fade>
                     <Fade right>

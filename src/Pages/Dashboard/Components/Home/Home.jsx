@@ -18,13 +18,13 @@ let { RangePicker } = DatePicker;
 const Home = () => {
     return (
         <div className='dashboardHomeContainer'>
-            <div className="heading">Revenues</div>
+            <div className="heading">Einkommen</div>
             <div className="box">
                 <Cards />
                 <div className="reportBox">
                     <div className="chartsBox">
                         <div className="flexLineSpace">
-                            <div className="subHeading">Sales Report</div>
+                            <div className="subHeading"></div>
                         </div>
                         <div className="charts">
                             <LineChart />

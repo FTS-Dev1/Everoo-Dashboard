@@ -24,7 +24,7 @@ import { toast } from "react-toastify";
 
 // CSS :
 import "./Transaction.scss";
-import TransactionDetail from "./Component/TransactionDetail/TransactionDetail";
+// import TransactionDetail from "./Component/CustomerDetail/TransactionDetail";
 
 const Transactions = (props) => {
 

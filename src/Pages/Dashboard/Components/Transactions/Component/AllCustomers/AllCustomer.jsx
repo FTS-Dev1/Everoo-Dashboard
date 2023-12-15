@@ -22,7 +22,7 @@ import { toast } from "react-toastify";
 
 // CSS :
 import "./AllCustomer.scss";
-import TransactionDetail from "../TransactionDetail/TransactionDetail";
+// import TransactionDetail from "../CustomerDetail/TransactionDetail";
 import PreLoader from "Components/PreLoader/PreLoader";
 import { GetAllOrdersAPI } from "API/order";
 
@@ -191,11 +191,12 @@ const AllCustomers = ({
   return (
     <>
       {showProfilePage ? (
-        <TransactionDetail
-          openPage={showProfilePage}
-          closePage={closeProfilePage}
-          selectedTransaction={selectedTransaction}
-        />
+        ''
+        // <TransactionDetail
+        //   openPage={showProfilePage}
+        //   closePage={closeProfilePage}
+        //   selectedTransaction={selectedTransaction}
+        // />
       ) : (
         <div className="dashboardAllUsersContainer">
           <div className="flexLineSpace">
