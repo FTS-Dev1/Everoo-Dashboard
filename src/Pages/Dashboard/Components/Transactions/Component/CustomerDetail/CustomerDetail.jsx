@@ -8,6 +8,10 @@ import event from '../../../../../../Assets/Svgs/eventIcon.svg'
 // import city from '../../../../../../Assets/Svgs/city.svg'
 import "./CustomerDetail.scss";
 
+
+
+
+
 const CustomerDetail = ({
   selectedTransaction,
   setData,
@@ -15,12 +19,10 @@ const CustomerDetail = ({
   closePage,
 }) => {
 
-
   return (
     <>
       <div className="TransactionContainer">
         <div className="heading">
-          {" "}
           <BsArrowLeftShort className="icon" onClick={closePage} />{" "}
           {selectedTransaction ? "VIEW" : ""}Customers Detail
         </div>
@@ -37,28 +39,28 @@ const CustomerDetail = ({
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
                   <h5 >Name</h5>
                 </div>
-                <p style={{ marginLeft: "1.9rem" }} >Mark White</p>
+                <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.firstName} {selectedTransaction?.lastName}</p>
               </div>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
                   <h5 >Event Type</h5>
                 </div>
-                <p style={{ marginLeft: "1.9rem" }} >Event Type</p>
+                <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.event?.name}</p>
               </div>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
                   <h5 >Event Locality</h5>
                 </div>
-                <p style={{ marginLeft: "1.9rem" }} >Event Locality</p>
+                <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.city?.name}</p>
               </div>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
                   <h5 >No of Guests</h5>
                 </div>
-                <p style={{ marginLeft: "1.9rem" }} >100</p>
+                <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.guests?.min} - {selectedTransaction?.guests?.max}</p>
               </div>
 
             </Col>
@@ -70,111 +72,47 @@ const CustomerDetail = ({
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
                   <h5 >Contact Detail</h5>
                 </div>
-                <p style={{ marginLeft: "1.9rem" }} >abc@gmail.com</p>
-                <p style={{ marginLeft: "1.9rem" }} >+1 00000000</p>
+                <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.email}</p>
+                <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.phone}</p>
               </div>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
                   <h5 >Event Location</h5>
                 </div>
-                <p style={{ marginLeft: "1.9rem" }} >Location</p>
+                <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.city?.name}</p>
               </div>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
                   <h5 >No of Days</h5>
                 </div>
-                <p style={{ marginLeft: "1.9rem" }} >0-0</p>
+                <p style={{ marginLeft: "1.9rem" }} >0-{selectedTransaction?.days}</p>
               </div>
             </Col>
           </Row>
           <Row gutter={26}>
             <h3 style={{ padding: "2rem" }}>Services</h3>
           </Row>
-          <Row gutter={{
-            xs: 8,
-            sm: 16,
-            md: 24,
-            lg: 32,
-          }}>
-            <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-              <div style={{ paddingTop: "2rem" }}>
-                <div style={{ display: "flex" }}>
-                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Location</h5>
-                </div>
-                <p style={{ marginLeft: "1.9rem" }} >Hall</p>
-              </div>
-              <div style={{ paddingTop: "2rem" }}>
-                <div style={{ display: "flex" }}>
-                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Ausstattung</h5>
-                </div>
-                <p style={{ marginLeft: "1.9rem" }} >Ausstattung 1</p>
-              </div>
-              <div style={{ paddingTop: "2rem" }}>
-                <div style={{ display: "flex" }}>
-                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Event Technology</h5>
-                </div>
-                <p style={{ marginLeft: "1.9rem" }} >Veranstaltungstechnik 1</p>
-              </div>
-              <div style={{ paddingTop: "2rem" }}>
-                <div style={{ display: "flex" }}>
-                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Dekoration</h5>
-                </div>
-                <p style={{ marginLeft: "1.9rem" }} >Dekoration_1 1</p>
-              </div>
-            </Col>
-            <Col xs={24} sm={24} md={16} lg={16} xl={8}>
-              <div style={{ paddingTop: "2rem" }}>
-                <div style={{ display: "flex" }}>
-                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Catering</h5>
-                </div>
-                <p style={{ marginLeft: "1.9rem" }} >Catering 1</p>
-              </div>
-              <div style={{ paddingTop: "2rem" }}>
-                <div style={{ display: "flex" }}>
-                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Shuttle</h5>
-                </div>
-                <p style={{ marginLeft: "1.9rem" }} >Shuttle 1</p>
-              </div>
-              <div style={{ paddingTop: "2rem" }}>
-                <div style={{ display: "flex" }}>
-                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Eventmodule</h5>
-                </div>
-                <p style={{ marginLeft: "1.9rem" }} >Eventmodule 1</p>
-              </div>
-            </Col>
-            <Col xs={24} sm={24} md={16} lg={16} xl={8}>
-              <div style={{ paddingTop: "2rem" }}>
-                <div style={{ display: "flex" }}>
-                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Beverage</h5>
-                </div>
-                <p style={{ marginLeft: "1.9rem" }} >Beverage 1</p>
-              </div>
-              <div style={{ paddingTop: "2rem" }}>
-                <div style={{ display: "flex" }}>
-                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Hotelmanagement</h5>
-                </div>
-                <p style={{ marginLeft: "1.9rem" }} >Hotelmanagement_1 1</p>
-              </div>
-              <div style={{ paddingTop: "2rem" }}>
-                <div style={{ display: "flex" }}>
-                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Präsente</h5>
-                </div>
-                <p style={{ marginLeft: "1.9rem" }} >Präsente_1 1</p>
-              </div>
-            </Col>
-          </Row>
+
+          <div className="servicesList">
+            {
+              Object.keys(selectedTransaction?.services).map(key => {
+                if (selectedTransaction?.services[key] != null) {
+                  return (
+                    <div className="service">
+                      <div className="title">
+                        <img src={event} width={16} />
+                        <h5 >{key}</h5>
+                      </div>
+                      <p>{selectedTransaction?.services[key].title}</p>
+                    </div>
+                  )
+                }
+              })
+            }
+
+          </div>
         </div>
 
       </div>

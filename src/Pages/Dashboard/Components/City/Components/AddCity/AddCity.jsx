@@ -26,23 +26,17 @@ const AddCity = ({ selectedCity, closePage }) => {
     const [allServicesList, setAllServicesList] = useState([])
 
     const [cityName, setCityName] = useState("")
-    const [selectedService, setSelectedService] = useState(null)
     const [selectedServiceData, setSelectedServiceData] = useState({})
 
-    const [checkedValues, setCheckedValues] = useState([]);
     const [loading, setLoading] = useState(false);
 
 
-    const onChange = (checkedValues) => {
-        setCheckedValues(checkedValues);
+    const onChange = (service, checkedValues) => {
         setSelectedServiceData({
             ...selectedServiceData,
-            [selectedService]: checkedValues
+            [service]: checkedValues
         })
     };
-    const handleSelectChange = (event) => {
-        setSelectedService(event)
-    }
 
 
     const SavingCity = async () => {
@@ -73,15 +67,6 @@ const AddCity = ({ selectedCity, closePage }) => {
     useEffect(() => {
         gettingAllServices()
     }, [])
-
-    useEffect(() => {
-        if (selectedService) {
-            let getCheckedValues = selectedServiceData[selectedService]
-            if (getCheckedValues && getCheckedValues.length >= 1) {
-                setCheckedValues(getCheckedValues)
-            }
-        }
-    }, [selectedService])
 
     useEffect(() => {
         if (selectedCity) {
@@ -142,37 +127,51 @@ const AddCity = ({ selectedCity, closePage }) => {
                         </div>
                         <div className="inputFields">
                             <div className="field1 field">
-                                <div className="lableName">Select Service</div>
-                                <div className="inputselect">
-                                    <div className="selecticon"><Flag className='iconInfo' /></div>
-                                    <Select
-                                        placeholder='Select Service'
-                                        bordered={false}
-                                        value={selectedService}
-                                        className='selector'
-                                        onChange={handleSelectChange}
-                                        options={allServicesList.map(service => ({ value: service, label: service }))}
-                                    />
+                                <div className="servicesList">
+
+                                    {
+                                        allServicesList.map((service, index) => {
+                                            return (
+                                                <>
+                                                    <div className="lableName">Select Service</div>
+                                                    <div className="service">
+                                                        <div className="inputselect">
+                                                            <div className="selecticon"><Flag className='iconInfo' /></div>
+                                                            <input
+                                                                placeholder='city name'
+                                                                value={service}
+                                                                className='selector'
+                                                            // onChange={(event) => setCityName(event.target.value)}
+                                                            />
+                                                        </div>
+                                                        {/* <div className="title">{index + 1} :- {service}</div> */}
+                                                        <div className="list">
+                                                            <Checkbox.Group
+                                                                style={{
+                                                                    width: '100%',
+                                                                }}
+                                                                onChange={(newValues) => onChange(service, newValues)}
+                                                                value={selectedServiceData[service]}
+                                                            >
+                                                                <Row>
+                                                                    {allServicesData[service].map((option) => (
+                                                                        <Col span={8} key={option}>
+                                                                            <Checkbox value={option?._id}>{option?.title}</Checkbox>
+                                                                        </Col>
+                                                                    ))}
+                                                                </Row>
+                                                            </Checkbox.Group>
+                                                        </div>
+                                                    </div>
+                                                </>
+                                            )
+                                        })
+                                    }
+
+
                                 </div>
                             </div>
                         </div>
-
-
-                        <Checkbox.Group
-                            style={{
-                                width: '100%',
-                            }}
-                            onChange={onChange}
-                            value={checkedValues}
-                        >
-                            <Row>
-                                {selectedService && allServicesData[selectedService].map((option) => (
-                                    <Col span={8} key={option}>
-                                        <Checkbox value={option?._id}>{option?.title}</Checkbox>
-                                    </Col>
-                                ))}
-                            </Row>
-                        </Checkbox.Group>
 
                         <Button className='yellowGraBtn'
                             loading={loading}

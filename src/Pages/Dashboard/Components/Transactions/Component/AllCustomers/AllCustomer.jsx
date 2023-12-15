@@ -22,7 +22,7 @@ import { toast } from "react-toastify";
 
 // CSS :
 import "./AllCustomer.scss";
-// import TransactionDetail from "../CustomerDetail/TransactionDetail";
+import CustomerDetail from "../CustomerDetail/CustomerDetail";
 import PreLoader from "Components/PreLoader/PreLoader";
 import { GetAllOrdersAPI } from "API/order";
 
@@ -176,10 +176,9 @@ const AllCustomers = ({
               <Tooltip placement="top" title={view}>
                 <div
                   className="actionBtn"
-                // onClick={() => openProfilePage(data)}
+                  onClick={() => openProfilePage(data)}
                 >
                   <GrView className="icon cursor" />
-                  {/* <img src={EditIcon} alt="" className="icon cursor" /> */}
                 </div>
               </Tooltip>
             </div>
@@ -191,12 +190,11 @@ const AllCustomers = ({
   return (
     <>
       {showProfilePage ? (
-        ''
-        // <TransactionDetail
-        //   openPage={showProfilePage}
-        //   closePage={closeProfilePage}
-        //   selectedTransaction={selectedTransaction}
-        // />
+        <CustomerDetail
+          openPage={showProfilePage}
+          closePage={closeProfilePage}
+          selectedTransaction={selectedTransaction}
+        />
       ) : (
         <div className="dashboardAllUsersContainer">
           <div className="flexLineSpace">
