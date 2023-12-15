@@ -8,8 +8,7 @@ import Table from "../../../Users/Component/table/Table";
 import ConfirmationModel from "../../../../../../Components/ConfirmationModel/ConfirmationModel";
 
 // Assets | ICONS :
-import EditIcon from "../../../../../../Assets/Images/editIcon.png";
-import BagIcon from "../../../../../../Assets/Images/bagIcon.png";
+import viewIcon from "Assets/Svgs/viewIcon.svg";
 import { GrView } from "react-icons/gr";
 
 // API :
@@ -178,8 +177,7 @@ const AllCustomers = ({
                   className="actionBtn"
                 // onClick={() => openProfilePage(data)}
                 >
-                  <GrView className="icon cursor" />
-                  {/* <img src={EditIcon} alt="" className="icon cursor" /> */}
+                  <img src={viewIcon} alt=""  />
                 </div>
               </Tooltip>
             </div>
