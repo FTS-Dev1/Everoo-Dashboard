@@ -8,6 +8,7 @@ import { AiOutlineFileProtect } from "react-icons/ai";
 import { FaGraduationCap } from "react-icons/fa";
 
 import dashboardCardPersonIcon from "../../../../../../Assets/Images/dashboardCardPersonIcon.png"
+import revenue from "../../../../../../Assets/Svgs/revenue.svg"
 
 // CSS :
 import "./Cards.scss";
@@ -52,12 +53,12 @@ const Cards = () => {
                             <div className="hoverEffect" key={index}>
                                 <div className="card">
                                     <div className="iconBox">
-                                    <div className="title">{data.time}</div>
+                                    <div className="titleHeading">{data.time}</div>
                                     </div>
                                     <div className="detials">
-                                        <h1 className="value">{data.value}</h1>
-                                        <div className="title">{data.name}</div>
-                                        <span className="title">{data.value2}</span>
+                                        <h1 className="value">{data.value} <span className='revenuValue'><img src={revenue}></img> +10.79%</span></h1>
+                                        <div className="titleHeading">{data.name}</div>
+                                        <span className="titleHeading">{data.value2}</span>
                                     </div>
                                 </div>
                             </div>

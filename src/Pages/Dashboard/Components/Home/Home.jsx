@@ -1,7 +1,7 @@
 import React from 'react'
 
 // MUI | ANT-D :
-import { DatePicker, Progress } from 'antd'
+import { DatePicker, Progress, Button } from 'antd'
 
 // Components :
 import Cards from './Components/ReportCards/Cards'
@@ -23,10 +23,16 @@ const Home = () => {
             <div className="box">
                 <Cards />
                 <div className="reportBox">
+                  
                     <div className="chartsBox">
                         <div className="flexLineSpace">
                             <div className="subHeading"></div>
                         </div>
+                        <div className='chartsButton'>
+                        <Button className='dashboardBtn' style={{ width: "120px" }} > Day</Button>
+                        <Button className='dashboardBtn' style={{ width: "120px" }} > Month</Button>
+                        <Button className='dashboardBtn' style={{ width: "120px" }} > Year</Button>
+                    </div>
                         <div className="charts">
                             <LineChart />
                         </div>
@@ -36,19 +42,11 @@ const Home = () => {
                     <div className='customerCard'>
                         <p>Customer State</p>
                         <Progress percent={50} status="active" />
-                        <Progress percent={70} status="exception" />
-                        <Progress percent={100} />
-                        <Progress percent={50} showInfo={false} />
+                        <Progress percent={70} status="active" />
+                        <Progress percent={100} status="active" />
                     </div>
                     <div className='customerCard'>
                         <p>Trending Event</p>
-                        <div style={{ paddingTop: "2rem" }}>
-                            <div style={{ display: "flex" }}>
-                                <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                                <h5 >Event Name</h5>
-                            </div>
-                            <p style={{ marginLeft: "1.9rem" }} >Detail</p>
-                        </div>
                         <div style={{ paddingTop: "1rem" }}>
                             <div style={{ display: "flex" }}>
                                 <img src={event} width={16} style={{ marginRight: "1rem" }} />
@@ -56,7 +54,14 @@ const Home = () => {
                             </div>
                             <p style={{ marginLeft: "1.9rem" }} >Detail</p>
                         </div>
-                        <div style={{ paddingTop: "1rem" }}>
+                        <div style={{ paddingTop: "0.5rem" }}>
+                            <div style={{ display: "flex" }}>
+                                <img src={event} width={16} style={{ marginRight: "1rem" }} />
+                                <h5 >Event Name</h5>
+                            </div>
+                            <p style={{ marginLeft: "1.9rem" }} >Detail</p>
+                        </div>
+                        <div style={{ paddingTop: "0.5rem" }}>
                             <div style={{ display: "flex" }}>
                                 <img src={event} width={16} style={{ marginRight: "1rem" }} />
                                 <h5 >Event Name</h5>

@@ -26,10 +26,9 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
         background-color: white;
-        padding: 2.5rem 1rem;
-        box-shadow: 0px 0px 8px 1px rgba(15, 15, 15, 0.2);
+        padding: 1.5rem 2.5rem;
+        box-shadow: 3px 3px 8px 3px rgba(15, 15, 15, 0.2);
         border-radius: 15px;
         cursor: pointer;
 
@@ -41,6 +40,7 @@
             .icon {
                 font-size: 2rem;
             }
+            
 
             .counts {
                 display: flex;
@@ -58,6 +58,7 @@
             .countDanger {
                 box-shadow: 0px 0px 4px 1px rgba(190, 47, 93, 0.3);
             }
+
         }
 
         .detials {
@@ -66,15 +67,25 @@
             gap: .3rem;
 
             .value {
-                font-size: 1.5rem;
-                font-weight: 700;
+                font-size: 2.5rem;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding-bottom: 1rem;
+
+                .revenuValue {
+                    font-size: 0.5rem;
+                }
             }
 
-            .title {
-                color: gray;
-                font-size: small;
-            }
+          
         }
 
+    }
+    .titleHeading {
+        color: black;
+        font-size: 1rem;
+        font-weight: 500;
     }
 }

@@ -25,8 +25,8 @@ import { Tooltip, Tag, Col, Row, Button, Modal, Select, Input } from "antd";
 
 // Components :
 import Table from "Pages/Dashboard/Components/Users/Component/table/Table";
-import BagIcon from "Assets/Images/bagIcon.png";
-import EditIcon from "Assets/Images/editIcon.png";
+import BagIcon from "Assets/Svgs/deleteIcon.svg";
+import EditIcon from "Assets/Svgs/editIcon.svg";
 
 // CSS :
 // import "./AllServices.scss";
@@ -110,7 +110,7 @@ const AllEvents = ({ allEvents, loading, togglePage, setReload }) => {
                             <div className="actionBtn"
                                 onClick={() => togglePage(data)}
                             >
-                                <img src={EditIcon} alt="" className='icon cursor' />
+                                <img src={EditIcon} alt="" width={60}  />
                             </div>
                         </Tooltip>
                     }
@@ -120,7 +120,7 @@ const AllEvents = ({ allEvents, loading, togglePage, setReload }) => {
                             <div className="actionBtn"
                                 onClick={() => handleDeleteEventConfirmation(data)}
                             >
-                                <img src={BagIcon} alt="" className='icon cursor' />
+                                <img src={BagIcon} alt="" width={60}  />
                             </div>
                         </Tooltip>
                     }
