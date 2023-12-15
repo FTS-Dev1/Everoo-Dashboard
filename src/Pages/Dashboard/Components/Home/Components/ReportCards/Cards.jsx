@@ -8,6 +8,7 @@ import { AiOutlineFileProtect } from "react-icons/ai";
 import { FaGraduationCap } from "react-icons/fa";
 
 import dashboardCardPersonIcon from "../../../../../../Assets/Images/dashboardCardPersonIcon.png"
+import revenue from "../../../../../../Assets/Svgs/revenue.svg"
 
 // CSS :
 import "./Cards.scss";
@@ -21,21 +22,24 @@ let tempCardsData = [
         image: dashboardCardPersonIcon,
         static: 80,
         value: '$143,624',
-        // name: "Register Users"
+        name: "Last day",
+        value2: '$143,624',
     },
     {
         time: 'Monatlich',
         image: dashboardCardPersonIcon,
         static: -30,
         value: '$143,624',
-        // name: "Total Courses"
+        name: "Last Month",
+        value2: '$143,624',
     },
     {
         time: 'Jahrlich',
         image: dashboardCardPersonIcon,
         static: 40,
         value: '$143,624',
-        // name: "Online Class"
+        name: "Last Year",
+        value2: '$143,624',
     },
 
 ]
@@ -49,12 +53,12 @@ const Cards = () => {
                             <div className="hoverEffect" key={index}>
                                 <div className="card">
                                     <div className="iconBox">
-                                    <div className="title">{data.time}</div>
-
+                                    <div className="titleHeading">{data.time}</div>
                                     </div>
                                     <div className="detials">
-                                        <div className="value">{data.value}</div>
-                                        <div className="title">{data.name}</div>
+                                        <h1 className="value">{data.value} <span className='revenuValue'><img src={revenue}></img> +10.79%</span></h1>
+                                        <div className="titleHeading">{data.name}</div>
+                                        <span className="titleHeading">{data.value2}</span>
                                     </div>
                                 </div>
                             </div>

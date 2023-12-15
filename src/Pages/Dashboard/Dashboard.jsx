@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 
 // MUI | ANT-D :
-import { Layout, Menu } from "antd"
+import { Layout, Menu,Button } from "antd"
 
 // Asstets | ICONS :
 import Logo from "../../Assets/Images/logo.png"
@@ -53,11 +53,12 @@ const Dashboard = () => {
     return (
         <>
             <div className="dashboardContainer">
-                <Sider collapsible collapsed={collapsed} breakpoint='lg' onCollapse={(value) => setCollapsed(value)} width="250" className="sider" trigger={<> <div className="trig">{collapsed ? <FaAngleRight /> : <FaAngleLeft />}</div> </>}>
+                <Sider collapsible collapsed={collapsed} breakpoint='lg' onCollapse={(value) => setCollapsed(value)} width="270" className="sider" trigger={<> <div className="trig">{collapsed ? <FaAngleRight /> : <FaAngleLeft />}</div> </>}>
                     <div className="logoBox">
                         <img style={collapsed ? { width: "60px" } : {}} src={Logo} alt="ERROR" />
                     </div>
                     <Menu mode="inline" items={RoutesList} onClick={handleMenuClick} selectedKeys={selectedRoutes} />
+                    <Button className='logoutBtn' >Logout </Button>
                 </Sider>
                 <div className="rightContainer">
                     <Navbar />
