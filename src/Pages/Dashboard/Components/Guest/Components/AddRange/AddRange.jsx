@@ -73,26 +73,26 @@ const AddRange = ({ selectedRange, closePage }) => {
         <>
             <div className="AddEventMain">
                 <div className="flexLineSpace">
-                    <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedRange ? "Edit" : "ADD"} Range</div></div>
+                    <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedRange ? "Bearbeiten" : "Hinzufügen."} Bereich</div></div>
                 </div>
                 <div className="ManageAccessMain">
                     <div className="inputMain">
                         <div className="inputFields">
                             <div className="field1 field">
-                                <div className="lableName">Start Amount of Guest</div>
+                                <div className="lableName">Start Anzahl der Gäste</div>
                                 <Input
                                     // prefix={<Lock className='icon' />}
-                                    size='large' className='input' type="number" placeholder='start range' name="min"
+                                    size='large' className='input' type="number" placeholder='Startbereich' name="min"
                                     value={data?.min}
                                     onChange={enteringData}
                                 />
                             </div>
 
                             <div className="field2 field">
-                                <div className="lableName">Maximum Amount of Guest</div>
+                                <div className="lableName">Maximale Anzahl der Gäste</div>
                                 <Input
                                     //  prefix={<Lock className='icon' />}
-                                    size='large' className='input' type="number" placeholder='End Range' name="max"
+                                    size='large' className='input' type="number" placeholder='Endbereich' name="max"
                                     value={data?.max}
                                     onChange={enteringData}
                                 />
@@ -102,7 +102,7 @@ const AddRange = ({ selectedRange, closePage }) => {
                         <Button className='yellowGraBtn'
                             loading={loading}
                             onClick={savingRange}
-                        >{selectedRange ? "Update" : "Save"}</Button>
+                        >{selectedRange ? "Aktualisierung" : "Speichern"}</Button>
                     </div>
                 </div>
             </div>

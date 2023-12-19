@@ -45,7 +45,8 @@
         .donuts {
             height: 420px;
         }
-        .chartsButton{
+
+        .chartsButton {
             display: flex;
             gap: 1rem;
             justify-content: end;
@@ -58,6 +59,10 @@
         grid-template-columns: 2fr 1fr;
         gap: 3.5rem;
         color: var(--primaryTextColor);
+
+        @media screen and (max-width:768px) {
+            grid-template-columns: 1fr;
+        }
 
         .customerCard {
             position: relative;
