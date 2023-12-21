@@ -80,7 +80,7 @@ const AllRanges = ({ allRanges, loading, togglePage, setReload }) => {
 
     const columns = [
         {
-            title: 'Minimum Guest Range',
+            title: 'Minimale Gästezahl',
             dataIndex: 'minimum',
             key: 'minimum',
             width: "300px",
@@ -89,7 +89,7 @@ const AllRanges = ({ allRanges, loading, togglePage, setReload }) => {
 
         },
         {
-            title: 'Maximum Guest Range',
+            title: 'Maximale Gästereichweite',
             dataIndex: 'maximum',
             key: 'maximum',
             width: "300px",
@@ -98,7 +98,7 @@ const AllRanges = ({ allRanges, loading, togglePage, setReload }) => {
 
         },
         {
-            title: 'Actions',
+            title: 'Aktion',
             dataIndex: 'action',
             key: 'action',
             align: "center",
@@ -136,10 +136,10 @@ const AllRanges = ({ allRanges, loading, togglePage, setReload }) => {
             <div className="allEventsBox">
                 <div className="flexLineSpace">
                     <div className="heading upper">
-                        All Ranges
+                    Alle Gästebereiche
                     </div>
                     <div className="buttonandFilter">
-                        <Button className='dashboardBtn' style={{ width: "120px" }} onClick={() => togglePage(null)}> Add Range  </Button>
+                        <Button className='dashboardBtn' style={{ width: "160px" }} onClick={() => togglePage(null)}>  Alle Gästebereiche</Button>
                     </div>
                 </div>
 

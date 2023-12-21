@@ -94,25 +94,25 @@ const AddEvent = ({ selectedEvent, closePage }) => {
         <>
             <div className="AddEventMain">
                 <div className="flexLineSpace">
-                    <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedEvent ? "Edit" : "ADD"} Event</div></div>
+                    <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedEvent ? "Bearbeiten" : "Hinzufügen."} Ereignistyp</div></div>
                 </div>
                 <div className="ManageAccessMain">
                     <div className="inputMain">
                         <div className="inputFields">
                             <div className="field1 field">
-                                <div className="lableName">Event Type Name</div>
-                                <Input prefix={<Profile className='icon' />} size='large' className='input' type="text" placeholder='Event Name' name="name"
+                                <div className="lableName">Name des Ereignisses</div>
+                                <Input prefix={<Profile className='icon' />} size='large' className='input' type="text" placeholder='Name des Ereignisses' name="name"
                                     onChange={enteringData} value={data.name}
                                 />
                             </div>
                         </div>
                         <div className="inputFields">
                             <div className="field1 field">
-                                <div className="lableName">City Name</div>
+                                <div className="lableName">Name der Stadt</div>
                                 <div className="inputselect">
                                     <div className="selecticon"><Flag className='iconInfo' /></div>
                                     <Select
-                                        placeholder='city'
+                                        placeholder='Die Stadt'
                                         bordered={false}
                                         value={data.cities[0]}
                                         className='selector'
@@ -126,7 +126,7 @@ const AddEvent = ({ selectedEvent, closePage }) => {
                         <Button className='yellowGraBtn'
                             loading={loading}
                             onClick={SavingEvent}
-                        >{selectedEvent ? "Update" : "Save"}</Button>
+                        >{selectedEvent ? "Aktualisierung" : "Speichern"}</Button>
                     </div>
                 </div>
             </div>

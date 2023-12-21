@@ -95,14 +95,14 @@ const AddService = ({ selectedService, closePage, path }) => {
     <>
       <div className="AddEventMain">
         <div className="flexLineSpace">
-          <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedService ? "EDIT" : "ADD"} {path}</div></div>
+          <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedService ? "Bearbeiten" : "Hinzufügen"} {path}</div></div>
         </div>
         <div className="ManageAccessMain">
           <div className="inputMain">
             <input type="file" onChange={enteringFile} />
             <div className="inputFields">
               <div className="field1 field">
-                <div className="lableName">Title</div>
+                <div className="lableName">Bezeichnung</div>
                 <Input
                   // prefix={<Lock className='icon' />}
                   size='large' className='input' type="text" placeholder='title' name="title"
@@ -112,10 +112,10 @@ const AddService = ({ selectedService, closePage, path }) => {
               </div>
 
               <div className="field2 field">
-                <div className="lableName">Price</div>
+                <div className="lableName">Preis</div>
                 <Input
                   //  prefix={<Lock className='icon' />}
-                  size='large' className='input' type="number" placeholder='price' name="price"
+                  size='large' className='input' type="number" placeholder='Preis' name="price"
                   value={formData.price}
                   onChange={enteringData}
                 />
@@ -124,8 +124,8 @@ const AddService = ({ selectedService, closePage, path }) => {
 
             <div className="inputFields">
               <div className="field1 field">
-                <div className="lableName">Description</div>
-                <Input.TextArea rows={4} size='large' className='textarea' type="text" placeholder='Enter Description' name="description"
+                <div className="lableName">Beschreibung</div>
+                <Input.TextArea rows={4} size='large' className='textarea' type="text" placeholder='Enter Beschreibung' name="description"
                   onChange={enteringData} value={formData?.description}
                 />
               </div>
@@ -134,7 +134,7 @@ const AddService = ({ selectedService, closePage, path }) => {
             <Button className='yellowGraBtn'
               loading={loading}
               onClick={saveService}
-            >{selectedService ? "Update" : "Save"}</Button>
+            >{selectedService ? "Aktualisierung" : "speichern"}</Button>
           </div>
         </div>
       </div>
