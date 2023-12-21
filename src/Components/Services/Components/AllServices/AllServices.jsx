@@ -39,7 +39,7 @@ import PreLoader from 'Components/PreLoader/PreLoader';
 
 const remove = <span>remove</span>;
 const edit = <span>edit</span>;
-const AllCateringService = ({ allEvents, loading, togglePage, setReload, path }) => {
+const AllCateringService = ({ allEvents, loading, togglePage, setReload, path, label }) => {
 
     const [deleteConfirmation, setDeleteConfirmation] = useState({
         open: false,
@@ -151,7 +151,7 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload, path })
             <div className="allEventsBox">
                 <div className="flexLineSpace">
                     <div className="heading upper">
-                        All {path}
+                        All {label}
                     </div>
                     <div className="buttonandFilter">
                         <Button className='dashboardBtn' style={{ width: "160px" }} onClick={() => togglePage(null)}> Dienst hinzufügen </Button>

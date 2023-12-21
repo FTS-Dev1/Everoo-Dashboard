@@ -17,7 +17,7 @@ import "./Services.scss";
 
 
 
-const Catering = ({ path }) => {
+const Catering = ({ path , label }) => {
     let Location = useLocation();
 
     const [currentPage, setCurrentPage] = useState("all")
@@ -59,7 +59,7 @@ const Catering = ({ path }) => {
             <div className="dashboardEventsContainer">
                 {
                     currentPage && currentPage == "all" ?
-                        <AllCateringService closePage={closePage} allEvents={allEvents} togglePage={togglePage} loading={loading} setReload={setReload} path={path} />
+                        <AllCateringService closePage={closePage} allEvents={allEvents} togglePage={togglePage} loading={loading} setReload={setReload} path={path} label={label} />
                         :
                         <AddService selectedService={selectedService} closePage={closePage} path={path} />
                 }

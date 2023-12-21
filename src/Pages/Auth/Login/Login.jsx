@@ -101,6 +101,7 @@ const Login = () => {
             let token = res?.data?.result?.token
             localStorage.setItem("everooToken", token)
             localStorage.setItem("everooUserData", JSON.stringify(res?.data?.result))
+            localStorage.setItem("tokenTime", new Date().getTime())
             setTimeout(() => {
                 window.location.href = "/"
             }, 500);

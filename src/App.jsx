@@ -41,6 +41,9 @@ const App = () => {
   let Dispatch = useDispatch()
 
   let token = localStorage.getItem("everooToken")
+  let tokenTime = Number(localStorage.getItem("tokenTime")) + 300000
+  let expireTime = new Date().getTime()
+
   let AuthToken = token ?? null
 
   let RefreshAPIs = useSelector(state => state.refreshAPIs)
@@ -53,11 +56,14 @@ const App = () => {
       let userData = res.data?.result;
       Dispatch(userDataActions.setUserData(userData))
       localStorage.setItem("everooUserData", JSON.stringify(userData))
+      // localStorage.setItem("tokenTime", new Date().getTime())
     }
   }
   useEffect(() => {
-    if (AuthToken) {
+    if (AuthToken && expireTime < tokenTime) {
       gettingProfileData()
+    } else {
+      localStorage.clear();
     }
   }, [RefreshAPIs?.userData])
 

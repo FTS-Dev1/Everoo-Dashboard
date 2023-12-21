@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 
 // MUI | ANT-D :
-import { Layout, Menu,Button } from "antd"
+import { Layout, Menu, Button } from "antd"
 
 // Asstets | ICONS :
 import Logo from "../../Assets/Images/logo.png"
@@ -48,6 +48,14 @@ const Dashboard = () => {
         Navigate("/dashboard" + path)
     }
 
+    const Logout = () => {
+        localStorage.clear();
+        setTimeout(() => {
+            toast.success("Abmelden erfolgreich")
+            window.location.href = "/"
+        }, 1500);
+    }
+
     const dispatch = useDispatch()
 
     return (
@@ -58,23 +66,23 @@ const Dashboard = () => {
                         <img style={collapsed ? { width: "60px" } : {}} src={Logo} alt="ERROR" />
                     </div>
                     <Menu mode="inline" items={RoutesList} onClick={handleMenuClick} selectedKeys={selectedRoutes} />
-                    <Button className='logoutBtn' >Logout </Button>
+                    <Button className='logoutBtn' onClick={Logout} >Ausloggen </Button>
                 </Sider>
                 <div className="rightContainer">
                     <Navbar />
                     <div className="rightBox">
                         <Routes>
-                            <Route key={"1c"} path='/location' element={<Catering1 path="location" />} />
-                            <Route key={"2c"} path='/catering' element={<Catering1 path="caterings" />} />
-                            <Route key={"3c"} path='/beverages' element={<Catering1 path="beverage" />} />
-                            <Route key={"4c"} path='/staff' element={<Catering1 path="staff" />} />
-                            <Route key={"5c"} path='/ausstattung' element={<Catering1 path="ausstattung" />} />
-                            <Route key={"6c"} path='/shuttle' element={<Catering1 path="shuttle" />} />
-                            <Route key={"7c"} path='/hotelmanagement' element={<Catering1 path="hotelmanagement" />} />
-                            <Route key={"8c"} path='/prasente' element={<Catering1 path="prasente" />} />
-                            <Route key={"9c"} path='/veranstaltungstechnik' element={<Catering1 path="veranstaltungstechnik" />} />
-                            <Route key={"10c"} path='/eventmodule' element={<Catering1 path="eventmodule" />} />
-                            <Route key={"11c"} path='/dekoration' element={<Catering1 path="dekoration" />} />
+                            <Route key={"1c"} path='/location' element={<Catering1 path="location"  label="Standort" />} />
+                            <Route key={"2c"} path='/catering' element={<Catering1 path="caterings" label="Verpflegung" />} />
+                            <Route key={"3c"} path='/beverages' element={<Catering1 path="beverage" label="Getränke" />} />
+                            <Route key={"4c"} path='/staff' element={<Catering1 path="staff" label="Personal" />} />
+                            <Route key={"5c"} path='/ausstattung' element={<Catering1 path="ausstattung" label="Ausstattung" />} />
+                            <Route key={"6c"} path='/shuttle' element={<Catering1 path="shuttle" label="Zubringerdienst" />} />
+                            <Route key={"7c"} path='/hotelmanagement' element={<Catering1 path="hotelmanagement" label="Hotel-Management" />} />
+                            <Route key={"8c"} path='/prasente' element={<Catering1 path="prasente" label="Prasente" />} />
+                            <Route key={"9c"} path='/veranstaltungstechnik' element={<Catering1 path="veranstaltungstechnik" label="Veranstaltungstechnik" />} />
+                            <Route key={"10c"} path='/eventmodule' element={<Catering1 path="eventmodule" label="EreignisBaustein" />} />
+                            <Route key={"11c"} path='/dekoration' element={<Catering1 path="dekoration" label="Dekoration" />} />
                             {
                                 RoutesList && RoutesList.map((item, i) => {
                                     return (
