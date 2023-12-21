@@ -82,7 +82,8 @@ const CustomerDetail = ({
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
                   <h5 >Anzahl der Tage</h5>
                 </div>
-                <p style={{ marginLeft: "1.9rem" }} >0-{selectedTransaction?.days}</p>
+                <p style={{ marginLeft: "1.9rem" }} > <span style={{ fontWeight: "bold", fontSize: ".9rem" }}>From</span> {selectedTransaction?.days[0].slice(0, 10)} - <span style={{ fontWeight: "bold", fontSize: ".9rem" }}>To</span> {selectedTransaction?.days[1].slice(0, 10)}</p>
+                <p style={{ marginLeft: "1.9rem" }}> {(new Date(selectedTransaction?.days[1]).getTime() - new Date(selectedTransaction?.days[0]).getTime()) / (1000 * 60 * 60 * 24)} <span style={{ fontWeight: "bold", fontSize: ".9rem" }}>Days</span> </p>
               </div>
             </Col>
           </Row>
