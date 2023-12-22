@@ -73,6 +73,13 @@ const CustomerDetail = ({
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
+                  <h5 >Kundenadresse</h5>
+                </div>
+                <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.address}</p>
+              </div>
+              <div style={{ paddingTop: "2rem" }}>
+                <div style={{ display: "flex" }}>
+                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
                   <h5 >Ort des Ereignisses</h5>
                 </div>
                 <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.city?.name}</p>

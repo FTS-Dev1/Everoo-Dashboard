@@ -23,16 +23,16 @@ const Home = () => {
             <div className="box">
                 <Cards />
                 <div className="reportBox">
-                  
+
                     <div className="chartsBox">
                         <div className="flexLineSpace">
                             <div className="subHeading"></div>
                         </div>
                         <div className='chartsButton'>
-                        <Button className='dashboardBtn' style={{ width: "120px" }} > Tag</Button>
-                        <Button className='dashboardBtn' style={{ width: "120px" }} > Manat</Button>
-                        <Button className='dashboardBtn' style={{ width: "120px" }} > Jahr</Button>
-                    </div>
+                            <Button className='dashboardBtn' style={{ width: "120px" }} > Tag</Button>
+                            <Button className='dashboardBtn' style={{ width: "120px" }} > Manat</Button>
+                            <Button className='dashboardBtn' style={{ width: "120px" }} > Jahr</Button>
+                        </div>
                         <div className="charts">
                             <LineChart />
                         </div>
@@ -41,9 +41,9 @@ const Home = () => {
                 <div className='dashboardpart3'>
                     <div className='customerCard'>
                         <p>Zustand des Kunden</p>
-                        <Progress percent={50} status="active" />
-                        <Progress percent={70} status="active" />
-                        <Progress percent={100} status="active" />
+                        <Progress percent={50} status="active" strokeColor={"#099095"} />
+                        <Progress percent={70} status="active" strokeColor={"#099095"} />
+                        <Progress percent={100} status="active" strokeColor={"#099095"} />
                     </div>
                     <div className='customerCard'>
                         <p>Trend-Events </p>

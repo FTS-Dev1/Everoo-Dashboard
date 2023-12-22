@@ -7,6 +7,7 @@ import { Layout, Menu, Button } from "antd"
 // Asstets | ICONS :
 import Logo from "../../Assets/Images/logo.png"
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa"
+import { AiOutlineLogout } from "react-icons/ai"
 
 // Components :
 import Navbar from '../../Components/Navbar/Navbar'
@@ -61,18 +62,20 @@ const Dashboard = () => {
     return (
         <>
             <div className="dashboardContainer">
-                <Sider collapsible collapsed={collapsed} breakpoint='lg' onCollapse={(value) => setCollapsed(value)} width="270" className="sider" trigger={<> <div className="trig">{collapsed ? <FaAngleRight /> : <FaAngleLeft />}</div> </>}>
-                    <div className="logoBox">
+                {/* <Sider collapsible collapsed={collapsed} breakpoint='lg' onCollapse={(value) => setCollapsed(value)} width="270" className="sider" trigger={<> <div className="trig">{collapsed ? <FaAngleRight /> : <FaAngleLeft />}</div> </>}> */}
+                <Sider collapsible collapsed={collapsed} breakpoint='lg' onCollapse={(value) => setCollapsed(value)} width="270" className="sider" trigger={null}>
+                    <div className={collapsed ? "logoBoxClosed" : "logoBox"}>
                         <img style={collapsed ? { width: "60px" } : {}} src={Logo} alt="ERROR" />
                     </div>
                     <Menu mode="inline" items={RoutesList} onClick={handleMenuClick} selectedKeys={selectedRoutes} />
-                    <Button className='logoutBtn' onClick={Logout} >Ausloggen </Button>
+                    <Button style={collapsed && { padding: 0 }} className='logoutBtn' onClick={Logout} > <AiOutlineLogout /> {!collapsed && "Ausloggen"}  </Button>
+                    <Button className='sideBarTrigger' onClick={() => setCollapsed(!collapsed)} > {collapsed ? <FaAngleRight /> : <FaAngleLeft />}  </Button>
                 </Sider>
                 <div className="rightContainer">
                     <Navbar />
                     <div className="rightBox">
                         <Routes>
-                            <Route key={"1c"} path='/location' element={<Catering1 path="location"  label="Standort" />} />
+                            <Route key={"1c"} path='/location' element={<Catering1 path="location" label="Standort" />} />
                             <Route key={"2c"} path='/catering' element={<Catering1 path="caterings" label="Verpflegung" />} />
                             <Route key={"3c"} path='/beverages' element={<Catering1 path="beverage" label="Getränke" />} />
                             <Route key={"4c"} path='/staff' element={<Catering1 path="staff" label="Personal" />} />
