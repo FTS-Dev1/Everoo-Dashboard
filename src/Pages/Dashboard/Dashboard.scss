@@ -33,6 +33,7 @@
             ::-webkit-scrollbar {
                 width: 0px !important;
             }
+
             .ant-menu-root {
                 height: calc(100vh - 178px);
                 background-color: inherit;
@@ -44,7 +45,7 @@
                 .ant-menu-item {
                     font-size: 1.1rem;
                     width: 100%;
-                    margin: 2rem 0;
+                    margin: 1rem 0;
                     border-radius: 0;
 
                     .ant-menu-item-icon {
@@ -55,19 +56,20 @@
                         color: inherit;
                         // background-color: #111317;
                     }
-                    
-                    &:focus-visible{
+
+                    &:focus-visible {
                         background-color: transparent;
                         outline: none;
                     }
                 }
-                
+
                 .ant-menu-item-selected {
                     background-color: inherit;
                     color: var(--secondaryTextColor);
                     position: relative;
                     // background: linear-gradient(270deg, #282C35 0%, #111317 99.72%);
-                    background:  transparent;
+                    background: transparent;
+
                     &::before {
                         position: absolute;
                         content: "";
@@ -91,8 +93,9 @@
             padding: .2rem .5rem;
             cursor: pointer;
             transition: all .3s;
+
             @media screen and (max-width:800px) {
-                display: none;                
+                display: none;
             }
 
             .trig {

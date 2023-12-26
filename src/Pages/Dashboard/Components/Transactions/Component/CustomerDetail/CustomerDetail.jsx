@@ -82,7 +82,7 @@ const CustomerDetail = ({
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
                   <h5 >No of Days</h5>
                 </div>
-                <p style={{ marginLeft: "1.9rem" }} >0-{selectedTransaction?.days}</p>
+                <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.days[0].slice(0, 10)}    {selectedTransaction?.days[1].slice(0, 10)}</p>
               </div>
             </Col>
           </Row>

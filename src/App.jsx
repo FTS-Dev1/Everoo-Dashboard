@@ -65,7 +65,7 @@ const App = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [location.pathname])
-  console.log("ENV ------>", process.env);
+
   return (
     <>
       <ToastContainer
