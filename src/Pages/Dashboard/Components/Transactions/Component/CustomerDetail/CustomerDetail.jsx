@@ -24,7 +24,7 @@ const CustomerDetail = ({
       <div className="TransactionContainer">
         <div className="heading">
           <BsArrowLeftShort className="icon" onClick={closePage} />{" "}
-          {selectedTransaction ? "VIEW" : ""}Customers Detail
+          {selectedTransaction ? "VIEW " : ""} Kunden Detail
         </div>
         <div style={{ width: "80%", margin: "auto" }}>
           <Row gutter={26}>
@@ -32,28 +32,28 @@ const CustomerDetail = ({
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Name</h5>
+                  <h5 >Kundenname</h5>
                 </div>
                 <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.firstName} {selectedTransaction?.lastName}</p>
               </div>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Event Type</h5>
+                  <h5 >Ereignistyp</h5>
                 </div>
                 <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.event?.name}</p>
               </div>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Event Locality</h5>
+                  <h5 >Ereignisort</h5>
                 </div>
                 <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.city?.name}</p>
               </div>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >No of Guests</h5>
+                  <h5 >Anzahl der Gäste</h5>
                 </div>
                 <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.guests?.min} - {selectedTransaction?.guests?.max}</p>
               </div>
@@ -65,7 +65,7 @@ const CustomerDetail = ({
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Contact Detail</h5>
+                  <h5 >Kontakt Detail</h5>
                 </div>
                 <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.email}</p>
                 <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.phone}</p>
@@ -73,21 +73,29 @@ const CustomerDetail = ({
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >Event Location</h5>
+                  <h5 >Kundenadresse</h5>
+                </div>
+                <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.address}</p>
+              </div>
+              <div style={{ paddingTop: "2rem" }}>
+                <div style={{ display: "flex" }}>
+                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
+                  <h5 >Ort des Ereignisses</h5>
                 </div>
                 <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.city?.name}</p>
               </div>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>
                   <img src={event} width={16} style={{ marginRight: "1rem" }} />
-                  <h5 >No of Days</h5>
+                  <h5 >Anzahl der Tage</h5>
                 </div>
-                <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.days[0].slice(0, 10)}    {selectedTransaction?.days[1].slice(0, 10)}</p>
+                <p style={{ marginLeft: "1.9rem" }} > <span style={{ fontWeight: "bold", fontSize: ".9rem" }}>From</span> {selectedTransaction?.days[0].slice(0, 10)} - <span style={{ fontWeight: "bold", fontSize: ".9rem" }}>To</span> {selectedTransaction?.days[1].slice(0, 10)}</p>
+                <p style={{ marginLeft: "1.9rem" }}> {(new Date(selectedTransaction?.days[1]).getTime() - new Date(selectedTransaction?.days[0]).getTime()) / (1000 * 60 * 60 * 24)} <span style={{ fontWeight: "bold", fontSize: ".9rem" }}>Days</span> </p>
               </div>
             </Col>
           </Row>
           <Row gutter={26}>
-            <h3 style={{ padding: "2rem" }}>Services</h3>
+            <h3 style={{ padding: "2rem" }}>Dienstleistungen</h3>
           </Row>
           <div className="servicesList">
             {

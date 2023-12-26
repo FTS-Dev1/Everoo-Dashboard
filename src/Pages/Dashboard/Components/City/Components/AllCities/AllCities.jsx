@@ -80,7 +80,7 @@ const AllCities = ({ allCities, loading, togglePage, setReload }) => {
 
     const columns = [
         {
-            title: 'City Name',
+            title: 'Name der Stadt',
             dataIndex: 'EventName',
             key: 'eventName',
             width: "300px",
@@ -98,7 +98,7 @@ const AllCities = ({ allCities, loading, togglePage, setReload }) => {
 
         // },
         {
-            title: 'Actions',
+            title: 'Aktion',
             dataIndex: 'action',
             key: 'action',
             align: "center",
@@ -136,10 +136,10 @@ const AllCities = ({ allCities, loading, togglePage, setReload }) => {
             <div className="allEventsBox">
                 <div className="flexLineSpace">
                     <div className="heading upper">
-                        All Cities
+                    Alle Städte
                     </div>
                     <div className="buttonandFilter">
-                        <Button className='dashboardBtn' style={{ width: "120px" }} onClick={() => togglePage(null)}> Add City  </Button>
+                        <Button className='dashboardBtn' style={{ width: "160px" }} onClick={() => togglePage(null)}> Stadt hinzufügen</Button>
                     </div>
                 </div>
 

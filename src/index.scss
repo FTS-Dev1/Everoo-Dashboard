@@ -75,6 +75,7 @@ body {
     align-items: center;
     justify-content: center;
     border: none;
+
     &:hover {
         // color: var(--themeColor) !important;
         color: #fff;
@@ -98,6 +99,7 @@ body {
     align-items: center;
     justify-content: center;
     border: none;
+
     &:hover {
         // color: var(--themeColor) !important;
         color: #fff;
@@ -141,7 +143,8 @@ body {
     max-height: 30px;
     height: 30px;
     width: 75%;
-    margin-left: 29px;
+    align-self: center;
+    gap: .5rem;
     padding: 20px 35px;
     border-radius: 20px;
     font-size: 14px;
@@ -153,7 +156,7 @@ body {
     background-color: #82ABA8;
     min-height: 40px;
     box-shadow: 0px 8px 15px rgba(1, 1, 1, .1) !important;
-    transition: all 0.3s ease 0s;
+    transition: all 0.1s ease 0s;
 
 
     &:hover {
@@ -166,9 +169,35 @@ body {
     }
 }
 
+.sideBarTrigger {
+    position: absolute;
+    right: -18px;
+    bottom: 75px;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: #fff;
+    background-color: #82ABA8;
+    box-shadow: 0px 8px 15px rgba(1, 1, 1, .1) !important;
+    transition: all 0.3s ease 0s;
+    z-index: 99999;
+
+    &:hover {
+        // color: var(--themeColor) !important;
+        color: #fff;
+        background-color: black;
+        box-shadow: 0px 15px 20px rgba(1, 1, 1, .2) !important;
+    }
+}
+
 /* ************ Custom  ScrollBar ************** */
 
-.errorMessage{
+.errorMessage {
     color: red;
 }
 
@@ -218,7 +247,8 @@ body {
         margin: 0 20px;
     }
 }
-.lableName{
+
+.lableName {
     padding: 0.5rem 3px;
     font-size: 14px;
     font-weight: 400;
@@ -255,11 +285,13 @@ input {
             width: 100%;
             display: flex;
             flex-direction: column;
-            .lableName{
+
+            .lableName {
                 padding: 0.5rem 3px;
                 font-size: 14px;
                 font-weight: 400;
             }
+
             .inputselect {
                 width: 100%;
                 min-width: 10rem;
@@ -272,17 +304,19 @@ input {
                 display: flex;
                 align-items: center;
             }
+
             .selector {
                 border: transparent;
                 box-shadow: none;
                 display: flex;
                 width: 100%;
-                
+
             }
 
             .selecticon {
                 padding-left: 0.3rem;
             }
+
             .ant-select-selector {
                 border: none;
                 display: flex;
@@ -304,15 +338,17 @@ input {
                 box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
                 border-radius: 9px;
                 gap: 0.3rem;
+
                 input:-webkit-autofill,
                 input:-webkit-autofill:hover,
                 input:-webkit-autofill:focus,
                 input:-webkit-autofill:active {
                     -webkit-box-shadow: 0 0 0 30px white inset !important;
                 }
-                
+
             }
-            .textarea{
+
+            .textarea {
                 padding: 1rem;
                 width: 100%;
                 min-width: 10rem;
@@ -323,7 +359,8 @@ input {
             }
         }
     }
-    .yellowGraBtn{
+
+    .yellowGraBtn {
         width: 7rem;
         display: flex;
         align-self: flex-end;
@@ -380,9 +417,10 @@ input {
     color: var(--primaryTextColor);
     font-size: 1.7rem;
     font-weight: 600;
-        @media screen and (max-width:500px) {
-            font-size: 18px;            
-        }
+
+    @media screen and (max-width:500px) {
+        font-size: 18px;
+    }
 }
 
 .subHeading {
@@ -556,7 +594,7 @@ input {
 
 // ANT-D Date picker
 .ant-picker {
-    border: 1px solid var(--border) ;
+    border: 1px solid var(--border);
 
 }
 
@@ -656,7 +694,7 @@ input {
 // ANT-D table 
 .table {
     padding-top: 1rem;
-    // overflow: scroll;
+    overflow: scroll;
 
 
     .avaterBox {
@@ -753,6 +791,7 @@ input {
         background-color: transparent;
         color: white;
         height: 63px;
+
         &::before {
             content: none !important;
             border-color: transparent;
@@ -860,7 +899,8 @@ input {
         }
     }
 }
-.ant-input-affix-wrapper-lg{
+
+.ant-input-affix-wrapper-lg {
     border: transparent;
 }
 
@@ -869,25 +909,31 @@ input {
     background-color: var(--themeColor) !important;
     border-color: var(--themeColor) !important;
 }
+
 .ant-radio-wrapper:hover .ant-radio-inner {
     border-color: var(--themeColor);
 }
-  .ant-radio:hover .ant-radio-inner {
+
+.ant-radio:hover .ant-radio-inner {
     border-color: var(--themeColor) !important;
 }
+
 .ant-radio-input:focus .ant-radio-inner {
     border-color: var(--themeColor) !important;
-  }
-  .radioMain{
+}
+
+.radioMain {
     border-color: var(--themeColor) !important;
-  }
+}
 
 .ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
     color: white;
 }
-.ant-image-preview-root .ant-image-preview-mask{
+
+.ant-image-preview-root .ant-image-preview-mask {
     background-color: rgba(0, 0, 0, 0.85);
 }
+
 .ant-modal {
 
     .deleteModel {
@@ -927,20 +973,24 @@ input {
     }
 }
 
-.ant-menu-light .ant-menu-submenu-selected >.ant-menu-submenu-title,.ant-menu-light>.ant-menu .ant-menu-submenu-selected >.ant-menu-submenu-title {
+.ant-menu-light .ant-menu-submenu-selected>.ant-menu-submenu-title,
+.ant-menu-light>.ant-menu .ant-menu-submenu-selected>.ant-menu-submenu-title {
     color: white;
     font-size: 1.1rem;
 }
 
-.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):hover,.ant-menu-light>.ant-menu:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):hover {
+.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):hover,
+.ant-menu-light>.ant-menu:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):hover {
     background-color: transparent;
 }
 
-.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):active,.ant-menu-light>.ant-menu:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):active {
-     background-color: transparent; 
+.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):active,
+.ant-menu-light>.ant-menu:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):active {
+    background-color: transparent;
 }
 
-.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:active,.ant-menu-light>.ant-menu:not(.ant-menu-horizontal) .ant-menu-submenu-title:active {
+.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:active,
+.ant-menu-light>.ant-menu:not(.ant-menu-horizontal) .ant-menu-submenu-title:active {
     background-color: transparent;
-    
+
 }

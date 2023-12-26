@@ -122,7 +122,7 @@ const AllCustomers = ({
     //   ellipsis: true,
     // },
     {
-      title: "Name",
+      title: "Kundenname",
       dataIndex: "name",
       key: "name",
       align: "left",
@@ -131,7 +131,7 @@ const AllCustomers = ({
       ellipsis: true,
     },
     {
-      title: "Email",
+      title: "E-Mail",
       dataIndex: "email",
       key: "email",
       ellipsis: true,
@@ -139,7 +139,7 @@ const AllCustomers = ({
 
     },
     {
-      title: "Phone",
+      title: "Telefon",
       dataIndex: "phone",
       key: "phone",
       ellipsis: true,
@@ -147,7 +147,7 @@ const AllCustomers = ({
       render: (_, data) => <>{data?.phone}</>,
     },
     {
-      title: "Event",
+      title: "Ereignis",
       dataIndex: "event",
       key: "event",
       align: "center",
@@ -155,7 +155,7 @@ const AllCustomers = ({
       ellipsis: true,
     },
     {
-      title: "Date",
+      title: "Datum",
       dataIndex: "date",
       key: "date",
       render: (_, data) => data?.createdAt?.slice(0, 10) || null,
@@ -163,7 +163,7 @@ const AllCustomers = ({
       ellipsis: true,
     },
     {
-      title: "Actions",
+      title: "Aktion",
       dataIndex: "action",
       key: "action",
       align: "center",
@@ -197,7 +197,7 @@ const AllCustomers = ({
       ) : (
         <div className="dashboardAllUsersContainer">
           <div className="flexLineSpace">
-            <div className="heading upper">Customers</div>
+            <div className="heading upper">Kunden</div>
           </div>
           {
             loading ?

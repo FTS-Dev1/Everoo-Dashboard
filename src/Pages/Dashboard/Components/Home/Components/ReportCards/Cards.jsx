@@ -22,7 +22,7 @@ let tempCardsData = [
         image: dashboardCardPersonIcon,
         static: 80,
         value: '$143,624',
-        name: "Last day",
+        name: "Letzter Tag",
         value2: '$143,624',
     },
     {
@@ -30,7 +30,7 @@ let tempCardsData = [
         image: dashboardCardPersonIcon,
         static: -30,
         value: '$143,624',
-        name: "Last Month",
+        name: "letzter Monat",
         value2: '$143,624',
     },
     {
@@ -38,7 +38,7 @@ let tempCardsData = [
         image: dashboardCardPersonIcon,
         static: 40,
         value: '$143,624',
-        name: "Last Year",
+        name: "letztes Jahr",
         value2: '$143,624',
     },
 

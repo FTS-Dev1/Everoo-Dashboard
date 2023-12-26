@@ -80,7 +80,7 @@ const AllEvents = ({ allEvents, loading, togglePage, setReload }) => {
 
     const columns = [
         {
-            title: 'Event Name',
+            title: 'Auswahl von Veranstaltungen',
             dataIndex: 'EventName',
             key: 'eventName',
             width: "300px",
@@ -89,7 +89,7 @@ const AllEvents = ({ allEvents, loading, togglePage, setReload }) => {
 
         },
         {
-            title: 'City',
+            title: 'Die Stadt',
             dataIndex: 'city',
             key: 'city',
             width: "300px",
@@ -98,7 +98,7 @@ const AllEvents = ({ allEvents, loading, togglePage, setReload }) => {
 
         },
         {
-            title: 'Actions',
+            title: 'Aktion',
             dataIndex: 'action',
             key: 'action',
             align: "center",
@@ -136,10 +136,10 @@ const AllEvents = ({ allEvents, loading, togglePage, setReload }) => {
             <div className="allEventsBox">
                 <div className="flexLineSpace">
                     <div className="heading upper">
-                        All Events
+                    Ereignis hinzufügen
                     </div>
                     <div className="buttonandFilter">
-                        <Button className='dashboardBtn' style={{ width: "120px" }} onClick={() => togglePage(null)}> Add Event  </Button>
+                        <Button className='dashboardBtn' style={{ width: "162px" }} onClick={() => togglePage(null)}>Ereignis hinzufügen </Button>
                     </div>
                 </div>
 

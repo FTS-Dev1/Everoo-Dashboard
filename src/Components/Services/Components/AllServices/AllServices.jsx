@@ -39,7 +39,7 @@ import PreLoader from 'Components/PreLoader/PreLoader';
 
 const remove = <span>remove</span>;
 const edit = <span>edit</span>;
-const AllCateringService = ({ allEvents, loading, togglePage, setReload, path }) => {
+const AllCateringService = ({ allEvents, loading, togglePage, setReload, path, label }) => {
 
     const [deleteConfirmation, setDeleteConfirmation] = useState({
         open: false,
@@ -82,14 +82,14 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload, path })
 
     const columns = [
         {
-            title: 'Picture',
+            title: 'Abbildung',
             dataIndex: 'picture',
             key: 'picture',
             render: (_, data) => <> <div className="avaterBox"> {data?.image?.url ? <img src={ImgURLGEN(data?.image)} alt="ERROR" /> : <UserAvaterIcon size={18} className='icon' />}  </div> </>,
 
         },
         {
-            title: 'Catering Name',
+            title: 'Bezeichnung',
             dataIndex: 'cateringName',
             key: 'cateringName',
             width: "300px",
@@ -98,7 +98,7 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload, path })
 
         },
         {
-            title: 'Price',
+            title: 'Preis',
             dataIndex: 'price',
             key: 'price',
             width: "300px",
@@ -107,14 +107,14 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload, path })
 
         },
         {
-            title: 'Description',
+            title: 'Beschreibung',
             dataIndex: 'description',
             key: 'description',
             width: "300px",
             ellipsis: true,
         },
         {
-            title: 'Actions',
+            title: 'Aktion',
             dataIndex: 'action',
             key: 'action',
             align: "center",
@@ -151,10 +151,10 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload, path })
             <div className="allEventsBox">
                 <div className="flexLineSpace">
                     <div className="heading upper">
-                        All {path}
+                        All {label}
                     </div>
                     <div className="buttonandFilter">
-                        <Button className='dashboardBtn' style={{ width: "120px" }} onClick={() => togglePage(null)}> Add Service </Button>
+                        <Button className='dashboardBtn' style={{ width: "160px" }} onClick={() => togglePage(null)}> Dienst hinzufügen </Button>
                     </div>
                 </div>
 

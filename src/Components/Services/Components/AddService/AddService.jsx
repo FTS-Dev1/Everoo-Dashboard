@@ -5,7 +5,8 @@ import React, { useEffect, useState } from "react";
 // import Styling
 // import './ManageAccess.scss'
 import { Lock, NoteFavorite, Profile, Flag } from 'iconsax-react'
-import { Button, Input, Upload, Select } from 'antd'
+import { Button, Input, Upload, Select, message } from 'antd'
+import { PlusOutlined, LoadingOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux'
 import { LocalDiningOutlined } from '@mui/icons-material'
 import { toast } from 'react-toastify'
@@ -23,6 +24,22 @@ import "./AddService.scss";
 
 
 
+const getBase64 = (img, callback) => {
+  const reader = new FileReader();
+  reader.addEventListener('load', () => callback(reader.result));
+  reader.readAsDataURL(img);
+};
+const beforeUpload = (file) => {
+  const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+  if (!isJpgOrPng) {
+    message.error('You can only upload JPG/PNG file!');
+  }
+  const isLt2M = file.size / 1024 / 1024 < 2;
+  if (!isLt2M) {
+    message.error('Image must smaller than 2MB!');
+  }
+  return isJpgOrPng && isLt2M;
+};
 const AddService = ({ selectedService, closePage, path }) => {
 
   const [formData, setFormData] = useState({
@@ -30,7 +47,9 @@ const AddService = ({ selectedService, closePage, path }) => {
     description: "",
     price: ""
   })
-  const [image, setImage] = useState(null);
+
+  const [imageUrl, setImageUrl] = useState(null);
+  const [file, setFile] = useState(null)
 
   const [loading, setLoading] = useState(false)
 
@@ -44,9 +63,26 @@ const AddService = ({ selectedService, closePage, path }) => {
     })
 
   }
-  const enteringFile = (event) => {
-    setImage(event.target.files[0])
-  }
+
+  const handleUploadChange = (info) => {
+    getBase64(info.file.originFileObj, (url) => {
+      setImageUrl(url);
+    });
+
+    setFile(info?.file?.originFileObj || null)
+  };
+  const uploadButton = (
+    <div>
+      {loading ? <LoadingOutlined /> : <PlusOutlined />}
+      <div
+        style={{
+          marginTop: 8,
+        }}
+      >
+        Hochladen
+      </div>
+    </div>
+  );
 
 
   const saveService = async () => {
@@ -57,7 +93,7 @@ const AddService = ({ selectedService, closePage, path }) => {
     data.append("title", formData.title)
     data.append("price", formData.price)
     data.append("description", formData.description)
-    data.append("image", image)
+    data.append("image", file)
 
     let res;
     if (selectedService) {
@@ -95,14 +131,34 @@ const AddService = ({ selectedService, closePage, path }) => {
     <>
       <div className="AddEventMain">
         <div className="flexLineSpace">
-          <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedService ? "EDIT" : "ADD"} {path}</div></div>
+          <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedService ? "Bearbeiten" : "Hinzufügen"} {path}</div></div>
         </div>
         <div className="ManageAccessMain">
           <div className="inputMain">
-            <input type="file" onChange={enteringFile} />
+            <Upload
+              listType="picture-card"
+              className="avatar-uploader"
+              showUploadList={false}
+              beforeUpload={beforeUpload}
+              onChange={handleUploadChange}
+            >
+              {imageUrl ? (
+                <div className="imgBox">
+                  <img
+                    src={imageUrl}
+                    alt="avatar"
+                    style={{
+                      width: '100%',
+                    }}
+                  />
+                </div>
+              ) : (
+                uploadButton
+              )}
+            </Upload>
             <div className="inputFields">
               <div className="field1 field">
-                <div className="lableName">Title</div>
+                <div className="lableName">Bezeichnung</div>
                 <Input
                   // prefix={<Lock className='icon' />}
                   size='large' className='input' type="text" placeholder='title' name="title"
@@ -112,10 +168,10 @@ const AddService = ({ selectedService, closePage, path }) => {
               </div>
 
               <div className="field2 field">
-                <div className="lableName">Price</div>
+                <div className="lableName">Preis</div>
                 <Input
                   //  prefix={<Lock className='icon' />}
-                  size='large' className='input' type="number" placeholder='price' name="price"
+                  size='large' className='input' type="number" placeholder='Preis' name="price"
                   value={formData.price}
                   onChange={enteringData}
                 />
@@ -124,8 +180,8 @@ const AddService = ({ selectedService, closePage, path }) => {
 
             <div className="inputFields">
               <div className="field1 field">
-                <div className="lableName">Description</div>
-                <Input.TextArea rows={4} size='large' className='textarea' type="text" placeholder='Enter Description' name="description"
+                <div className="lableName">Beschreibung</div>
+                <Input.TextArea rows={4} size='large' className='textarea' type="text" placeholder='Enter Beschreibung' name="description"
                   onChange={enteringData} value={formData?.description}
                 />
               </div>
@@ -134,7 +190,7 @@ const AddService = ({ selectedService, closePage, path }) => {
             <Button className='yellowGraBtn'
               loading={loading}
               onClick={saveService}
-            >{selectedService ? "Update" : "Save"}</Button>
+            >{selectedService ? "Aktualisierung" : "speichern"}</Button>
           </div>
         </div>
       </div>

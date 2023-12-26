@@ -106,18 +106,18 @@ const AddCity = ({ selectedCity, closePage }) => {
         <>
             <div className="AddEventMain">
                 <div className="flexLineSpace">
-                    <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedCity ? "Edit" : "ADD"} Event</div></div>
+                    <div className="heading upper"><BsArrowLeftShort className='icon cursor' onClick={closePage} /><div className="head">{selectedCity ? "Bearbeiten" : "Hinzufügen"} Ereignis </div></div>
                 </div>
                 <div className="ManageAccessMain">
 
                     <div className="inputMain">
                         <div className="inputFields">
                             <div className="field1 field">
-                                <div className="lableName">City</div>
+                                <div className="lableName">Die Stadt</div>
                                 <div className="inputselect">
                                     <div className="selecticon"><Flag className='iconInfo' /></div>
                                     <input
-                                        placeholder='city name'
+                                        placeholder='Name der Stadt'
                                         value={cityName}
                                         className='selector'
                                         onChange={(event) => setCityName(event.target.value)}
@@ -133,7 +133,7 @@ const AddCity = ({ selectedCity, closePage }) => {
                                         allServicesList.map((service, index) => {
                                             return (
                                                 <>
-                                                    <div className="lableName">Select Service</div>
+                                                    <div className="lableName">Dienst auswählen</div>
                                                     <div className="service">
                                                         <div className="inputselect">
                                                             <div className="selecticon"><Flag className='iconInfo' /></div>
@@ -176,7 +176,7 @@ const AddCity = ({ selectedCity, closePage }) => {
                         <Button className='yellowGraBtn'
                             loading={loading}
                             onClick={SavingCity}
-                        >{selectedCity ? "Update" : "Save"}</Button>
+                        >{selectedCity ? "Aktualisierung" : "speichern"}</Button>
                     </div>
                 </div>
             </div>
