@@ -18,7 +18,7 @@ const CustomerDetail = ({
   setSelectedUser,
   closePage,
 }) => {
-
+  console.log("----------------> ", selectedTransaction);
   return (
     <>
       <div className="TransactionContainer">
@@ -56,6 +56,13 @@ const CustomerDetail = ({
                   <h5 >Anzahl der Gäste</h5>
                 </div>
                 <p style={{ marginLeft: "1.9rem" }} >{selectedTransaction?.guests?.min} - {selectedTransaction?.guests?.max}</p>
+              </div>
+              <div style={{ paddingTop: "2rem" }}>
+                <div style={{ display: "flex" }}>
+                  <img src={event} width={16} style={{ marginRight: "1rem" }} />
+                  <h5 >Anzahl der Stunden</h5>
+                </div>
+                <p style={{ marginLeft: "1.9rem" }} > <span style={{ fontWeight: "bold", fontSize: ".9rem" }}>From</span> {selectedTransaction?.hours[0]}  <span style={{ fontWeight: "bold", fontSize: ".9rem" }}>To</span> {selectedTransaction?.hours[1]}</p>
               </div>
 
             </Col>
