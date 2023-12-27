@@ -177,7 +177,7 @@ const AllBooks = ({ page, setPage, setSelectedBook, data, setData, RoutePermissi
                                 // style={{
                                 //     minwidth: 200,
                                 // }}
-                                suffixIcon={<Filter color="#FCD117" className='icon' />}
+                                suffixIcon={<Filter color="#5E9894" className='icon' />}
                                 options={[
                                     {
                                         value: 'all',

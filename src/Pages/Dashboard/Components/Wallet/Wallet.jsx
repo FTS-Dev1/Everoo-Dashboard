@@ -36,7 +36,7 @@ const Wallet = () => {
                     gradient.addColorStop(1, "rgba(255, 219, 126, 0.2)");
                     return gradient;
                 },
-                pointBorderColor: "#FCD117",
+                pointBorderColor: "#5E9894",
                 tension: 0.4,
                 // borderWidth: 4,
                 pointHoverRadius: 6,

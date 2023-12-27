@@ -228,7 +228,7 @@ const User = ({ data, setData, selectedUser, setSelectedUser, showProfilePage, s
                                 style={{
                                     minwidth: 200,
                                 }}
-                                suffixIcon={<Filter color="#FCD117" />}
+                                suffixIcon={<Filter color="#5E9894" />}
                                 options={[
                                     {
                                         value: '',

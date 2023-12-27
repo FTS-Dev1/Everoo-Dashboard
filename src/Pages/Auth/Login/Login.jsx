@@ -11,7 +11,7 @@ import Google from '../../../Assets/Images/google.svg';
 import EmailIcon from '../../../Assets/Images/emailIcon.png';
 import MuslimMan from "../../../Assets/Images/muslimMan.png"
 // import Logo from "../../../Assets/Images/logo.png"
-import { ReactComponent as Logo} from "../../../Assets/Svgs/logo.svg"
+import { ReactComponent as Logo } from "../../../Assets/Svgs/logo.svg"
 
 // Redux :
 import { useDispatch } from "react-redux";
@@ -150,9 +150,9 @@ const Login = () => {
                                 {formError.password && <div className="errorMessage">{formError.password}</div>}
 
                             </div>
-                            <div className="forgotPass">
+                            {/* <div className="forgotPass">
                                 <p className='cursor' onClick={forgetFun}>Forgot Password?</p>
-                            </div>
+                            </div> */}
                             <div className="loginButton">
                                 <Button disabled={!stepStatus} loading={loading} className='yellowBtn' onClick={handleLogin} onDragEnter={handleLogin}>Login</Button>
                                 {/* <p>Create an account? <a className='signup cursor' onClick={registerFun}>Register</a> </p> */}

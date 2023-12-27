@@ -10,7 +10,7 @@ import { Lock, NoteFavorite, Profile, Flag } from 'iconsax-react'
 import { BsArrowLeftShort } from "react-icons/bs";
 
 // API :
-import { CreatCityAPI, GetAllServicesDataAPI } from 'API/city'
+import { CreatCityAPI, GetAllServicesDataAPI, UpdateCityAPI } from 'API/city'
 // Redux :
 import { useSelector } from 'react-redux'
 // Helper :
@@ -41,11 +41,17 @@ const AddCity = ({ selectedCity, closePage }) => {
 
     const SavingCity = async () => {
         setLoading(true);
-        let res = await CreatCityAPI({ name: cityName, services: selectedServiceData });
+        let res;
+        if (selectedCity) {
+            res = await UpdateCityAPI(selectedCity?._id, { name: cityName, services: selectedServiceData });
+        } else {
+            res = await CreatCityAPI({ name: cityName, services: selectedServiceData });
+        }
         if (res.error != null) {
             toast.error(res.error);
         } else {
             toast.success(res.data.message);
+            closePage();
         }
         setLoading(false);
     }

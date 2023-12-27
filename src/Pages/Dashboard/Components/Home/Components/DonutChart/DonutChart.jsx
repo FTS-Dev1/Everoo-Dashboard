@@ -21,7 +21,7 @@ const Sample = {
         {
             label: ["Students"],
             data: [40 , 60],
-            backgroundColor: ["#006400", "#FCD117"],
+            backgroundColor: ["#006400", "#5E9894"],
             borderWidth: 4
         },
     ]

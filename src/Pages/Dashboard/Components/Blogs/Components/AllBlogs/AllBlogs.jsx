@@ -167,7 +167,7 @@ const AllBlogs = ({ page, setPage, setSelectedBlog, data, setData, RoutePermissi
                                 style={{
                                     minwidth: 200,
                                 }}
-                                suffixIcon={<Filter color="#FCD117" />}
+                                suffixIcon={<Filter color="#5E9894" />}
                                 options={[
                                     {
                                         value: 'all',
