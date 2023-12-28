@@ -49,7 +49,7 @@ const EventType = () => {
         setLoading(true)
         let res = await GetAllEventsAPI()
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
             setAllEvents(res.data?.result || [])
         }

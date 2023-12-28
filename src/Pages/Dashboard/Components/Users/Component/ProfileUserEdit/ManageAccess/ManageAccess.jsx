@@ -84,9 +84,9 @@ export default function ManageAccess({ page, setPage, selectedUser }) {
 
         let res = await EditProfileAPI(selectedUser?._id, fData)
         if (res?.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
-            toast.success(res?.data?.message)
+            toast.success("Operation erfolgreich")
         }
 
         setLoading(false)
@@ -94,7 +94,7 @@ export default function ManageAccess({ page, setPage, selectedUser }) {
     const gettingAllRoles = async () => {
         let res = await GetAllRolesAPI()
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
             let rolesData = res?.data?.result || null
             let process = rolesData?.map((role) => {

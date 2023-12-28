@@ -60,9 +60,9 @@ const ConfirmationEmail = ({ formData, setFormData, currentStep, handleChangeSte
             email: formData?.email,
         })
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
-            toast.success(res.data.message);
+            toast.success("Operation erfolgreich");
             handleGoNext()
         }
         setloading(false)

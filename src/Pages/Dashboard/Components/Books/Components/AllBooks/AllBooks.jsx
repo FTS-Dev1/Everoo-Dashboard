@@ -51,7 +51,7 @@ const AllBooks = ({ page, setPage, setSelectedBook, data, setData, RoutePermissi
         setLoading(true)
         const res = await GetAllBooksAPI()
         if (res.error != null) {
-            toast.error(res?.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
             let bookData = res.data.result
             setData(bookData || [])
@@ -122,9 +122,9 @@ const AllBooks = ({ page, setPage, setSelectedBook, data, setData, RoutePermissi
         })
         const res = await DeleteBooksAPI(deleteConfirmation?.bookId)
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
-            toast.success(res.data?.message)
+            toast.success("Operation erfolgreich")
             setRefreshPage(!refreshPage)
         }
         setDeleteConfirmation({

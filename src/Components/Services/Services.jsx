@@ -42,7 +42,7 @@ const Catering = ({ path , label }) => {
         setLoading(true)
         let res = await GetAllServicesAPI(path)
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
             setAllEvents(res.data?.result || [])
         }

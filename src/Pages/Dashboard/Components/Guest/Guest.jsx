@@ -47,7 +47,7 @@ const Guest = () => {
         setLoading(true)
         let res = await GetRangeAPI()
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
             setAllRanges(res.data?.result || [])
         }

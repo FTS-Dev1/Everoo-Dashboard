@@ -100,7 +100,7 @@ const AllCustomers = ({
     setLoading(true);
     const res = await GetAllOrdersAPI();
     if (res.error != null) {
-      toast.error(res.error);
+      toast.error("etwas ist schief gelaufen");
     } else {
       let transactionData = res?.data?.result;
       setData(transactionData || []);

@@ -137,9 +137,9 @@ const PersonalInfo = () => {
         }
         let res = await EditProfileAPI(UserData?._id, formData)
         if (res?.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
-            toast.success(res?.data?.message)
+            toast.success("Operation erfolgreich")
             setLoading(false)
         }
     }

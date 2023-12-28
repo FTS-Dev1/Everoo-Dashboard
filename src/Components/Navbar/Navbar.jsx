@@ -81,7 +81,7 @@ const Navbar = () => {
         }
         let res = await ReadNotificationAPI(payload)
         if (res?.error != null) {
-            return toast.error(res?.error)
+            return toast.error("etwas ist schief gelaufen")
         } else {
             return getallNotification();
         }

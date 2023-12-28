@@ -69,9 +69,9 @@ const UserDetails = () => {
             password_confirmation: formData.confirmPassword
         })
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
-            toast.success(res.data.message);
+            toast.success("Operation erfolgreich");
             setTimeout(() => {
                 Navigate("/login")
             }, 2000);

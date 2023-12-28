@@ -62,9 +62,9 @@ const RegisterEmail = ({ formData, setFormData, currentStep, handleChangeStep })
       otp: otpCode
     })
     if (res.error != null) {
-      toast.error(res.error);
+      toast.error("etwas ist schief gelaufen");
     } else {
-      toast.success(res.data.message);
+      toast.success("Operation erfolgreich");
       handleNextStep()
     }
     setloading(false)

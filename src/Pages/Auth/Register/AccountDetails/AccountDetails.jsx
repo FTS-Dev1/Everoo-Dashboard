@@ -127,7 +127,7 @@ const AccountDetails = ({ formData, setFormData, currentStep, handleChangeStep }
           toast.error("Uncatched Status Error");
         }
       } else {
-        toast.error(res.error);
+        toast.error("etwas ist schief gelaufen");
       }
     } else {
       handleNextStep()

@@ -67,9 +67,9 @@ const Roles = (props) => {
         })
         let res = await DeleteRoleAPI(deleteConfirmation?.roleID)
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
-            toast.success(res.data?.message)
+            toast.success("Operation erfolgreich")
             setReload(!reload)
         }
         setDeleteConfirmation({
@@ -156,7 +156,7 @@ const Roles = (props) => {
         setLoading(true)
         let res = await GetAllRolesAPI()
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
             setData(res?.data?.result || [])
             setFilteredData(res?.data?.result || [])

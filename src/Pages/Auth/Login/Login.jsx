@@ -95,9 +95,9 @@ const Login = () => {
         setloading(true)
         let res = await LoginAPI({ email: formData.email, password: formData.password })
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
-            toast.success(res.data.message);
+            toast.success("Operation erfolgreich");
             Dispatch(userDataActions.setUserData(res?.data?.result))
             let token = res?.data?.result?.token
             localStorage.setItem("everooToken", token)

@@ -48,9 +48,9 @@ const AddCity = ({ selectedCity, closePage }) => {
             res = await CreatCityAPI({ name: cityName, services: selectedServiceData });
         }
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
-            toast.success(res.data.message);
+            toast.success("Operation erfolgreich");
             closePage();
         }
         setLoading(false);
@@ -61,7 +61,7 @@ const AddCity = ({ selectedCity, closePage }) => {
     const gettingAllServices = async () => {
         let res = await GetAllServicesDataAPI()
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
             setAllServicesData(res.data?.result || null)
             if (res?.data?.result) {

@@ -123,7 +123,7 @@ const Meetings = (props) => {
     setLoading(true)
     let res = await GetAllPaidMeetingsAPI()
     if (res.error != null) {
-      toast.error(res.error)
+      toast.error("etwas ist schief gelaufen")
     } else {
       setAllMeetings(res.data?.result || [])
     }

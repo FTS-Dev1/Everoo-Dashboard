@@ -41,7 +41,7 @@ const User = (props) => {
         setLoading(true)
         let res = await GetAllUsersAPI()
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
             setData(res?.data?.result || [])
             setFilteredData(res?.data?.result || [])

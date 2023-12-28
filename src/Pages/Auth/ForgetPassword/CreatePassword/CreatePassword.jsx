@@ -71,9 +71,9 @@ const RegisterPassword = ({ formData, setFormData, currentStep, handleChangeStep
       otpCode: formData.otp
     })
     if (res.error != null) {
-      toast.error(res.error);
+      toast.error("etwas ist schief gelaufen");
     } else {
-      toast.success(res.data.message);
+      toast.success("Operation erfolgreich");
       setTimeout(() => {
         Navigate("/login")
       }, 3000);

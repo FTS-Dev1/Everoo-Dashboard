@@ -226,9 +226,9 @@ const ProfileModal = ({ openModal, closeModal, selectedUser, isprofile }) => {
 
         let res = await UpdateProfileAPI(fData)
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
-            toast.success(res.data.message);
+            toast.success("Operation erfolgreich");
         }
         setloading(false)
     }
@@ -237,7 +237,7 @@ const ProfileModal = ({ openModal, closeModal, selectedUser, isprofile }) => {
     const gettingAllRoles = async () => {
         let res = await GetAllRolesAPI()
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
             let rolesData = res?.data?.result || null
             let process = rolesData?.map((role) => {
@@ -253,7 +253,7 @@ const ProfileModal = ({ openModal, closeModal, selectedUser, isprofile }) => {
     const gettingProfileData = async () => {
         let res = await GetProfileDataAPI()
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
             let userData = res.data?.result;
             setFormData({

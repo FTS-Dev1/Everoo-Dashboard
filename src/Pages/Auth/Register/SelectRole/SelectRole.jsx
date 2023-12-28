@@ -53,9 +53,9 @@ const RegisterRole = ({ formData, setFormData, currentStep, handleChangeStep }) 
             role: formData.role,
         })
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
-            toast.success(res.data.message);
+            toast.success("Operation erfolgreich");
             handleNextStep()
 
         }
@@ -66,7 +66,7 @@ const RegisterRole = ({ formData, setFormData, currentStep, handleChangeStep }) 
     const gettingAllRoles = async () => {
         let res = await GetAllRolesAPI()
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
             let rolesData = res?.data?.result || null
             let process = rolesData?.map((role) => {

@@ -38,7 +38,7 @@ const VideoCall = ({ }) => {
   const gettingMeetingData = async () => {
     let res = await GetSpecificMeetingAPI(meetingId);
     if (res.error != null) {
-      toast.error(res.error)
+      toast.error("etwas ist schief gelaufen")
       setMeetingData(false)
     } else {
       setMeetingData(res.data?.result)

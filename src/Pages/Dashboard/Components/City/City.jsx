@@ -47,7 +47,7 @@ const City = () => {
         setLoading(true)
         let res = await GetCitiesAPI()
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
             setAllCities(res.data?.result || [])
         }

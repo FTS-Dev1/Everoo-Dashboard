@@ -62,9 +62,9 @@ const Book = ({ allBooks, selectedBook, closeSubPage }) => {
         }
         const res = await ApproveBooksAPI(data)
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
-            toast.success(res?.data?.message)
+            toast.success("Operation erfolgreich")
         }
         closeSubPage()
         setLoading(false)
@@ -76,9 +76,9 @@ const Book = ({ allBooks, selectedBook, closeSubPage }) => {
         }
         const res = await ApproveBooksAPI(data)
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
-            toast.success(res?.data?.message)
+            toast.success("Operation erfolgreich")
         }
         closeSubPage()
         setLoading(false)

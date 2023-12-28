@@ -206,9 +206,9 @@ export default function AddBook({ openPage, selectedBook, allBooks, closeSubPage
             res = await CreatBooksAPI(fData)
         }
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
-            toast.success(res?.data?.message)
+            toast.success("Operation erfolgreich")
             closeSubPage()
         }
         setLoading(false)

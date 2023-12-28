@@ -214,7 +214,7 @@ body {
 ::-webkit-scrollbar-thumb {
     margin-top: 1rem;
     border-radius: 10px !important;
-    background: #d1d1d1;
+    background: black;
 }
 
 /* ************ Input placeholder ************** */
@@ -361,7 +361,7 @@ input {
     }
 
     .yellowGraBtn {
-        width: 7rem;
+        min-width: 9rem;
         display: flex;
         align-self: flex-end;
     }

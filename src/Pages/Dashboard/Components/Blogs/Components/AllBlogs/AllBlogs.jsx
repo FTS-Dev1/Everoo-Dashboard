@@ -49,7 +49,7 @@ const AllBlogs = ({ page, setPage, setSelectedBlog, data, setData, RoutePermissi
         setLoading(true)
         const res = await GetAllBlogsAPI()
         if (res.error != null) {
-            toast.error(res?.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
             let blogData = res.data.result
             setData(blogData || [])
@@ -114,9 +114,9 @@ const AllBlogs = ({ page, setPage, setSelectedBlog, data, setData, RoutePermissi
         })
         const res = await DeleteBlogsAPI(deleteConfirmation?.blogId)
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
-            toast.success(res.data?.message)
+            toast.success("Operation erfolgreich")
             setRefreshPage(!refreshPage)
         }
         setDeleteConfirmation({

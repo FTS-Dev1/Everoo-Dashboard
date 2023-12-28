@@ -25,7 +25,7 @@ const CreateMeeting = ({ RoutePermissions }) => {
         setLoading(true)
         const res = await CreateMeetingAPI()
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
             setMeetingData(res.data.result)
         }

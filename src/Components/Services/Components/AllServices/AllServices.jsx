@@ -61,9 +61,9 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload, path, l
         })
         let res = await DeleteServiceAPI(path, deleteConfirmation.eventID)
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
-            toast.success(res.data?.message)
+            toast.success("Operation erfolgreich")
         }
         setDeleteConfirmation({
             open: false,

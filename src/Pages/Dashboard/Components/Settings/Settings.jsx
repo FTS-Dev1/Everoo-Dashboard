@@ -42,7 +42,7 @@ const Settings = () => {
         setLoading(true);
         const res = await GetCommission();
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
             let commissionData = res?.data?.result;
             setData(commissionData || []);

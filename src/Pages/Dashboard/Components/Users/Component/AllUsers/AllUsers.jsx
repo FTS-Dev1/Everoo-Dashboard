@@ -77,9 +77,9 @@ const User = ({ data, setData, selectedUser, setSelectedUser, showProfilePage, s
         })
         let res = await DeleteUserAPI(deleteConfirmation?.userID)
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
-            toast.success(res.data?.message)
+            toast.success("Operation erfolgreich")
             setReload(!reload)
         }
         setDeleteConfirmation({
@@ -200,7 +200,7 @@ const User = ({ data, setData, selectedUser, setSelectedUser, showProfilePage, s
         setLoading(true)
         let res = await GetAllUsersAPI()
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
             setData(res?.data?.result || [])
             setFilteredData(res?.data?.result || [])

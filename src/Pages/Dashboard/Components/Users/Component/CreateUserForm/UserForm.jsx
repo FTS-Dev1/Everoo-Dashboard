@@ -255,10 +255,10 @@ const ProfileModal = ({ openPage, closePage, selectedUser }) => {
                     toast.error(res.error?.data?.message)
                 }
             } else {
-                toast.error(res.error);
+                toast.error("etwas ist schief gelaufen");
             }
         } else {
-            toast.success(res.data.message);
+            toast.success("Operation erfolgreich");
             closePage()
         }
         setloading(false)
@@ -298,7 +298,7 @@ const ProfileModal = ({ openPage, closePage, selectedUser }) => {
     const gettingAllRoles = async () => {
         let res = await GetAllRolesAPI()
         if (res.error != null) {
-            toast.error(res.error);
+            toast.error("etwas ist schief gelaufen");
         } else {
             let rolesData = res?.data?.result || null
             let process = rolesData?.map((role) => {

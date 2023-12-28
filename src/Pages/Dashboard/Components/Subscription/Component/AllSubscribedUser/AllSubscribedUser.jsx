@@ -64,9 +64,9 @@ const AllSubscribedUser = ({
     })
     let res = await DeleteAPI(deleteConfirmation?.userID)
     if (res.error != null) {
-      toast.error(res.error)
+      toast.error("etwas ist schief gelaufen")
     } else {
-      toast.success(res.data?.message)
+      toast.success("Operation erfolgreich")
       setReload(!reload)
     }
     setDeleteConfirmation({
@@ -158,7 +158,7 @@ const AllSubscribedUser = ({
     const res = await GetAllSubscriptionAPI();
     console.log(res, "res")
     if (res.error != null) {
-      toast.error(res.error);
+      toast.error("etwas ist schief gelaufen");
     } else {
       let subscriptionData = res?.data?.subscribedUsers;
       console.log(subscriptionData, "sub")

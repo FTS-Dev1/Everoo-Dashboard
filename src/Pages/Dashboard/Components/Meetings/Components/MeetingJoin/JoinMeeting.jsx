@@ -24,7 +24,7 @@ const JoinMeeting = () => {
         setloading(true)
         const res = await JoinMeetingAPI(meetingId)
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
             window.open(res.data.result.url, "_blanck")
         }

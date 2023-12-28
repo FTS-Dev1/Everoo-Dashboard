@@ -55,9 +55,9 @@ const AddEvent = ({ selectedEvent, closePage }) => {
             res = await CreatEventAPI(data);
         }
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
-            toast.success(res.data.message)
+            toast.success("Operation erfolgreich")
             closePage()
         }
         setLoading(false);
@@ -67,7 +67,7 @@ const AddEvent = ({ selectedEvent, closePage }) => {
     let gettingCities = async () => {
         let res = await GetCitiesAPI()
         if (res.error != null) {
-            toast.error(res.error)
+            toast.error("etwas ist schief gelaufen")
         } else {
             setAllCitiesData(res?.data?.result || [])
         }
