@@ -35,8 +35,8 @@ import PreLoader from 'Components/PreLoader/PreLoader';
 
 
 
-const remove = <span>remove</span>;
-const edit = <span>edit</span>;
+const remove = <span>entfernen</span>;
+const edit = <span>bearbeiten</span>;
 const AllRanges = ({ allRanges, loading, togglePage, setReload }) => {
 
     const [deleteConfirmation, setDeleteConfirmation] = useState({
@@ -163,7 +163,7 @@ const AllRanges = ({ allRanges, loading, togglePage, setReload }) => {
             <ConfirmationModel open={deleteConfirmation.open} onOk={handleDeleteEvent} onCancel={handleNotDeleteEvent} confirmLoading={deleteConfirmation.loading}>
                 <div className="deleteModel">
                     <div className="titleBox">
-                        <RiInformationLine className='icon' /> <div className="title"> Are you sure you want to delete this Range? </div>
+                        <RiInformationLine className='icon' /> <div className="title"> Sind Sie sicher, dass Sie diesen Bereich löschen möchten? </div>
                     </div>
                 </div>
             </ConfirmationModel>

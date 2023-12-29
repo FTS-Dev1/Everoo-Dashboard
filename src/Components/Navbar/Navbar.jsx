@@ -110,13 +110,13 @@ const Navbar = () => {
 
     const content = (
         <div className='antPopover'>
-            <div className='popoverItem' onClick={() => Navigate("/dashboard/profile")}>
+            {/* <div className='popoverItem' onClick={() => Navigate("/dashboard/profile")}>
                 <Profile className='icon' />
                 Profile
-            </div>
+            </div> */}
             <div className='popoverItem' onClick={logout}>
                 <Logout className='icon' />
-                Logout
+                Ausloggen
             </div>
         </div>
     );

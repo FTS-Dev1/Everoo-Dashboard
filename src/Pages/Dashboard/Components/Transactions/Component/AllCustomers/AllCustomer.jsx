@@ -25,7 +25,7 @@ import CustomerDetail from "../CustomerDetail/CustomerDetail";
 import PreLoader from "Components/PreLoader/PreLoader";
 import { GetAllOrdersAPI } from "API/order";
 
-const view = <span>View</span>;
+const view = <span>Sicht</span>;
 
 const AllCustomers = ({
   data,

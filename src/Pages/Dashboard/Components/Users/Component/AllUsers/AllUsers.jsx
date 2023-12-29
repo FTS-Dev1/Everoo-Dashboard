@@ -28,7 +28,7 @@ import PreLoader from 'Components/PreLoader/PreLoader';
 
 
 
-const edit = <span>Edit</span>;
+const edit = <span>bearbeiten</span>;
 const remove = <span>Delete</span>;
 
 

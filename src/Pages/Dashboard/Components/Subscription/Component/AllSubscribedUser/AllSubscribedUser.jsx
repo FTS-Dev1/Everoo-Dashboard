@@ -23,7 +23,7 @@ import ConfirmationModel from "Components/ConfirmationModel/ConfirmationModel";
 import PreLoader from "Components/PreLoader/PreLoader";
 import { useSelector } from "react-redux";
 
-const remove = <span>remove</span>;
+const remove = <span>entfernen</span>;
 
 const { Option } = Select;
 

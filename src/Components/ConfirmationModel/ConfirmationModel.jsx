@@ -13,7 +13,7 @@ import "./ConfirmationModel.scss";
 const ConfirmationModel = ({title, open, onOk, onCancel, confirmLoading = false, test, children}) => {
     return (
         <>
-            <Modal title={title} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading} centered>
+            <Modal title={title} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading} centered cancelText="Stornieren">
                 {children}
             </Modal>
         </>

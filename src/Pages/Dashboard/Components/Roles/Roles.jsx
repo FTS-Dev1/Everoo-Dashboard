@@ -32,7 +32,7 @@ import PreLoader from 'Components/PreLoader/PreLoader';
 const Roles = (props) => {
     let RoutePermissions = props?.permissions || []
 
-    const edit = <span>Edit</span>;
+    const edit = <span>bearbeiten</span>;
     const remove = <span>Delete</span>;
 
     const [deleteConfirmation, setDeleteConfirmation] = useState({

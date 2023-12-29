@@ -18,7 +18,7 @@ import SetCharges from './Component/SetCharges';
 import { GetCommission } from 'API/setComission';
 
 const Settings = () => {
-    const edit = <span>Edit</span>;
+    const edit = <span>bearbeiten</span>;
     const remove = <span>Delete</span>;
 
     const [data, setData] = useState([]);
