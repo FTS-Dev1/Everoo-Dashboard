@@ -55,7 +55,11 @@ const AddEvent = ({ selectedEvent, closePage }) => {
             res = await CreatEventAPI(data);
         }
         if (res.error != null) {
-            toast.error("etwas ist schief gelaufen")
+            if (res.error?.err?.code == 11000) {
+                toast.error("Doppelter Eintrag")
+            } else {
+                toast.error("etwas ist schief gelaufen")
+            }
         } else {
             toast.success("Operation erfolgreich")
             closePage()

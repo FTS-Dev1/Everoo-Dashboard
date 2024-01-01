@@ -134,7 +134,7 @@ const Login = () => {
                         <div className="flexFields">
                             <div className="field inputBox">
                                 <div className="name"> Email Address </div>
-                                <Input className='loginInput' type="text" placeholder='Your email address' name="email" onChange={enteringFormData} value={formData.email} suffix={<> <img src={EmailIcon} alt="" /> </>} />
+                                <Input className='loginInput' type="text" placeholder='Your email address' name="email" onChange={enteringFormData} value={formData.email} onPressEnter={handleLogin} suffix={<> <img src={EmailIcon} alt="" /> </>} />
                                 {formError.email && <div className="errorMessage">{formError.email}</div>}
                             </div>
                             <div className="field inputBox">
@@ -146,6 +146,7 @@ const Login = () => {
                                     onChange={enteringFormData}
                                     value={formData.password}
                                     rules={[{ required: true, message: 'Please input your username!' }]}
+                                    onPressEnter={handleLogin}
                                 />
                                 {formError.password && <div className="errorMessage">{formError.password}</div>}
 

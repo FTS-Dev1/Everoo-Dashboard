@@ -68,8 +68,8 @@ const CreatCityAPI = async (formData) => {
         })
         resolved.data = res.data
     } catch (err) {
-        if (err && err.response && err?.response?.data?.message) {
-            resolved.error = err.response.data.message
+        if (err && err.response && err?.response?.data) {
+            resolved.error = err.response.data
         } else {
             resolved.error = "Something went Wrong"
         }

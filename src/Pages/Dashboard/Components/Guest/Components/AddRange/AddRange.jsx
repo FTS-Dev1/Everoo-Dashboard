@@ -31,6 +31,10 @@ const AddRange = ({ selectedRange, closePage }) => {
     let enteringData = (event) => {
         let { name, value } = event.target;
 
+        if (value < 0 || value > 1000) {
+            return
+        }
+
         setData({
             ...data,
             [name]: value
@@ -39,6 +43,10 @@ const AddRange = ({ selectedRange, closePage }) => {
 
 
     let savingRange = async () => {
+        if (data.min < 1 || data.max < 1) {
+            toast.error("Min.- und Max.-Bereich dürfen nicht leer sein")
+            return
+        }
         setLoading(true);
         let res;
         if (selectedRange) {
@@ -47,7 +55,11 @@ const AddRange = ({ selectedRange, closePage }) => {
             res = await CreateRangeAPI({ min: data.min, max: data?.max })
         }
         if (res.error != null) {
-            toast.error("etwas ist schief gelaufen")
+            if (res.error?.err?.code == 11000) {
+                toast.error("Doppelter Eintrag")
+            } else {
+                toast.error("etwas ist schief gelaufen")
+            }
         } else {
             toast.success("Operation erfolgreich")
             closePage()

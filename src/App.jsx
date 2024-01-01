@@ -41,7 +41,7 @@ const App = () => {
   let Dispatch = useDispatch()
 
   let token = localStorage.getItem("everooToken")
-  let tokenTime = Number(localStorage.getItem("tokenTime")) + 300000
+  let tokenTime = Number(localStorage.getItem("tokenTime")) + 3000000
   let expireTime = new Date().getTime()
 
   let AuthToken = token ?? null
