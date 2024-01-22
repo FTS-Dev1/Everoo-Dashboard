@@ -163,6 +163,22 @@ const AllCustomers = ({
       ellipsis: true,
     },
     {
+      title: "Budget",
+      dataIndex: "budget",
+      key: "budget",
+      render: (_, data) => `€ ${data?.budget}`,
+      align: "center",
+      ellipsis: true,
+    },
+    {
+      title: "Rechnung",
+      dataIndex: "bill",
+      key: "bill",
+      render: (_, data) => `€ ${data?.bill}`,
+      align: "center",
+      ellipsis: true,
+    },
+    {
       title: "Aktion",
       dataIndex: "action",
       key: "action",
@@ -177,7 +193,7 @@ const AllCustomers = ({
                   className="actionBtn"
                   onClick={() => openProfilePage(data)}
                 >
-                  <img src={viewIcon} alt=""  />
+                  <img src={viewIcon} alt="" />
                 </div>
               </Tooltip>
             </div>

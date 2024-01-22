@@ -95,7 +95,7 @@ const CustomerDetail = ({
                   <MoneyRecive size="16" color="#5E9894" variant="Bold" style={{ marginRight: "1rem" }} />
                   <h5 >Budget</h5>
                 </div>
-                <p style={{ marginLeft: "2.2rem" }} >{selectedTransaction?.budget}</p>
+                <p style={{ marginLeft: "2.2rem" }} >€ {selectedTransaction?.budget}</p>
               </div>
               <div style={{ paddingTop: "2rem" }}>
                 <div style={{ display: "flex" }}>

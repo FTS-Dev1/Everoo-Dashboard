@@ -103,7 +103,7 @@ const AllCateringService = ({ allEvents, loading, togglePage, setReload, path, l
             key: 'price',
             width: "300px",
             ellipsis: true,
-            render: (_, data) => `${data?.price}`,
+            render: (_, data) => `€ ${data?.price}`,
 
         },
         {

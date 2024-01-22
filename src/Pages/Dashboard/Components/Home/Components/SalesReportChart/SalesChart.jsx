@@ -79,7 +79,7 @@ const SalesChart = () => {
                     },
                     color: "#006400",
                     callback: function callback(value) {
-                        return "$" + value;
+                        return "€" + value;
                     }
                 },
                 grid: {

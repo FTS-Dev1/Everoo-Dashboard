@@ -116,11 +116,12 @@ const AddEvent = ({ selectedEvent, closePage }) => {
                                 <div className="inputselect">
                                     <div className="selecticon"><Flag className='iconInfo' /></div>
                                     <Select
+                                        mode='tags'
                                         placeholder='Die Stadt'
                                         bordered={false}
-                                        value={data.cities[0]}
+                                        value={data.cities}
                                         className='selector'
-                                        onChange={(value) => enteringData({ target: { name: "cities", value: [value] } })}
+                                        onChange={(value) => enteringData({ target: { name: "cities", value: value } })}
                                         options={allCitiesData.map(city => ({ value: city?._id, label: city?.name }))}
                                     />
                                 </div>
