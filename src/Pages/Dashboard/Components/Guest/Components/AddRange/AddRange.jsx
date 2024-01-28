@@ -56,7 +56,7 @@ const AddRange = ({ selectedRange, closePage }) => {
         }
         if (res.error != null) {
             if (res.error?.err?.code == 11000) {
-                toast.error("Doppelter Eintrag")
+                toast.error("Doppelter Einträg")
             } else {
                 toast.error("etwas ist schief gelaufen")
             }

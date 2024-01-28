@@ -80,7 +80,7 @@ const AllCities = ({ allCities, loading, togglePage, setReload }) => {
 
     const columns = [
         {
-            title: 'Name der Stadt',
+            title: 'Name der Ort',
             dataIndex: 'EventName',
             key: 'eventName',
             width: "300px",
@@ -139,7 +139,7 @@ const AllCities = ({ allCities, loading, togglePage, setReload }) => {
                     Alle Städte
                     </div>
                     <div className="buttonandFilter">
-                        <Button className='dashboardBtn' style={{ width: "160px" }} onClick={() => togglePage(null)}> Stadt hinzufügen</Button>
+                        <Button className='dashboardBtn' style={{ width: "160px" }} onClick={() => togglePage(null)}> Ort hinzufügen</Button>
                     </div>
                 </div>
 
@@ -163,7 +163,7 @@ const AllCities = ({ allCities, loading, togglePage, setReload }) => {
             <ConfirmationModel open={deleteConfirmation.open} onOk={handleDeleteEvent} onCancel={handleNotDeleteEvent} confirmLoading={deleteConfirmation.loading}>
                 <div className="deleteModel">
                     <div className="titleBox">
-                        <RiInformationLine className='icon' /> <div className="title"> Sind Sie sicher, dass Sie diese Stadt löschen möchten? </div>
+                        <RiInformationLine className='icon' /> <div className="title"> Sind Sie sicher, dass Sie diese Ort löschen möchten? </div>
                     </div>
                 </div>
             </ConfirmationModel>

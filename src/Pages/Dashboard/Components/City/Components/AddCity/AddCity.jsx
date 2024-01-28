@@ -49,7 +49,7 @@ const AddCity = ({ selectedCity, closePage }) => {
         }
         if (res.error != null) {
             if (res.error?.err?.code == 11000) {
-                toast.error("Doppelter Eintrag")
+                toast.error("Doppelter Einträg")
             } else {
                 toast.error("etwas ist schief gelaufen")
             }
@@ -123,11 +123,11 @@ const AddCity = ({ selectedCity, closePage }) => {
                     <div className="inputMain">
                         <div className="inputFields">
                             <div className="field1 field">
-                                <div className="lableName">Die Stadt</div>
+                                <div className="lableName">Die Ort</div>
                                 <div className="inputselect">
                                     <div className="selecticon"><Flag className='iconInfo' /></div>
                                     <input
-                                        placeholder='Name der Stadt'
+                                        placeholder='Name der Ort'
                                         value={cityName}
                                         className='selector'
                                         onChange={(event) => setCityName(event.target.value)}

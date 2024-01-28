@@ -56,7 +56,7 @@ const AddEvent = ({ selectedEvent, closePage }) => {
         }
         if (res.error != null) {
             if (res.error?.err?.code == 11000) {
-                toast.error("Doppelter Eintrag")
+                toast.error("Doppelter Einträg")
             } else {
                 toast.error("etwas ist schief gelaufen")
             }
@@ -112,12 +112,12 @@ const AddEvent = ({ selectedEvent, closePage }) => {
                         </div>
                         <div className="inputFields">
                             <div className="field1 field">
-                                <div className="lableName">Name der Stadt</div>
+                                <div className="lableName">Name der Ort</div>
                                 <div className="inputselect">
                                     <div className="selecticon"><Flag className='iconInfo' /></div>
                                     <Select
                                         mode='tags'
-                                        placeholder='Die Stadt'
+                                        placeholder='Die Ort'
                                         bordered={false}
                                         value={data.cities}
                                         className='selector'

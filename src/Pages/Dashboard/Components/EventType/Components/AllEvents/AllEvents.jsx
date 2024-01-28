@@ -89,7 +89,7 @@ const AllEvents = ({ allEvents, loading, togglePage, setReload }) => {
 
         },
         {
-            title: 'Die Stadt',
+            title: 'Die Ort',
             dataIndex: 'city',
             key: 'city',
             width: "300px",

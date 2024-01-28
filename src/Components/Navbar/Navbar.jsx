@@ -167,7 +167,7 @@ const Navbar = () => {
                             <div className="name"> hallo.
                                 {/* {`${UserData.firstName} ${UserData?.lastName}`}  */}
                             </div>
-                            <div className="welcome"> Willkommen bei dashboard </div>
+                            <div className="welcome"> Willkommen in dashboard </div>
                         </div>
                     </Fade>
                     <Fade right>

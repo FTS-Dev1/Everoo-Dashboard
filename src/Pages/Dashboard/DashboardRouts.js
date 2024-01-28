@@ -37,11 +37,11 @@ const getSideBarData = ({ label, key, icon, children, element, isDefault, permis
 }
 
 const routsList = [
-    getSideBarData({ label: 'Instrumententafel', key: '/', icon: <img src={dashboard} />, element: Home, isDefault: true }),
-    getSideBarData({ label: 'Art des Ereignisses', key: '/eventtype', icon: <img src={event} />, element: EventType }),
-    getSideBarData({ label: 'Die Stadt', key: '/city', icon: <img src={city} />, element: City }),
-    getSideBarData({ label: 'Gäste-Sortiment', key: '/guest', icon: <img src={guest} />, element: Guest }),
-    getSideBarData({ label: 'Kundschaft', key: '/customers', icon: <img src={customers} />, element: Transaction }),
+    getSideBarData({ label: 'Dashboard', key: '/', icon: <img src={dashboard} />, element: Home, isDefault: true }),
+    getSideBarData({ label: 'Event-Art ', key: '/eventtype', icon: <img src={event} />, element: EventType }),
+    getSideBarData({ label: 'Die Ort', key: '/city', icon: <img src={city} />, element: City }),
+    getSideBarData({ label: 'Gäste-Anlage', key: '/guest', icon: <img src={guest} />, element: Guest }),
+    getSideBarData({ label: 'Einträge', key: '/customers', icon: <img src={customers} />, element: Transaction }),
     getSideBarData({
         label: 'Dienste',
         icon: <img src={services} />,
